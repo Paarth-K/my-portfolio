@@ -10,6 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.7.1"
+    "@astrojs/vue": "^2.2.1",
+    "astro": "^2.7.1",
+    "sass": "^1.63.6",
+    "vue": "^3.2.30"
+  },
+  "pnpm": {
+    "overrides": {
+      "semver@<7.5.2": ">=7.5.2"
+    }
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.10.0"
   }
 }
