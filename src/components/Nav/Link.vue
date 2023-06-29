@@ -1,11 +1,11 @@
 <template>
-  <div class="nav-link-container">
-    <a :href="to">
+  <a :href="to">
+    <div class="nav-link-container">
       <button>
         <slot />
       </button>
-    </a>
-  </div>
+    </div>
+  </a>
 </template>
 
 <script>

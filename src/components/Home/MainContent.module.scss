@@ -37,6 +37,14 @@
   transition: transform 0.2s;
   transform: scale(1.02);
 }
+.meImgContainer:active .meImgShadow {
+  transition: transform 0.07s;
+  transform: none !important;
+}
+.meImgContainer:active .meImg {
+  transition: transform 0.07s;
+  transform: none !important;
+}
 .meImg {
   width: 35vw;
   position: absolute;
