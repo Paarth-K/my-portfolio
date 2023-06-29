@@ -1,12 +1,17 @@
 ---
-import NavBar from "../components/Nav/Bar.vue";
 import Layout from "../layouts/Layout.astro";
+import TitleSection from "../components/Title/TitleSection.vue";
+import ScrollAnim from "../components/Base/ScrollAnim.vue";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome!">
 	<main>
 		<div>
-			<NavBar />
+			<TitleSection client:only="vue" />
 		</div>
+		<div>
+			<ScrollAnim client:only="vue" />
+		</div>
+		<div style="height: 20000px;"></div>
 	</main>
 </Layout>
