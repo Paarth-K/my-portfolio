@@ -1,12 +1,13 @@
 .main {
   margin: 0 8vw;
+  padding-top: 1200px; //compensating for the TitleSection
 }
 .about {
   padding-bottom: 70px;
 }
 .aboutGrid {
   display: grid;
-  grid-template-columns: 6vw auto;
+  grid-template-columns: 7vw auto;
   column-gap: 60px;
 }
 .aboutTitle {
@@ -14,6 +15,8 @@
   writing-mode: vertical-rl;
   font-size: 6vw;
   color: rgb(42, 42, 42);
+  margin: 0px 0px;
+  place-items: center;
 }
 .aboutContent {
   display: inline-grid;
@@ -22,12 +25,18 @@
 .aboutContentGrid {
   display: grid;
   grid-template-columns: auto 35vw;
+  column-gap: 40px;
+  color: #6a738f;
 }
 .meDesc {
   display: inline-grid;
+  margin: auto;
 }
 .meImgContainer {
   display: inline-grid;
+  margin: auto;
+  width: 35vw;
+  height: 35vw;
 }
 .meImgContainer:hover .meImg {
   transition: transform 0.2s;
@@ -47,6 +56,7 @@
 }
 .meImg {
   width: 35vw;
+  height: 35vw;
   position: absolute;
   border-radius: 25px;
   z-index: 9;
@@ -63,6 +73,42 @@
 }
 
 .meDescTitle {
-  font-size: 30px;
+  font-size: 3vw;
   font-weight: 500;
+  margin: 20px;
+}
+
+.meDescText {
+  font-size: 1.3vw;
+  padding-left: 20px;
+  color: rgb(62, 62, 62);
+}
+@media (max-width: 630px) {
+  .aboutContentGrid {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+  .meImg,
+  .meImgShadow {
+    width: 60vw;
+    height: 60vw;
+  }
+  .meImgContainer {
+    margin-top: 20px;
+    transform: translateX(2vw);
+    width: 60vw;
+    height: 60vw;
+  }
+  .meDescTitle {
+    font-size: 6vw;
+    text-align: center;
+  }
+  .meDescText {
+    font-size: 14px;
+    text-align: center;
+  }
+  .aboutGrid {
+    column-gap: 0px;
+    transform: translateX(-4vw);
+  }
 }

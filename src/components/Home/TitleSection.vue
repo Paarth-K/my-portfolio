@@ -5,13 +5,13 @@
       :class="lockPos ? 'title-lock' : ''"
     >
       <TransitionGroup>
-        <p key="welcome" class="title">
+        <p key="welcome" class="interactive-text">
           Hi!
           <span :class="showMyName ? '' : 'highlight1'"> My name </span>
           is
           <span :class="showMyName ? '' : 'highlight2'">Paarth</span>
         </p>
-        <p key="name" v-if="showMyName" class="my-name">
+        <p key="name" v-if="showMyName" class="interactive-text">
           <span :class="showMyName ? 'highlight1' : ''"> Welcome </span>
           to my
           <span :class="showMyName ? 'highlight2' : ''">Portfolio</span>
@@ -66,12 +66,13 @@ addEventListener("scroll", (event) => {
   opacity: 0;
 }
 
-.title,
-.my-name {
-  font-family: "Inter", sans-serif !important;
+.interactive-text {
+  // font-family: "Inter", sans-serif !important;
+  font-weight: 400;
   font-size: 200%;
   transition: all 0.4s;
 }
+
 .vertical-center {
   margin: 0;
   position: fixed;
@@ -79,6 +80,7 @@ addEventListener("scroll", (event) => {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  width: 80vw;
 }
 .title-lock {
   margin-top: 400px !important;

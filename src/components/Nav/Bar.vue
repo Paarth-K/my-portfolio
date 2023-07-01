@@ -5,7 +5,7 @@
     </div>
     <div class="nav-links-container">
       <nav-link
-        class="nav-links interactable"
+        class="nav-links"
         v-for="data in navLinkData"
         :to="data.to"
         :key="data"
@@ -42,11 +42,13 @@ export default {
 .container {
   position: fixed;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #f7fdf9;
+  z-index: 9000;
   height: auto;
   text-align: right;
   padding: 7px;
 }
+
 .nav-links-container {
   margin-right: 15px;
 }

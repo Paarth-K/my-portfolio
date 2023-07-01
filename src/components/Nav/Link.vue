@@ -31,6 +31,12 @@ export default {
   transition: border 0.1s;
   border: 1px #3299cd dashed;
 }
+@media (max-width: 385px) {
+  .nav-link-container {
+    transform: scale(0.9);
+    margin-left: 5px;
+  }
+}
 
 .nav-link-container:hover button {
   background-color: white;

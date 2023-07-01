@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import TitleSection from "../components/Home/TitleSection.vue";
 import ScrollAnim from "../components/Base/ScrollAnim.vue";
-import MainContent from "../components/Home/MainContent.jsx";
+import AboutSection from "../components/AboutSection/AboutSection.jsx";
 ---
 
 <Layout title="Welcome!">
@@ -13,8 +13,8 @@ import MainContent from "../components/Home/MainContent.jsx";
 		<div>
 			<ScrollAnim client:only="vue" />
 		</div>
-		<div style="padding-top: 1200px">
-			<MainContent />
+		<div>
+			<AboutSection />
 		</div>
 	</main>
 </Layout>
