@@ -1,20 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TitleSection from "../components/Home/TitleSection.vue";
-import ScrollAnim from "../components/Base/ScrollAnim.vue";
-import AboutSection from "../components/AboutSection/AboutSection.jsx";
+import HomePageView from "../components/Home/HomePageView.astro";
 ---
 
 <Layout title="Welcome!">
 	<main>
-		<div>
-			<TitleSection client:only="vue" />
-		</div>
-		<div>
-			<ScrollAnim client:only="vue" />
-		</div>
-		<div>
-			<AboutSection />
-		</div>
+		<HomePageView />
 	</main>
 </Layout>

@@ -18,10 +18,12 @@
         </p>
       </TransitionGroup>
     </div>
+    <ScrollPromptAnim></ScrollPromptAnim>
   </div>
 </template>
 
 <script setup>
+import ScrollPromptAnim from "../Base/ScrollPromptAnim.vue";
 import { onMounted, ref } from "vue";
 const showMyName = ref(false);
 const lockPos = ref(false);
