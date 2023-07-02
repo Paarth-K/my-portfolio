@@ -1,13 +1,17 @@
 ---
-import HomePage from "./HomePageContent.jsx";
-import TitleSection from "./TitleSection.vue";
+import AboutSection from "../AboutSection/AboutSection";
+import LandingPage from "../LandingPage/LandingPage.astro";
+import ProjectsSection from "../ProjectsSection/ProjectsSection";
 ---
 
 <div>
     <div>
-        <TitleSection client:only="vue" />
+        <LandingPage />
     </div>
     <div>
-        <HomePage />
+        <AboutSection />
+    </div>
+    <div>
+        <ProjectsSection />
     </div>
 </div>

@@ -27,6 +27,18 @@ import ScrollPromptAnim from "../Base/ScrollPromptAnim.vue";
 import { onMounted, ref } from "vue";
 const showMyName = ref(false);
 const lockPos = ref(false);
+console.log(
+  `
+
+  _   _      _ _       _ 
+ | | | | ___| | | ___ | |
+ | |_| |/ _ \\ | |/ _ \\| |
+ |  _  |  __/ | | (_) |_|
+ |_| |_|\\___|_|_|\\___/(_)
+                         
+
+`
+);
 onMounted(() => {
   checkPos();
 });

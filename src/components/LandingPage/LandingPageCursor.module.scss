@@ -1,0 +1,34 @@
+.react,
+.vue,
+.astro {
+  width: 80px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.react {
+  filter: drop-shadow(10px 5px 4px #61dcfb88);
+  top: 100px;
+  right: 200px;
+}
+
+.vue {
+  filter: drop-shadow(-10px 5px 4px #3fba859e);
+  bottom: 200px;
+  left: 200px;
+}
+
+.astro {
+  filter: drop-shadow(0px 10px 4px rgba(217, 128, 10, 0.597));
+  top: 900px;
+  right: 200px;
+}
+
+@media (max-width: 1010px) {
+  .vue {
+    left: 50px;
+  }
+  .astro {
+    right: 20px;
+  }
+}
