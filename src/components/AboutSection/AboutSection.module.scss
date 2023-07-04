@@ -84,6 +84,11 @@
   color: rgb(62, 62, 62);
 }
 @media (max-width: 630px) {
+  .aboutTitle {
+    position: sticky;
+    top: 45%;
+    align-self: flex-start;
+  }
   .aboutContentGrid {
     grid-template-columns: auto;
     grid-template-rows: auto auto;

@@ -29,6 +29,11 @@
 }
 
 @media (max-width: 630px) {
+  .projectTitle {
+    position: sticky;
+    top: 45%;
+    align-self: flex-start;
+  }
   .projectContent {
     grid-template-rows: auto !important;
     grid-template-columns: auto !important;
