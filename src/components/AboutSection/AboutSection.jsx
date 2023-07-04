@@ -13,8 +13,8 @@ export default function AboutSection(props) {
     },
   ];
   return (
-    <div className={Styles.main}>
-      <div className={Styles.about} id="about">
+    <div className={Styles.main} id="about">
+      <div className={Styles.about}>
         <div className={Styles.aboutGrid}>
           <div className={Styles.aboutTitle}>
             <span>A bit about me</span>

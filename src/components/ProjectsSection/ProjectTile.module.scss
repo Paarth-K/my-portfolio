@@ -1,0 +1,60 @@
+.projectTile {
+  margin: 0px;
+  padding: 0px;
+  aspect-ratio: 16/9;
+  height: auto;
+  width: 30vw;
+  background-color: #84e1d2;
+  border-radius: 25px;
+}
+.projectPicture {
+  width: 30vw;
+  height: auto;
+  border-radius: 25px;
+  border-radius: 25px;
+  aspect-ratio: auto;
+  transition: all 0.5s;
+}
+
+.projectPictureContainer {
+  position: relative;
+  z-index: 24 !important;
+}
+.projectPicture:hover {
+  scale: 1.01;
+  transition: all 0.2s ease;
+  // box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.091);
+}
+.projectLink {
+  text-decoration: none;
+}
+.projectTile:hover .descriptionTextContainer {
+  margin-top: -5px;
+  transition: margin-top 0.15s ease;
+}
+.projectTile:active .descriptionTextContainer {
+  margin-top: -80px;
+  transition: margin-top 0.15s ease;
+}
+.descriptionTextContainer {
+  transition: margin-top 0.15s ease;
+  z-index: 20 !important;
+  margin-top: -80px;
+  padding-bottom: 5px;
+}
+.descriptionText {
+  text-align: center;
+  font-size: 18px;
+}
+
+@media (max-width: 630px) {
+  .projectTile {
+    width: 60vw;
+  }
+  .projectPicture {
+    width: 60vw;
+  }
+  .descriptionTextContainer {
+    margin-top: -5px;
+  }
+}

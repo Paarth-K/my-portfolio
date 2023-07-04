@@ -18,3 +18,23 @@
   margin: 0px 0px;
   place-items: center;
 }
+
+.projectContent {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 30vw 30vw;
+  column-gap: 50px !important;
+  row-gap: 50px !important;
+  justify-content: center;
+}
+
+@media (max-width: 630px) {
+  .projectContent {
+    grid-template-rows: auto !important;
+    grid-template-columns: auto !important;
+    transform: translateX(8vw);
+  }
+  .projectTile {
+    width: 50vw;
+  }
+}
