@@ -44,12 +44,12 @@ onMounted(() => {
 });
 function checkPos() {
   console.log(window.scrollY);
-  if (window.scrollY >= 150) {
+  if (window.scrollY >= 250) {
     showMyName.value = true;
   } else {
     showMyName.value = false;
   }
-  if (window.scrollY >= 400) {
+  if (window.scrollY >= 600) {
     lockPos.value = true;
   } else {
     lockPos.value = false;
@@ -97,7 +97,7 @@ addEventListener("scroll", () => {
   width: 80vw;
 }
 .title-lock {
-  margin-top: 400px !important;
+  margin-top: 600px !important;
   position: absolute !important;
 }
 

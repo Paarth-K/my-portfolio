@@ -12,6 +12,7 @@ export default function LandingPageCursor() {
     <div>
       <Image
         src="/home/React-icon.png"
+        alt="React Icon"
         style={{
           transform: `translateX(${
             mouseModifX * Math.sqrt(mousePos[0])
@@ -22,6 +23,7 @@ export default function LandingPageCursor() {
 
       <Image
         src="/home/Vue-icon.png"
+        alt="Vue Icon"
         style={{
           transform: `translateX(${
             -mouseModifX * Math.sqrt(mousePos[0])
@@ -31,6 +33,7 @@ export default function LandingPageCursor() {
       ></Image>
       <Image
         src="/home/Astro-icon.png"
+        alt="Astro Icon"
         style={{
           transform: `translateX(${
             mouseModifX * -Math.sqrt(mousePos[0])

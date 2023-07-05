@@ -10,7 +10,11 @@ export default function ProjectTile({ project }) {
         rel="noopener"
       >
         <div className={Styles.projectPictureContainer}>
-          <Image src={project.image} className={Styles.projectPicture}></Image>
+          <Image
+            alt={project.imgalt}
+            src={project.image}
+            className={Styles.projectPicture}
+          ></Image>
         </div>
         <div className={Styles.descriptionTextContainer}>
           <p className={Styles.descriptionText}>{project.desc}</p>
