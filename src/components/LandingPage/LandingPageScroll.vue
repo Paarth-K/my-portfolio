@@ -55,7 +55,7 @@ function checkPos() {
     lockPos.value = false;
   }
 }
-addEventListener("scroll", (event) => {
+addEventListener("scroll", () => {
   checkPos();
 });
 </script>
@@ -104,7 +104,7 @@ addEventListener("scroll", (event) => {
 .highlight1,
 .highlight2 {
   transition: color 0.2s;
-  color: #f78c3b;
+  color: var(--secondary);
 }
 
 .highlight1:hover,

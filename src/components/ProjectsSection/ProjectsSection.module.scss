@@ -1,6 +1,6 @@
 .main {
   margin: 0 8vw;
-  margin-top: 50px; //compensating for the TitleSection
+  padding-top: 100px; //compensating for the TitleSection
 }
 .project {
   padding-bottom: 70px;
@@ -8,7 +8,7 @@
 .projectGrid {
   display: grid;
   grid-template-columns: auto 7vw;
-  column-gap: 60px;
+  // column-gap: 60px;
 }
 .projectTitle {
   display: inline-grid;
@@ -21,25 +21,25 @@
 
 .projectContent {
   display: grid;
+  margin-top: 15px;
   grid-template-rows: auto;
-  grid-template-columns: 30vw 30vw;
+  grid-template-columns: auto auto;
   column-gap: 50px !important;
   row-gap: 50px !important;
   justify-content: center;
+  place-items: center;
 }
 
 @media (max-width: 630px) {
   .projectTitle {
-    position: sticky;
     top: 45%;
+    position: sticky;
     align-self: flex-start;
+    transform: translateX(5vw);
   }
   .projectContent {
     grid-template-rows: auto !important;
     grid-template-columns: auto !important;
     transform: translateX(8vw);
-  }
-  .projectTile {
-    width: 50vw;
   }
 }

@@ -12,12 +12,17 @@
   "dependencies": {
     "@astrojs/react": "^2.2.1",
     "@astrojs/vue": "^2.2.1",
+    "@react-three/fiber": "^8.13.4",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/three": "^0.152.1",
     "astro": "^2.7.2",
+    "framer-motion": "^10.12.18",
+    "popmotion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.63.6",
+    "three": "^0.154.0",
     "vue": "^3.3.4"
   },
   "pnpm": {

@@ -4,23 +4,13 @@ export default function ProjectsSection() {
   const projects = [
     {
       link: "https://www.paarthkukrejadofe.eu.org",
-      desc: "test",
-      image: "/projects/dofeweb_light.png",
+      desc: "I made project this with Nuxt3, for the Skills section of the Duke of Edinburgh Award",
+      image: "/projects/dofeweb_dark.png",
     },
     {
-      link: "https://www.paarthkukrejadofe.eu.org",
-      desc: "test",
-      image: "/projects/dofeweb_light.png",
-    },
-    {
-      link: "https://www.paarthkukrejadofe.eu.org",
-      desc: "test",
-      image: "/projects/dofeweb_light.png",
-    },
-    {
-      link: "https://www.paarthkukrejadofe.eu.org",
-      desc: "test",
-      image: "/projects/dofeweb_light.png",
+      link: "https://colab.research.google.com/drive/1rApehuk87KAJgl2RmoEk3X2eJc9l3BoW?usp=sharing",
+      desc: "I made project this with Python, for a Data Science Competition by Byju's",
+      image: "/projects/siliconvc.png",
     },
   ];
   return (
@@ -33,7 +23,7 @@ export default function ProjectsSection() {
             })}
           </div>
           <div className={Styles.projectTitle}>
-            <span>Some Projects</span>
+            <span>My projects</span>
           </div>
         </div>
       </div>

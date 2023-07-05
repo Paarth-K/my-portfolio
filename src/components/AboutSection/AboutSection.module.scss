@@ -61,6 +61,7 @@
   border-radius: 25px;
   z-index: 9;
   transition: transform 0.2s;
+  pointer-events: none;
 }
 .meImgShadow {
   width: 35vw;

@@ -42,7 +42,14 @@ export default {
 .container {
   position: fixed;
   width: 100%;
-  background-color: #f7fdf9;
+  /* background-color: #f7fdf9;
+   */
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0) 1px,
+    var(--background) 1px
+  );
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
   z-index: 9000;
   height: auto;
   text-align: right;

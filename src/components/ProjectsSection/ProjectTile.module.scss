@@ -4,16 +4,15 @@
   aspect-ratio: 16/9;
   height: auto;
   width: 30vw;
-  background-color: #84e1d2;
-  border-radius: 25px;
+  background-color: var(--background);
+  border-radius: 15px;
 }
 .projectPicture {
   width: 30vw;
   height: auto;
-  border-radius: 25px;
-  border-radius: 25px;
-  aspect-ratio: auto;
-  transition: all 0.5s;
+  border-radius: 15px;
+  aspect-ratio: 16/10;
+  transition: all 0.9s ease;
 }
 
 .projectPictureContainer {
@@ -23,7 +22,7 @@
 .projectPicture:hover {
   scale: 1.01;
   transition: all 0.2s ease;
-  // box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.091);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.091);
 }
 .projectLink {
   text-decoration: none;
@@ -37,22 +36,25 @@
   transition: margin-top 0.15s ease;
 }
 .descriptionTextContainer {
-  transition: margin-top 0.15s ease;
+  transition: margin-top 0.9s ease;
   z-index: 20 !important;
   margin-top: -80px;
   padding-bottom: 5px;
 }
 .descriptionText {
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 @media (max-width: 630px) {
-  .projectTile {
-    width: 60vw;
-  }
   .projectPicture {
-    width: 60vw;
+    width: 65vw;
+  }
+  .projectTile {
+    width: 65vw;
+    transform: translateX(-8px);
   }
   .descriptionTextContainer {
     margin-top: -5px;

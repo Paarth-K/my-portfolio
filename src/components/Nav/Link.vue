@@ -29,7 +29,7 @@ export default {
 }
 .nav-link-container:hover {
   transition: border 0.1s;
-  border: 1px #3299cd dashed;
+  border: 1px var(--primary) dashed;
 }
 @media (max-width: 385px) {
   .nav-link-container {
