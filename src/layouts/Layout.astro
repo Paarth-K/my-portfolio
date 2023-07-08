@@ -39,7 +39,6 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global lang="scss">
-	@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 	:root {
 		--background: #f7fdf9;
 		--primary: #3299cd;
@@ -78,7 +77,12 @@ const { title } = Astro.props;
 	h6,
 	button,
 	div {
-		font-family: "Nunito", sans-serif;
+		// font-family: "Nunito", sans-serif;
+		font-family: "Avenir";
 		color: #0b181e;
+	}
+	@font-face {
+		font-family: "Avenir";
+		src: url("fonts/Avenir.ttc") format("truetype");
 	}
 </style>
