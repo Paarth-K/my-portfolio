@@ -50,6 +50,7 @@ export default {
   );
   background-size: 4px 4px;
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   z-index: 9000;
   height: auto;
   text-align: right;

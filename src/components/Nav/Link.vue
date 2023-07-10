@@ -49,7 +49,8 @@ button {
   border-radius: 30px;
   border: none;
   text-transform: uppercase;
-  transition: all 0.25s;
+  transition: background-color 0.25s, border 0.25s;
+  /* transition: all 0.25s; */
   background-color: #84e1d2;
   pointer-events: none;
 }

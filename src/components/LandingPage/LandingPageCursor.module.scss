@@ -3,7 +3,8 @@
 .astro {
   width: 80px;
   position: absolute;
-  transition: all 0.08s;
+  transition: filter 0.08s, scale 0.08s;
+
   z-index: 100;
   // pointer-events: none;
 }
@@ -11,7 +12,7 @@
 .react:active,
 .vue:active,
 .astro:active {
-  transition: all 0.08s;
+  transition: scale 0.08s, filter 0.08s;
   filter: none !important;
   scale: 0.98;
 }

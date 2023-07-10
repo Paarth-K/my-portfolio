@@ -5,7 +5,7 @@
       :class="lockPos ? 'title-lock' : ''"
     >
       <TransitionGroup>
-        <p key="welcome" class="interactive-text">
+        <p key="welcome" class="interactive-text first">
           Hi!
           <span :class="showMyName ? '' : 'highlight1'"> My name </span>
           is
@@ -80,9 +80,17 @@ addEventListener("scroll", () => {
   opacity: 0;
 }
 
+.v-leave-active {
+  position: absolute;
+  margin: 0;
+  top: 85%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 80vw;
+}
+
 .interactive-text {
-  // font-family: "Inter", sans-serif !important;
-  font-weight: 400;
   font-size: 200%;
   transition: all 0.4s;
 }
