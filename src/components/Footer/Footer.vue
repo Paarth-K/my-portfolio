@@ -2,7 +2,7 @@
   <footer id="footer">
     <div class="footergrid">
       <div class="footergriditem">
-        <h2>Let's get in touch</h2>
+        <p class="footertitle">Let's get in touch</p>
         <div>
           <p><a class="contact" href="tel:+6591772057">+65 91772057</a></p>
           <p>
@@ -13,13 +13,13 @@
         </div>
       </div>
       <div class="footergriditem">
-        <h2>Here's a PDF</h2>
+        <p class="footertitle">Here's a PDF</p>
         <div>
           <nav-link class="navlink" to="/pdf"> View PDF Resume</nav-link>
         </div>
       </div>
       <div class="footergriditem">
-        <h2>Socials</h2>
+        <p class="footertitle">My Socials</p>
         <div>
           <a href="https://github.com/Paarth-K">
             <IconGithub style="color: #171515" class="socialicon"></IconGithub
@@ -67,7 +67,10 @@ import { IconGithub, IconInstagram } from "@iconify-prerendered/vue-mdi";
   margin: 10px;
   transition: scale 0.2s ease;
 }
-
+.footertitle {
+  font-weight: 500;
+  font-size: 25px;
+}
 .socialicon:hover {
   transition: scale 0.2s ease;
   scale: 1.07;
