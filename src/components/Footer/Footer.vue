@@ -5,7 +5,10 @@
         <p class="footertitle">Let's get in touch</p>
         <div>
           <p>
-            <a class="contact" href="mailto: paarth@paarthkukreja.com"
+            <a
+              aria-label="My Email Address"
+              class="contact"
+              href="mailto: paarth@paarthkukreja.com"
               >paarth@paarthkukreja.com</a
             >
           </p>
@@ -14,22 +17,36 @@
       <div class="footergriditem">
         <p class="footertitle">Here's a PDF</p>
         <div>
-          <nav-link class="navlink" to="/pdf"> View PDF Resume</nav-link>
+          <nav-link aria-label="View my PDF Resume" class="navlink" to="/pdf">
+            View PDF Resume</nav-link
+          >
         </div>
       </div>
       <div class="footergriditem">
         <p class="footertitle">My Socials</p>
         <div>
-          <a target="_blank" href="https://github.com/Paarth-K">
+          <a
+            aria-label="Link to Github Profile"
+            target="_blank"
+            href="https://github.com/Paarth-K"
+          >
             <IconGithub style="color: #171515" class="socialicon"></IconGithub>
           </a>
-          <a target="_blank" href="https://www.instagram.com/paarth.kukreja/">
+          <a
+            aria-label="Link to Instagram Profile"
+            target="_blank"
+            href="https://www.instagram.com/paarth.kukreja/"
+          >
             <IconInstagram
               style="color: var(--text-col)"
               class="socialicon"
             ></IconInstagram>
           </a>
-          <a target="_blank" href="https://linkedin.com/in/paarth-kukreja/">
+          <a
+            aria-label="Link to LinkedIn Profile"
+            target="_blank"
+            href="https://linkedin.com/in/paarth-kukreja/"
+          >
             <IconLinkedin
               style="color: var(--text-col)"
               class="socialicon"
@@ -39,7 +56,11 @@
       </div>
     </div>
     <div class="copyrights">
-      <a class="src" href="https://github.com/Paarth-K/my-portfolio">
+      <a
+        aria-label="Link to Source Code (on github) for this site"
+        class="src"
+        href="https://github.com/Paarth-K/my-portfolio"
+      >
         <span>View the source code for this site</span>
       </a>
     </div>

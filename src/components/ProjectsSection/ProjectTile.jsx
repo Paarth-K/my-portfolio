@@ -8,6 +8,7 @@ export default function ProjectTile({ project }) {
         href={project.link}
         target="_blank"
         rel="noopener"
+        aria-label={project.desc}
       >
         <div className={Styles.projectPictureContainer}>
           <Image
