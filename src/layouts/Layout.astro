@@ -10,12 +10,6 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 		<!-- Google tag (gtag.js) -->
 		<script
 			async
@@ -30,6 +24,12 @@ const { title } = Astro.props;
 
 			gtag("config", "G-2PWJ5Z5RY1");
 		</script>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
 		<script type="text/javascript">
 			(function (c, l, a, r, i, t, y) {
 				c[a] =
@@ -58,6 +58,7 @@ const { title } = Astro.props;
 		--background: #f7fdf9;
 		--primary: #3299cd;
 		--secondary: #f57c20;
+		--text-col: #0b181e;
 	}
 	::-moz-selection {
 		/* Code for Firefox */
@@ -98,6 +99,6 @@ const { title } = Astro.props;
 		// font-family: "Noto Sans", sans-serif;
 		// font-family: "Hind", sans-serif;
 		font-family: "DM Sans", sans-serif;
-		color: #0b181e;
+		color: var(--text-col);
 	}
 </style>

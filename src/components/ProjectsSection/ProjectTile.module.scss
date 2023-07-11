@@ -6,6 +6,7 @@
   width: 30vw;
   background-color: var(--background);
   border-radius: 15px;
+  transform: scale 0.2s ease;
 }
 .projectPicture {
   width: 30vw;
@@ -29,11 +30,11 @@
 }
 .projectTile:hover .descriptionTextContainer {
   margin-top: -5px;
-  transition: margin-top 0.15s ease;
+  transition: margin-top 0.15s ease, scale 0.2s ease;
 }
-.projectTile:active .descriptionTextContainer {
-  margin-top: -80px;
-  transition: margin-top 0.15s ease;
+.projectTile:active {
+  transition: scale 0.2s ease;
+  scale: 0.93;
 }
 .descriptionTextContainer {
   transition: margin-top 0.9s ease;

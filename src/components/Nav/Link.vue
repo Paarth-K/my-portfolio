@@ -42,8 +42,10 @@ export default {
 button {
   /* filter: invert(); */
   display: inline-block;
-  padding-top: 15px !important;
   padding: 14px;
+  width: 100%;
+  height: 100%;
+  /* padding-top: 15px !important; */
   border-radius: 30px;
   border: none;
   text-transform: uppercase;

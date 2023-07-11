@@ -1,16 +1,20 @@
 import Styles from "./LandingPageCursor.module.scss";
 import Image from "../Base/Image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function LandingPageCursor() {
   const [mousePos, setMousePos] = useState([]);
   const mouseModifX = 1;
   const mouseModifY = 1;
-  addEventListener("mousemove", (event) => {
-    setMousePos([event.clientX, event.clientY]);
-  });
+  useEffect(() => {
+    window.addEventListener("mousemove", (event) => {
+      setMousePos([event.clientX, event.clientY]);
+    });
+  }, []);
+
   return (
     <div>
       <Image
+        draggable="false"
         src="/home/React-icon.png"
         alt="React Icon"
         style={{
@@ -22,6 +26,7 @@ export default function LandingPageCursor() {
       ></Image>
 
       <Image
+        draggable="false"
         src="/home/Vue-icon.png"
         alt="Vue Icon"
         style={{
@@ -32,6 +37,7 @@ export default function LandingPageCursor() {
         className={Styles.vue}
       ></Image>
       <Image
+        draggable="false"
         src="/home/Astro-icon.png"
         alt="Astro Icon"
         style={{

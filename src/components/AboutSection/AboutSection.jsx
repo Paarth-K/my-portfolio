@@ -5,7 +5,7 @@ export default function AboutSection(props) {
   const aboutMeText = [
     {
       title: "Who am I?",
-      text: "Hi! as you already know, my name is Paarth. I'm 15 years old, and study at Dover Court International School and live in Singapore. I consider myself to be a tech enthusiast with special interest in web development and data science.",
+      text: "Hi! As you already know, my name is Paarth. I'm 15 years old and study at Dover Court International School and live in Singapore. I consider myself to be a tech enthusiast with a special interest in web development and data science.",
     },
     {
       title: "What do I know?",

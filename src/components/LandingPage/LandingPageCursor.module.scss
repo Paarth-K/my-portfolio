@@ -9,6 +9,13 @@
   // pointer-events: none;
 }
 
+.react:hover,
+.vue:hover,
+.astro:hover {
+  transition: scale 0.2s, filter 0.08s;
+  scale: 1.02;
+}
+
 .react:active,
 .vue:active,
 .astro:active {
@@ -23,16 +30,28 @@
   right: 200px;
 }
 
+.react:hover {
+  filter: drop-shadow(10px 5px 5px #61dcfb88);
+}
+
 .vue {
   filter: drop-shadow(-10px 5px 4px #3fba859e);
   bottom: 200px;
   left: 200px;
 }
 
+.vue:hover {
+  filter: drop-shadow(-10px 5px 5px #3fba859e);
+}
+
 .astro {
   filter: drop-shadow(0px 10px 4px rgba(217, 128, 10, 0.597));
   top: 1300px;
   right: 200px;
+}
+
+.astro:hover {
+  filter: drop-shadow(0px 10px 5px rgba(217, 128, 10, 0.597));
 }
 
 @media (max-width: 1010px) {

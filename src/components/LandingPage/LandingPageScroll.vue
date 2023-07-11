@@ -6,8 +6,13 @@
     >
       <TransitionGroup>
         <p key="welcome" class="interactive-text first">
-          Hi!
-          <span :class="showMyName ? '' : 'highlight1'"> My name </span>
+          Hi<span :class="showMyName ? '' : 'highlight1'"
+            >{{ personName ? " " + personName : "" }} </span
+          >!
+          <span v-if="!personName" :class="showMyName ? '' : 'highlight1'">
+            My name
+          </span>
+          <span v-else> My name </span>
           is
           <span :class="showMyName ? '' : 'highlight2'">Paarth</span>
         </p>
@@ -25,23 +30,35 @@
 <script setup>
 import ScrollPromptAnim from "../Base/ScrollPromptAnim.vue";
 import { onMounted, ref } from "vue";
+
 const showMyName = ref(false);
 const lockPos = ref(false);
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+  return results == null
+    ? ""
+    : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+const personName = ref(getParameterByName("to"));
+
 console.log(
   `
 
-  _   _      _ _       _ 
+  _   _      _ _       _
  | | | | ___| | | ___ | |
  | |_| |/ _ \\ | |/ _ \\| |
  |  _  |  __/ | | (_) |_|
  |_| |_|\\___|_|_|\\___/(_)
-                         
+
 
 `
 );
 onMounted(() => {
   checkPos();
 });
+
 function checkPos() {
   console.log(window.scrollY);
   if (window.scrollY >= 250) {

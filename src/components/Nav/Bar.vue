@@ -61,6 +61,12 @@ export default {
   margin-left: 17px;
 }
 
+@media (max-width: 385px) {
+  .nav-links {
+    margin-left: 0px;
+  }
+}
+
 .nav-links-container {
   margin-right: 15px;
   margin-top: 3px;
