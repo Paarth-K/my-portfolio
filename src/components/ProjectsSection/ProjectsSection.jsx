@@ -3,7 +3,7 @@ import ProjectTile from "./ProjectTile";
 export default function ProjectsSection() {
   const projects = [
     {
-      link: "https://www.paarthkukrejadofe.eu.org",
+      link: "https://dofe.paarthkukreja.com",
       desc: "I made this project with Nuxt3, for the Skills section of the Duke of Edinburgh Award.",
       image: "/projects/dofeweb_dark.png",
       imgalt: "DofE Website",
