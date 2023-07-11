@@ -1,3 +1,8 @@
+---
+const resumeUrl =
+    "https://drive.google.com/file/d/1hdi4fhTAMJmlt10t7SEyVPHbVKH_l0py/view?usp=sharing";
+---
+
 <html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
@@ -17,10 +22,7 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            http-equiv="refresh"
-            content="0;url=https://drive.google.com/file/d/1hdi4fhTAMJmlt10t7SEyVPHbVKH_l0py/view?usp=sharing"
-        />
+        <meta http-equiv="refresh" content=`0;url=${resumeUrl}` />
         <title>Redirecting...</title>
         <script type="text/javascript">
             (function (c, l, a, r, i, t, y) {
@@ -37,5 +39,9 @@
             })(window, document, "clarity", "script", "hui597fchn");
         </script>
     </head>
-    <body> Redirecting to PDF Resume</body>
+    <body>
+        Redirecting to PDF Resume. If it doesn't automatically please <a
+            href={resumeUrl}>click here</a
+        ></body
+    >
 </html>
