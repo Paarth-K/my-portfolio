@@ -1,5 +1,5 @@
-import Styles from "./AwardsSection.module.scss";
-export default function ProjectsSection() {
+import Styles from "./Experiences.module.scss";
+export default function Experiences() {
   const projects = [
     {
       link: "https://www.paarthkukrejadofe.eu.org",
@@ -18,7 +18,7 @@ export default function ProjectsSection() {
     <div className={Styles.main} id="projects">
       <div className={Styles.project}>
         <div className={Styles.projectTitle}>
-          <span>Awards I've Won</span>
+          <span>My Experience</span>
         </div>
         <div className={Styles.projectGrid}>
           <div className={Styles.projectContent}></div>
