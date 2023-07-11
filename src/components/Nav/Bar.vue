@@ -57,8 +57,13 @@ export default {
   padding: 7px;
 }
 
+.nav-links {
+  margin-left: 17px;
+}
+
 .nav-links-container {
   margin-right: 15px;
+  margin-top: 3px;
 }
 #paarth-logo {
   padding: 10px;

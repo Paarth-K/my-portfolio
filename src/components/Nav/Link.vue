@@ -20,9 +20,7 @@ export default {
   height: 100%;
   list-style-type: none;
   text-align: center;
-  margin-top: 3px;
 
-  margin-left: 17px;
   border-radius: 30px;
   border: 1px solid;
   transition: border 0.1s;
