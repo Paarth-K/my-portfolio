@@ -4,7 +4,6 @@
       <div class="footergriditem">
         <p class="footertitle">Let's get in touch</p>
         <div>
-          <p><a class="contact" href="tel:+6591772057">+65 91772057</a></p>
           <p>
             <a class="contact" href="mailto: paarth@paarthkukreja.com"
               >paarth@paarthkukreja.com</a
@@ -21,14 +20,20 @@
       <div class="footergriditem">
         <p class="footertitle">My Socials</p>
         <div>
-          <a href="https://github.com/Paarth-K">
-            <IconGithub style="color: #171515" class="socialicon"></IconGithub
-          ></a>
-          <a href="https://www.instagram.com/paarth.kukreja/">
+          <a target="_blank" href="https://github.com/Paarth-K">
+            <IconGithub style="color: #171515" class="socialicon"></IconGithub>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/paarth.kukreja/">
             <IconInstagram
               style="color: var(--text-col)"
               class="socialicon"
             ></IconInstagram>
+          </a>
+          <a target="_blank" href="https://linkedin.com/in/paarth-kukreja/">
+            <IconLinkedin
+              style="color: var(--text-col)"
+              class="socialicon"
+            ></IconLinkedin>
           </a>
         </div>
       </div>
@@ -42,7 +47,11 @@
 </template>
 <script setup>
 import NavLink from "../Nav/Link.vue";
-import { IconGithub, IconInstagram } from "@iconify-prerendered/vue-mdi";
+import {
+  IconGithub,
+  IconInstagram,
+  IconLinkedin,
+} from "@iconify-prerendered/vue-mdi";
 </script>
 
 <style scoped lang="scss">

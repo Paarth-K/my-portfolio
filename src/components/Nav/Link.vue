@@ -37,21 +37,21 @@ export default {
 }
 
 .nav-link-container:hover button {
-  background-color: white;
+  background-color: var(--background);
 }
 button {
   /* filter: invert(); */
   display: inline-block;
   padding: 14px;
+  padding-top: 15px !important;
   width: 100%;
   height: 100%;
-  /* padding-top: 15px !important; */
   border-radius: 30px;
   border: none;
   text-transform: uppercase;
   transition: background-color 0.25s, border 0.25s;
   /* transition: all 0.25s; */
-  background-color: #84e1d2;
+  background-color: var(--accent);
   pointer-events: none;
 }
 </style>
