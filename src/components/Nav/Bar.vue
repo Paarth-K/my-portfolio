@@ -153,15 +153,9 @@ const showBar = ref(false);
     margin-left: 10px;
     margin-right: 10px;
   }
-  .nav-links-div {
-    /* display: none; */
-  }
 }
 
 @media (max-width: 410px) {
-  .nav-links-div {
-    /* scale: 0.8 !important; */
-  }
   .nav-links {
     margin-left: 5px;
     margin-right: 5px;
