@@ -61,7 +61,6 @@ onMounted(() => {
 });
 
 function checkPos() {
-  console.log(window.scrollY);
   if (window.scrollY >= 250) {
     showMyName.value = true;
   } else {
