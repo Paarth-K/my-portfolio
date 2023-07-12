@@ -67,7 +67,9 @@ addEventListener("scroll", (event) => {
   z-index: 9999;
 }
 #scroll-text {
-  bottom: 60px;
+  bottom: 55px;
+  width: 99vw;
+  text-align: center;
 }
 #mouse-scroll span {
   display: block;
