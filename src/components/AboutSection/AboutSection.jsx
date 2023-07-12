@@ -1,15 +1,15 @@
 import Styles from "./AboutSection.module.scss";
-import Image from "../Base/Image";
+import ClickyImage from "../Base/ClickyImage.jsx";
 
 export default function AboutSection(props) {
   const aboutMeText = [
     {
       title: "Who am I?",
-      text: "Hi! As you already know, my name is Paarth. I'm 15 years old and study at Dover Court International School and live in Singapore. I consider myself to be a tech enthusiast with a special interest in web development and data science.",
+      text: "Hi! As you already know, my name is Paarth. I was born in India, and I'm currently 15 years old, studying at Dover Court International School in Singapore. I consider myself a tech enthusiast with a special interest in web development and data science.",
     },
     {
       title: "What do I know?",
-      text: "I know front-end frameworks like React.js, Vue.js, and Astro (this portfolio is built on all 3 of them), and Full stack frameworks like Next.js and Nuxt3.js. Other than that I also know Machine Learning and Data Science with Python.",
+      text: "I'm familiar with front-end frameworks such as React.js, Vue.js, and Astro (this portfolio is built using all three of them). Additionally, I have experience with full-stack frameworks like Next.js and Nuxt3.js. Apart from web development, I also have a keen interest in Python-based machine learning and data science.",
     },
   ];
   return (
@@ -32,12 +32,7 @@ export default function AboutSection(props) {
                 })}
               </div>
               <div className={Styles.meImgContainer}>
-                <Image
-                  src="/home/me_pic.png"
-                  alt="An Image of Me"
-                  className={Styles.meImg}
-                ></Image>
-                <div className={Styles.meImgShadow}></div>
+                <ClickyImage src="/home/me_pic.png"></ClickyImage>
               </div>
             </div>
           </div>

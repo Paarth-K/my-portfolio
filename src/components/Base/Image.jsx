@@ -6,7 +6,7 @@ export default function Image({
 }) {
   return (
     <img
-      src={`https://res.cloudinary.com/do5pfqw8l/image/upload/${transformations}/v1688023317/assets/${src}`}
+      src={`https://res.cloudinary.com/do5pfqw8l/image/upload/${transformations}/assets/${src}`}
       alt={alt}
       {...other}
     />

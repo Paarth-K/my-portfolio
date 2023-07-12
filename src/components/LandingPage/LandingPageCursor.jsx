@@ -7,7 +7,9 @@ export default function LandingPageCursor() {
   const mouseModifY = 1;
   useEffect(() => {
     window.addEventListener("mousemove", (event) => {
-      setMousePos([event.clientX, event.clientY]);
+      if (window.innerWidth > 630) {
+        setMousePos([event.clientX, event.clientY]);
+      }
     });
   }, []);
 

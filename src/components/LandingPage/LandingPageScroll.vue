@@ -33,6 +33,7 @@ import { onMounted, ref } from "vue";
 
 const showMyName = ref(false);
 const lockPos = ref(false);
+
 function getParameterByName(name) {
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
   var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -79,7 +80,6 @@ addEventListener("scroll", () => {
 
 <style scoped lang="scss">
 .title-card {
-  width: 50vw;
   text-align: center;
   cursor: default;
   -webkit-user-select: none; /* Safari */

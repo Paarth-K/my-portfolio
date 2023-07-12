@@ -38,40 +38,6 @@
   width: 35vw;
   height: 35vw;
 }
-.meImgContainer:hover .meImg {
-  transition: transform 0.2s;
-  transform: translateX(-13px) translateY(-13px);
-}
-.meImgContainer:hover .meImgShadow {
-  transition: transform 0.2s;
-  transform: scale(1.02);
-}
-.meImgContainer:active .meImgShadow {
-  transition: transform 0.07s;
-  transform: none !important;
-}
-.meImgContainer:active .meImg {
-  transition: transform 0.07s;
-  transform: none !important;
-}
-.meImg {
-  width: 35vw;
-  height: 35vw;
-  position: absolute;
-  border-radius: 25px;
-  z-index: 9;
-  transition: transform 0.2s;
-  pointer-events: none;
-}
-.meImgShadow {
-  width: 35vw;
-  height: 35vw;
-  border-radius: 25px;
-  background-color: rgb(30, 29, 29);
-  z-index: 8;
-  transition: transform 0.2s;
-  pointer-events: none;
-}
 
 .meDescTitle {
   font-size: 3vw;
@@ -94,21 +60,19 @@
     grid-template-columns: auto;
     grid-template-rows: auto auto;
   }
-  .meImg,
-  .meImgShadow {
-    width: 60vw;
-    height: 60vw;
+
+  .meDescTitle {
+    font-size: 6vw;
+    text-align: center;
   }
+
   .meImgContainer {
     margin-top: 20px;
     transform: translateX(2vw);
     width: 60vw;
     height: 60vw;
   }
-  .meDescTitle {
-    font-size: 6vw;
-    text-align: center;
-  }
+
   .meDescText {
     font-size: 14px;
     text-align: center;

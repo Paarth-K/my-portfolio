@@ -1,0 +1,43 @@
+.clickImgContainer {
+  display: block;
+  position: relative;
+  margin: auto;
+  width: inherit;
+  height: inherit;
+}
+.clickImgContainer:hover .clickImg {
+  transition: transform 0.2s;
+  transform: translateX(-13px) translateY(-13px);
+}
+
+.clickImgContainer:hover .clickImgShadow {
+  transition: transform 0.2s;
+  transform: scale(1.02);
+}
+.clickImgContainer:active .clickImgShadow {
+  transition: transform 0.07s;
+  transform: none !important;
+}
+.clickImgContainer:active .clickImg {
+  transition: transform 0.07s;
+  transform: none !important;
+}
+.clickImg {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  border-radius: 25px;
+  z-index: 9;
+  transition: transform 0.2s;
+  scale: 1.002;
+  pointer-events: none;
+}
+.clickImgShadow {
+  width: inherit;
+  height: inherit;
+  border-radius: 25px;
+  background-color: rgb(30, 29, 29);
+  z-index: 8;
+  transition: transform 0.2s;
+  pointer-events: none;
+}

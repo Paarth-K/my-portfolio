@@ -2,15 +2,16 @@
   margin: 0 8vw;
   padding-top: 100px; //compensating for the TitleSection
 }
-.project {
+.ex {
   padding-bottom: 70px;
 }
-.projectGrid {
+.exGrid {
   display: grid;
-  grid-template-columns: auto 7vw;
+  grid-template-columns: 7vw auto;
+
   // column-gap: 60px;
 }
-.projectTitle {
+.exTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
   font-size: 6vw;
@@ -19,27 +20,61 @@
   place-items: center;
 }
 
-.projectContent {
+.exContent {
   display: grid;
   margin-top: 15px;
   grid-template-rows: auto;
   grid-template-columns: auto auto;
   column-gap: 50px !important;
   row-gap: 50px !important;
-  justify-content: center;
-  place-items: center;
+  // justify-content: center;
+  // place-items: center;
+}
+.exContentItem {
+}
+
+.exDescTitle {
+  font-size: 2.5vw;
+  font-weight: 500;
+  margin: 20px;
+  text-align: center;
+}
+
+.currentImg {
+  width: 30vw;
+  height: 30vw;
+  margin: auto;
+  // border-radius: 25px;
+}
+
+.currentDesc {
+  text-align: center;
+  font-size: 1.3vw;
 }
 
 @media (max-width: 630px) {
-  .projectTitle {
+  .exTitle {
     top: 45%;
     position: sticky;
     align-self: flex-start;
-    transform: translateX(5vw);
+    transform: translateX(-4vw);
   }
-  .projectContent {
+  .currentDesc {
+    font-size: 14px;
+  }
+  .exContent {
     grid-template-rows: auto !important;
     grid-template-columns: auto !important;
-    transform: translateX(8vw);
+    transform: translateX(-2vw);
+  }
+  .exDescTitle {
+    font-size: 6vw;
+    text-align: center;
+  }
+  .currentImg {
+    margin-top: 20px;
+    transform: translateX(2vw);
+    width: 60vw;
+    height: 60vw;
   }
 }

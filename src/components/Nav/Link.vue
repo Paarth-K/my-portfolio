@@ -31,7 +31,6 @@ export default {
 }
 @media (max-width: 385px) {
   .nav-link-container {
-    transform: scale(0.9);
     margin-left: 5px;
   }
 }

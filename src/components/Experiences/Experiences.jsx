@@ -1,27 +1,36 @@
 import Styles from "./Experiences.module.scss";
+import ClickyImage from "../Base/ClickyImage.jsx";
 export default function Experiences() {
-  const projects = [
-    {
-      link: "https://www.paarthkukrejadofe.eu.org",
-      desc: "I made this project with Nuxt3, for the Skills section of the Duke of Edinburgh Award",
-      image: "/projects/dofeweb_dark.png",
-      imgalt: "DofE Website",
-    },
-    {
-      link: "https://colab.research.google.com/drive/1rApehuk87KAJgl2RmoEk3X2eJc9l3BoW?usp=sharing",
-      desc: "I made this Data Science Project with Python, for the Silicon Valley Competition by Byju's",
-      image: "/projects/siliconvc.png",
-      imgalt: "SVC Byju's",
-    },
-  ];
   return (
-    <div className={Styles.main} id="projects">
-      <div className={Styles.project}>
-        <div className={Styles.projectTitle}>
-          <span>My Experience</span>
-        </div>
-        <div className={Styles.projectGrid}>
-          <div className={Styles.projectContent}></div>
+    <div className={Styles.main} id="experience">
+      <div className={Styles.ex}>
+        <div className={Styles.exGrid}>
+          <div className={Styles.exTitle}>
+            <span>My Experience</span>
+          </div>
+          <div className={Styles.exContent}>
+            <div className={Styles.exContentItem}>
+              <p className={Styles.exDescTitle}>What I'm upto currently</p>
+
+              <div className={Styles.currentImg}>
+                <ClickyImage
+                  src="/experience/thinkinghuts.png"
+                  alt="Thinking huts logo"
+                  link={{
+                    to: "https://www.thinkinghuts.org/",
+                    ariaLabel: "Thinking huts website",
+                  }}
+                />
+              </div>
+
+              <p className={Styles.currentDesc}>
+                I am currently an Intern for Thinking Huts. I'm working on
+                integrating a CRM (HubSpot) into the organisation's workflow and
+                exploring the potential applications of it to ease marketing and
+                communications.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

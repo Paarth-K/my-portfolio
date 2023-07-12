@@ -11,7 +11,7 @@ export default function ProjectsSection() {
     {
       link: "https://colab.research.google.com/drive/1rApehuk87KAJgl2RmoEk3X2eJc9l3BoW?usp=sharing",
       desc: "I made this Data Science Project with Python, for the Silicon Valley Competition by Byju's.",
-      image: "/projects/siliconvc.png",
+      image: "/projects/SiliconVCNew.png",
       imgalt: "SVC Byju's",
     },
   ];
