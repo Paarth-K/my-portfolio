@@ -14,7 +14,7 @@ export default function Experiences() {
 
               <div className={Styles.currentImg}>
                 <ClickyMedia
-                  src="/experience/thinkinghuts.png"
+                  src="/experience/thinkinghutswtext.png"
                   alt="Thinking huts logo"
                   link={{
                     to: "https://www.thinkinghuts.org/",
@@ -29,11 +29,10 @@ export default function Experiences() {
               </div>
 
               <p className={Styles.currentDesc}>
-                I'm an Intern for Thinking Huts! Which is a Non Profit
-                Organisation based in the US. I'm working on integrating a CRM
-                (HubSpot) into the organisation's workflow and exploring the
-                potential applications of it to ease marketing and
-                communications.
+                I'm an intern at Thinking Huts! Which is a non-profit
+                organization in the US that 3D prints schools. My job is to help
+                integrate a CRM (HubSpot) into our workflow and see how it can
+                help us better market and communicate with our donors.
               </p>
             </div>
           </div>
