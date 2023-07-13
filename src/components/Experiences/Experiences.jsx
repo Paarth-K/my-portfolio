@@ -23,7 +23,7 @@ export default function Experiences() {
                   hoverVid={{
                     src: "/experience/TH_Hover_vid_e4ih61.mov",
                     transformations:
-                      "br_1500k,c_crop,g_west,h_710,vc_h264,w_710,x_470,y_40",
+                      "br_1500k,c_crop,g_west,h_710,w_710,x_470,y_40,q_auto:best,f_auto",
                   }}
                 />
               </div>
