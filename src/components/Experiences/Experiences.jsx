@@ -10,7 +10,7 @@ export default function Experiences() {
           </div>
           <div className={Styles.exContent}>
             <div className={Styles.exContentItem}>
-              <p className={Styles.exDescTitle}>What I'm upto currently</p>
+              <p className={Styles.exDescTitle}>What I'm currently up to</p>
 
               <div className={Styles.currentImg}>
                 <ClickyImage
@@ -24,9 +24,10 @@ export default function Experiences() {
               </div>
 
               <p className={Styles.currentDesc}>
-                I am currently an Intern for Thinking Huts. I'm working on
-                integrating a CRM (HubSpot) into the organisation's workflow and
-                exploring the potential applications of it to ease marketing and
+                I'm an Intern for Thinking Huts! Which is a Non Profit
+                Organisation based in the US. I'm working on integrating a CRM
+                (HubSpot) into the organisation's workflow and exploring the
+                potential applications of it to ease marketing and
                 communications.
               </p>
             </div>

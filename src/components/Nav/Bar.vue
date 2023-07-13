@@ -131,6 +131,11 @@ const showBar = ref(false);
     padding: 0px;
     padding-top: 7px !important;
   }
+  #paarth-logo {
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-65.5px);
+  }
   .arrow {
     display: inline-block;
   }
@@ -141,6 +146,8 @@ const showBar = ref(false);
     display: none;
   }
   .nav-links-container {
+    display: none !important;
+
     width: 100%;
     position: absolute;
     /* padding-right: 25px; */
