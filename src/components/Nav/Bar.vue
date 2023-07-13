@@ -130,6 +130,7 @@ const showBar = ref(false);
   .container {
     padding: 0px;
     padding-top: 7px !important;
+    height: 55px;
   }
   #paarth-logo {
     position: absolute;
