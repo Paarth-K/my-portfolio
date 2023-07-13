@@ -1,11 +1,30 @@
-import Styles from "./ClickyImage.module.scss";
-import Image from "../Base/Image.jsx";
-export default function ClickyImage({
+import Styles from "./ClickyMedia.module.scss";
+import Image from "./Image.jsx";
+import Video from "./Video.jsx";
+export default function ClickyMedia({
   src,
   alt,
   link = { to: false, ariaLabel: false, target: "_blank" },
+  hoverVid = { src: false, transformations: false },
   ...other
 }) {
+  let hoverVidElement;
+  if (hoverVid.src) {
+    hoverVidElement = (
+      <div className={`${Styles.clickVid} ${Styles.clickImg}`}>
+        <Video
+          playsInline
+          loop
+          autoPlay
+          muted
+          src={hoverVid.src}
+          transformations={hoverVid.transformations}
+        ></Video>
+      </div>
+    );
+  } else {
+    hoverVidElement = null;
+  }
   if (link.to) {
     if (!link.ariaLabel) {
       return (
@@ -21,11 +40,13 @@ export default function ClickyImage({
           className={Styles.clickImgContainer}
         >
           <Image
+            className={Styles.clickImg}
             src={src}
             alt={alt}
-            className={Styles.clickImg}
             {...other}
           ></Image>
+
+          {hoverVidElement}
 
           <div className={Styles.clickImgShadow}></div>
         </a>
@@ -40,7 +61,7 @@ export default function ClickyImage({
           className={Styles.clickImg}
           {...other}
         ></Image>
-
+        {hoverVidElement}
         <div className={Styles.clickImgShadow}></div>
       </div>
     );

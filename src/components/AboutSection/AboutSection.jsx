@@ -1,5 +1,5 @@
 import Styles from "./AboutSection.module.scss";
-import ClickyImage from "../Base/ClickyImage.jsx";
+import ClickyMedia from "../Base/ClickyMedia.jsx";
 
 export default function AboutSection(props) {
   const aboutMeText = [
@@ -32,10 +32,10 @@ export default function AboutSection(props) {
                 })}
               </div>
               <div className={Styles.meImgContainer}>
-                <ClickyImage
+                <ClickyMedia
                   alt="An image of Paarth Kukreja"
                   src="/home/me_pic.png"
-                ></ClickyImage>
+                ></ClickyMedia>
               </div>
             </div>
           </div>

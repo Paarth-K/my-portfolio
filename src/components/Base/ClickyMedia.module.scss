@@ -10,16 +10,20 @@
   transform: translateX(-13px) translateY(-13px);
 }
 
+.clickImgContainer:hover .clickVid {
+  transition: all 0.2s;
+  opacity: 1;
+}
 .clickImgContainer:hover .clickImgShadow {
   transition: transform 0.2s;
   transform: scale(1.02);
 }
 .clickImgContainer:active .clickImgShadow {
-  transition: transform 0.07s;
+  transition: transform 0.1s ease;
   transform: none !important;
 }
 .clickImgContainer:active .clickImg {
-  transition: transform 0.07s;
+  transition: transform 0.1s ease;
   transform: none !important;
 }
 .clickImg {
@@ -31,6 +35,11 @@
   transition: transform 0.2s;
   scale: 1.002;
   pointer-events: none;
+  z-index: 55;
+}
+.clickVid {
+  transition: all 0.2s ease;
+  opacity: 0;
 }
 .clickImgShadow {
   width: inherit;

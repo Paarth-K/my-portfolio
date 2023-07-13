@@ -1,5 +1,5 @@
 import Styles from "./Experiences.module.scss";
-import ClickyImage from "../Base/ClickyImage.jsx";
+import ClickyMedia from "../Base/ClickyMedia.jsx";
 export default function Experiences() {
   return (
     <div className={Styles.main} id="experience">
@@ -13,12 +13,17 @@ export default function Experiences() {
               <p className={Styles.exDescTitle}>What I'm currently up to</p>
 
               <div className={Styles.currentImg}>
-                <ClickyImage
+                <ClickyMedia
                   src="/experience/thinkinghuts.png"
                   alt="Thinking huts logo"
                   link={{
                     to: "https://www.thinkinghuts.org/",
                     ariaLabel: "Thinking huts website",
+                  }}
+                  hoverVid={{
+                    src: "/experience/TH_Hover_vid_e4ih61.mov",
+                    transformations:
+                      "br_1500k,c_crop,g_west,h_710,vc_h264,w_710,x_470,y_43",
                   }}
                 />
               </div>
