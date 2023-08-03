@@ -91,6 +91,7 @@ const showBar = ref(false);
   height: auto;
   text-align: right;
   padding: 7px;
+  box-shadow: 0px 2px 20px var(--background);
 }
 
 .nav-links {

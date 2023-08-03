@@ -6,14 +6,13 @@
     >
       <TransitionGroup>
         <p key="welcome" class="interactive-text first">
-          Hi<span :class="showMyName ? '' : 'highlight1'"
-            >{{ personName ? " " + personName : "" }} </span
-          >!
           <span v-if="!personName" :class="showMyName ? '' : 'highlight1'">
-            My name
+            Hi!
           </span>
-          <span v-else> My name </span>
-          is
+          <span v-if="personName">Hi</span>
+          <span v-if="personName" :class="showMyName ? '' : 'highlight1'"
+            >{{ personName ? " " + personName : "" }}! </span
+          >My name is
           <span :class="showMyName ? '' : 'highlight2'">Paarth</span>
         </p>
         <p key="name" v-if="showMyName" class="interactive-text">
@@ -134,6 +133,6 @@ addEventListener("scroll", () => {
 .highlight1:hover,
 .highlight2:hover {
   transition: color 0.2s;
-  color: #0b181e;
+  color: var(--text-col);
 }
 </style>

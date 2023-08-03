@@ -16,7 +16,7 @@
 }
 .clickImgContainer:hover .clickImgShadow {
   transition: transform 0.2s;
-  transform: scale(1.02);
+  transform: scale(1.005);
 }
 .clickImgContainer:active .clickImgShadow {
   transition: transform 0.1s ease;
