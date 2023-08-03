@@ -1,6 +1,6 @@
 import Styles from "./LandingPageCursor.module.scss";
 import Image from "../Base/Image";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "preact/compat";
 export default function LandingPageCursor() {
   const [mousePos, setMousePos] = useState([]);
   const mouseModifX = 1;
