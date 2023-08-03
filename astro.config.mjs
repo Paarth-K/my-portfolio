@@ -7,5 +7,5 @@ import preact from "@astrojs/preact";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.paarthkukreja.com",
-  integrations: [vue(), sitemap(), preact({ compat: true })],
+  integrations: [vue(), sitemap(), preact()],
 });
