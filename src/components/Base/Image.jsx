@@ -1,7 +1,7 @@
 export default function Image({
   src,
   alt,
-  transformations = "f_webp",
+  transformations = "f_auto,q_auto,w_auto,dpr_auto",
   ...other
 }) {
   return (
