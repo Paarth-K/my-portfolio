@@ -8,7 +8,7 @@
             <a
               aria-label="My Email Address"
               class="contact"
-              href="mailto: paarth@paarthkukreja.com"
+              href="mailto:paarth@paarthkukreja.com"
               >paarth@paarthkukreja.com</a
             >
           </p>
