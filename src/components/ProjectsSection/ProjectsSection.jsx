@@ -14,6 +14,13 @@ export default function ProjectsSection() {
       image: "/projects/SiliconVCNew.png",
       imgalt: "SVC Byju's",
     },
+    {
+      link: "https://internshipfinder.vercel.app",
+      desc: "This project has been made with Next.js, and it aims to help high school students find internships.",
+      image: "projects/internshipfinder_hdwip_preview.png",
+      imgalt: "Internship Finder Website",
+      isWIP: true,
+    },
   ];
   return (
     <div className={Styles.main} id="projects">

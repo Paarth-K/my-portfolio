@@ -39,7 +39,7 @@
 .descriptionTextContainer {
   transition: margin-top 0.9s ease;
   z-index: 20 !important;
-  margin-top: -100px;
+  margin-top: -150px;
   padding-bottom: 5px;
 }
 .descriptionText {
@@ -47,6 +47,15 @@
   font-size: 14px;
   padding-left: 10px !important;
   padding-right: 10px !important;
+}
+.descriptionWIP {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 @media (max-width: 630px) {

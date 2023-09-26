@@ -6,7 +6,7 @@ export default function ProjectTile({ project }) {
       <a
         className={Styles.projectLink}
         href={project.link}
-        target="_blank"
+        target={project.linkIsBlank ? "_self" : "_blank"}
         rel="noopener"
         aria-label={project.desc}
       >
@@ -19,6 +19,11 @@ export default function ProjectTile({ project }) {
           ></Image>
         </div>
         <div className={Styles.descriptionTextContainer}>
+          {project.isWIP ? (
+            <p className={Styles.descriptionWIP}>Work In Progress</p>
+          ) : (
+            ""
+          )}
           <p className={Styles.descriptionText}>{project.desc}</p>
         </div>
       </a>

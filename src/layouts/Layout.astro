@@ -1,7 +1,7 @@
 ---
 import NavBar from "../components/Nav/Bar.vue";
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -9,93 +9,91 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-2PWJ5Z5RY1"
-		></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PWJ5Z5RY1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-			gtag("config", "G-2PWJ5Z5RY1");
-		</script>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Paarth Kukreja's Portfolio" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<title>{title}</title>
-		<script type="text/javascript">
-			(function (c, l, a, r, i, t, y) {
-				c[a] =
-					c[a] ||
-					function () {
-						(c[a].q = c[a].q || []).push(arguments);
-					};
-				t = l.createElement(r);
-				t.async = 1;
-				t.src = "https://www.clarity.ms/tag/" + i;
-				y = l.getElementsByTagName(r)[0];
-				y.parentNode.insertBefore(t, y);
-			})(window, document, "clarity", "script", "hui597fchn");
-		</script>
-	</head>
-	<body>
-		<div>
-			<NavBar />
-		</div>
-		<slot />
-	</body>
+      gtag("config", "G-2PWJ5Z5RY1");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Paarth Kukreja's Portfolio" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title}</title>
+    <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "hui597fchn");
+    </script>
+  </head>
+  <body>
+    <div>
+      <NavBar />
+    </div>
+    <slot />
+  </body>
 </html>
 <style is:global lang="scss">
-	@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-	:root {
-		--background: #f7fdf9;
-		--primary: #3299cd;
-		--secondary: #f57c20;
-		--text-col: #0b181e;
-		--accent: #84e1d2;
-	}
-	::-moz-selection {
-		/* Code for Firefox */
-		color: var(--background);
-		background: var(--secondary);
-	}
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+  :root {
+    --background: #f7fdf9;
+    --primary: #3299cd;
+    --secondary: #f57c20;
+    --text-col: #0b181e;
+    --accent: #84e1d2;
+  }
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: var(--background);
+    background: var(--secondary);
+  }
 
-	::selection {
-		color: var(--background);
-		background: var(--secondary);
-	}
-	html,
-	body {
-		height: 100%;
-		padding: 0;
-		margin: 0;
+  ::selection {
+    color: var(--background);
+    background: var(--secondary);
+  }
+  html,
+  body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
 
-		scroll-behavior: smooth;
-	}
+    scroll-behavior: smooth;
+  }
 
-	body {
-		background-color: var(--background);
-		margin: 0 !important;
-	}
+  body {
+    background-color: var(--background);
+    margin: 0 !important;
+  }
 
-	p,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	button,
-	div {
-		font-family: "DM Sans", sans-serif;
-		color: var(--text-col);
-	}
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button,
+  div {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text-col);
+  }
 </style>
