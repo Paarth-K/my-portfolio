@@ -16,7 +16,7 @@ export default function ProjectsSection() {
     },
     {
       link: "https://internshipfinder.vercel.app",
-      desc: "This project has been made with Next.js, and it aims to help high school students find internships.",
+      desc: "This project is being made with a few of my friends and uses Next.js. It aims to help high school students find internships.",
       image: "projects/internshipfinder_hdwip_preview.png",
       imgalt: "Internship Finder Website",
       isWIP: true,
