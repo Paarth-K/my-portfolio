@@ -80,7 +80,7 @@ import {
   display: block !important;
   padding: 10px !important;
   text-align: center;
-  height: 20px;
+  height: 25px;
   place-items: center;
 }
 .footergrid {
@@ -133,5 +133,7 @@ import {
 .src {
   color: grey;
   text-decoration: none !important;
+  font-size: 12pt;
+  font-weight: 400;
 }
 </style>

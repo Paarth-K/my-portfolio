@@ -1,11 +1,22 @@
 import Styles from "./AboutSection.module.scss";
 import ClickyMedia from "../Base/ClickyMedia.jsx";
+import { useEffect, useState } from "preact/hooks";
 
 export default function AboutSection(props) {
+  function calculate_age(dob) {
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms);
+
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+  }
+  const [age, setAge] = useState("[age]");
+  useEffect(() => {
+    setAge(calculate_age(new Date(2007, 10, 1)));
+  }, []);
   const aboutMeText = [
     {
       title: "Who am I?",
-      text: "Hi! As you already know, my name is Paarth. I was born in India, and I'm currently 15 years old, studying at Dover Court International School in Singapore. I consider myself a tech enthusiast with a special interest in web development and data science.",
+      text: `Hi! As you already know, my name is Paarth. I was born in India, and I'm currently ${age} years old. I study at North London Collegiate School in Dubai. I consider myself to be a tech enthusiast with a special interest in web development and data science.`,
     },
     {
       title: "What do I know?",
