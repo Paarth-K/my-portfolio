@@ -11,12 +11,12 @@ export default function AboutSection(props) {
   }
   const [age, setAge] = useState("[age]");
   useEffect(() => {
-    setAge(calculate_age(new Date(2007, 10, 1)));
+    setAge(calculate_age(new Date("10/03/2007")));
   }, []);
   const aboutMeText = [
     {
       title: "Who am I?",
-      text: `Hi! As you already know, my name is Paarth. I was born in India and I'm currently ${age} years old, I currently study at North London Collegiate School in Dubai. I consider myself to be a tech enthusiast with a special interest in web development and data science.`,
+      text: `Hi! As you already know, my name is Paarth. I was born in India and I'm ${age} years old, I currently study at North London Collegiate School in Dubai. I consider myself to be a tech enthusiast with a special interest in web development and data science.`,
     },
     {
       title: "What do I know?",
