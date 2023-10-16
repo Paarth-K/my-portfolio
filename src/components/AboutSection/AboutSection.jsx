@@ -45,7 +45,7 @@ export default function AboutSection(props) {
               <div className={Styles.meImgContainer}>
                 <ClickyMedia
                   alt="An image of Paarth Kukreja"
-                  src="/home/me_pic.png"
+                  src="/home/me_pic"
                 ></ClickyMedia>
               </div>
             </div>

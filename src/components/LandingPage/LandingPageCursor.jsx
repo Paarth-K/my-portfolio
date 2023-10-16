@@ -15,44 +15,49 @@ export default function LandingPageCursor() {
 
   return (
     <div>
-      <Image
-        draggable="false"
-        src="/home/React-icon.png"
-        alt="React Icon"
-        style={{
-          transform: `translateX(${
-            mouseModifX * Math.sqrt(mousePos[0])
-          }px) translateY(${mouseModifY * Math.sqrt(mousePos[1])}px)`,
-        }}
-        className={Styles.react}
-      ></Image>
-
-      <Image
-        draggable="false"
-        src="/home/Vue-icon.png"
-        alt="Vue Icon"
-        style={{
-          transform: `translateX(${
-            -mouseModifX * Math.sqrt(mousePos[0])
-          }px) translateY(${-mouseModifY * Math.sqrt(mousePos[1])}px)`,
-        }}
-        className={Styles.vue}
-      ></Image>
-      <Image
-        draggable="false"
-        src="/home/Astro-icon.png"
-        alt="Astro Icon"
-        style={{
-          transform: `translateX(${
-            mouseModifX * -Math.sqrt(mousePos[1])
-          }px) translateY(${mouseModifY * Math.sqrt(mousePos[1])}px)`,
-        }}
-        className={Styles.astro}
-      ></Image>
+      <a href="#projects">
+        <Image
+          draggable={false}
+          src="/home/React-icon"
+          alt="React Icon"
+          style={{
+            transform: `translateX(${
+              mouseModifX * Math.sqrt(mousePos[0])
+            }px) translateY(${mouseModifY * Math.sqrt(mousePos[1])}px)`,
+          }}
+          className={Styles.react}
+        ></Image>
+      </a>
+      <a href="#projects">
+        <Image
+          draggable={false}
+          src="/home/Vue-icon"
+          alt="Vue Icon"
+          style={{
+            transform: `translateX(${
+              -mouseModifX * Math.sqrt(mousePos[0])
+            }px) translateY(${-mouseModifY * Math.sqrt(mousePos[1])}px)`,
+          }}
+          className={Styles.vue}
+        ></Image>
+      </a>
+      <a href="#projects">
+        <Image
+          draggable={false}
+          src="/home/Astro-icon"
+          alt="Astro Icon"
+          style={{
+            transform: `translateX(${
+              mouseModifX * -Math.sqrt(mousePos[1])
+            }px) translateY(${mouseModifY * Math.sqrt(mousePos[1])}px)`,
+          }}
+          className={Styles.astro}
+        ></Image>
+      </a>
       <a href="#dubai">
         <Image
-          draggable="false"
-          src="/home/UAE-flag.png"
+          draggable={false}
+          src="/home/UAE-flag"
           alt="United Arab Emirates Flag"
           style={{
             transform: `translateX(${
@@ -64,8 +69,8 @@ export default function LandingPageCursor() {
       </a>
       <a href="#singapore">
         <Image
-          draggable="false"
-          src="/home/SG-flag.png"
+          draggable={false}
+          src="/home/SG-flag"
           alt="Singapore Flag"
           style={{
             transform: `translateX(${

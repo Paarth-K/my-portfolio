@@ -15,7 +15,7 @@ export default function ProjectTile({ project }) {
             alt={project.imgalt}
             src={project.image}
             className={Styles.projectPicture}
-            draggable="false"
+            draggable={false}
           ></Image>
         </div>
         <div className={Styles.descriptionTextContainer}>

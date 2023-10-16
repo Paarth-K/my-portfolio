@@ -14,7 +14,7 @@ export default function Experiences() {
 
               <div className={Styles.currentImg}>
                 <ClickyMedia
-                  src="/experience/thinkinghutswtext.png"
+                  src="/experience/thinkinghutswtext"
                   alt="Thinking huts logo"
                   link={{
                     to: "https://www.thinkinghuts.org/",
@@ -23,7 +23,7 @@ export default function Experiences() {
                   hoverVid={{
                     src: "/experience/TH_Hover_vid_e4ih61.mov",
                     transformations:
-                      "br_1500k,c_crop,g_west,h_710,w_710,x_470,y_40,q_auto:best,f_auto",
+                      "c_crop,g_west,h_710,w_710,x_470,y_40,q_auto:best,f_auto:video",
                   }}
                 />
               </div>

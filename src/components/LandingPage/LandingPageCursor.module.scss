@@ -5,7 +5,9 @@
 .astro {
   width: 80px;
   position: absolute;
-  transition: filter 0.08s, scale 0.08s;
+  transition:
+    filter 0.08s,
+    scale 0.08s;
 
   z-index: 100;
   // pointer-events: none;
@@ -16,7 +18,9 @@
 .uae:hover,
 .sg:hover,
 .astro:hover {
-  transition: scale 0.2s, filter 0.08s;
+  transition:
+    scale 0.2s,
+    filter 0.08s;
   scale: 1.02;
 }
 
@@ -25,7 +29,9 @@
 .uae:active,
 .sg:active,
 .astro:active {
-  transition: scale 0.08s, filter 0.08s;
+  transition:
+    scale 0.08s,
+    filter 0.08s;
   filter: none !important;
   scale: 0.98;
 }
@@ -54,7 +60,7 @@
 
 .astro {
   filter: drop-shadow(0px 10px 4px rgba(217, 128, 10, 0.597));
-  top: 1300px;
+  top: 1200px;
   right: 200px;
 }
 
@@ -73,13 +79,13 @@
 }
 
 .sg {
-  filter: drop-shadow(-10px 5px 4px rgba(123, 120, 120, 0.597));
+  filter: drop-shadow(5px 5px 4px rgba(123, 120, 120, 0.597));
   bottom: 200px;
   right: 200px;
 }
 
 .sg:hover {
-  filter: drop-shadow(-10px 5px 5px rgba(123, 120, 120, 0.597));
+  filter: drop-shadow(5px 5px 5px rgba(123, 120, 120, 0.597));
 }
 
 @media (max-width: 1010px) {

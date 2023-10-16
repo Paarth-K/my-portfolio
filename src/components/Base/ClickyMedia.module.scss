@@ -18,6 +18,22 @@
   transition: transform 0.2s;
   transform: scale(1.005);
 }
+
+@media (max-width: 630px) {
+  .clickImg {
+    transition: transform 0.2s;
+    transform: translateX(-11px) translateY(-11px);
+  }
+  // .clickVid {
+  //   transition: all 0.2s;
+  //   opacity: 1;
+  // }
+  .clickImgShadow {
+    transition: transform 0.2s;
+    transform: scale(1.005);
+  }
+}
+
 .clickImgContainer:active .clickImgShadow {
   transition: transform 0.1s ease;
   transform: none !important;

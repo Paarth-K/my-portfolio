@@ -12,7 +12,7 @@
           <span v-if="personName">Hi</span>
           <span v-if="personName" :class="showMyName ? '' : 'highlight1'"
             >{{ personName ? " " + personName : "" }}! </span
-          >My name is
+          >I'm
           <span :class="showMyName ? '' : 'highlight2'">Paarth</span>
         </p>
         <p key="name" v-if="showMyName" class="interactive-text">

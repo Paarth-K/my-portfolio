@@ -1,0 +1,41 @@
+---
+import Dubai from "./Dubai/Dubai.jsx";
+import Singapore from "./Singapore/Singapore.jsx";
+---
+
+<div class="CountriesGrid" id="countries">
+  <div class="CountriesInfo">
+    <Dubai />
+    <Singapore />
+  </div>
+  <div class="CountriesTitle">
+    <span>Countries</span>
+  </div>
+</div>
+
+<style lang="scss">
+  .CountriesGrid {
+    display: grid;
+    grid-template-columns: auto 40px;
+  }
+  .CountriesTitle {
+    display: inline-grid;
+    writing-mode: vertical-rl;
+    font-size: 6vw;
+    color: rgb(42, 42, 42);
+    margin: 0px 0px;
+    place-items: center;
+    top: 30%;
+    position: sticky;
+    align-self: flex-start;
+    transform: translateX(-2vw);
+  }
+  @media (max-width: 630px) {
+    .CountriesTitle {
+      top: 45%;
+    }
+    .CountriesInfo {
+      transform: translateX(5%);
+    }
+  }
+</style>
