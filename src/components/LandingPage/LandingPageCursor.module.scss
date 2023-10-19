@@ -1,8 +1,4 @@
-.react,
-.vue,
-.uae,
-.sg,
-.astro {
+.movecursor {
   width: 80px;
   position: absolute;
   transition:
@@ -13,22 +9,14 @@
   // pointer-events: none;
 }
 
-.react:hover,
-.vue:hover,
-.uae:hover,
-.sg:hover,
-.astro:hover {
+.movecursor:hover {
   transition:
     scale 0.2s,
     filter 0.08s;
   scale: 1.02;
 }
 
-.react:active,
-.vue:active,
-.uae:active,
-.sg:active,
-.astro:active {
+.movecursor:active {
   transition:
     scale 0.08s,
     filter 0.08s;
@@ -49,7 +37,8 @@
 
 .vue {
   filter: drop-shadow(-10px 5px 4px #3fba859e);
-  bottom: 200px;
+  top: 600px;
+  // bottom: 200px;
   left: 200px;
   rotate: (-8deg);
 }
@@ -88,9 +77,30 @@
   filter: drop-shadow(5px 5px 5px rgba(123, 120, 120, 0.597));
 }
 
+.nlcs {
+  filter: drop-shadow(5px 5px 4px rgba(74, 26, 27, 0.597));
+  top: 200px;
+  left: 100px;
+}
+
+.nlcs:hover {
+  filter: drop-shadow(5px 5px 5px rgba(74, 26, 27, 0.597));
+}
+
+.nas {
+  filter: drop-shadow(5px 5px 4px rgba(123, 120, 120, 0.597));
+  top: 370px;
+  right: 100px;
+}
+
+.nas:hover {
+  filter: drop-shadow(5px 5px 5px rgba(123, 120, 120, 0.597));
+}
+
 @media (max-width: 1010px) {
   .vue {
-    left: 50px;
+    left: 53px;
+    top: 500px;
   }
   .astro {
     right: 20px;
@@ -99,9 +109,20 @@
     right: 50px;
   }
   .uae {
-    left: 50px;
+    left: 53px;
   }
   .sg {
     right: 20px;
+    top: 500px;
+  }
+  .nas {
+    right: 30px;
+    top: 250px;
+  }
+  .nlcs {
+    left: 20px;
+  }
+  .movecursor {
+    // filter: blur(1px);
   }
 }

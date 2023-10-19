@@ -1,0 +1,42 @@
+---
+import DCIS from "./DCIS/DCIS";
+import NLCS from "./NLCS/NLCS";
+---
+
+<div class="EducationGrid" id="Education">
+    <div class="EducationTitle">
+        <span>Education</span>
+    </div>
+    <div class="EducationInfo">
+        <DCIS />
+        <NLCS />
+    </div>
+</div>
+
+<style lang="scss">
+  .EducationGrid {
+    display: grid;
+    grid-template-columns: 7vw 20px;
+    margin: 0px 8vw;
+  }
+  .EducationTitle {
+    display: inline-grid;
+    writing-mode: vertical-rl;
+    font-size: 6vw;
+    color: rgb(42, 42, 42);
+    margin: 0px 0px;
+    place-items: center;
+    top: 30%;
+    position: sticky;
+    align-self: flex-start;
+  }
+  @media (max-width: 630px) {
+    .EducationTitle {
+      top: 45%;
+      transform: translateX(-4vw);
+    }
+    .EducationInfo {
+      transform: translateX(5%);
+    }
+  }
+</style>

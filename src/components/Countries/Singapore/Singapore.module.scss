@@ -1,6 +1,6 @@
 .main {
   margin: 0 8vw;
-  padding-top: 100px; //compensating for the TitleSection
+  padding-top: 50px; //compensating for the TitleSection
 }
 .ex {
   padding-bottom: 70px;
@@ -25,7 +25,8 @@
   margin-top: 15px;
   grid-template-rows: auto;
   grid-template-columns: auto auto;
-  column-gap: 50px !important;
+  margin-left: 50px;
+  // column-gap: -50px !important;
   row-gap: 50px !important;
   // justify-content: center;
   // place-items: center;
@@ -64,7 +65,9 @@
   .exContent {
     grid-template-rows: auto !important;
     grid-template-columns: auto !important;
-    transform: translateX(-2vw);
+    transform: translateX(1vw);
+    margin-left: 0px;
+    // margin-right: 50px;
   }
   .exDescTitle {
     font-size: 6vw;
@@ -78,6 +81,6 @@
   }
   .exTitle {
     font-size: 17px;
-    margin-right: 10px;
+    transform: translateX(-9vw);
   }
 }

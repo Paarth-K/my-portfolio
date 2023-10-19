@@ -1,7 +1,7 @@
 export default function Image({
   src,
   alt,
-  transformations = "f_auto:image,q_auto,w_auto,dpr_auto",
+  transformations = "f_auto:image,q_auto,w_auto",
   draggable = true,
   ...other
 }) {

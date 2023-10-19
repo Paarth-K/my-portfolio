@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="title-card vertical-center"
+      class="title-card vertical-center scroll-anim"
       :class="lockPos ? 'title-lock' : ''"
     >
       <TransitionGroup>
@@ -124,6 +124,10 @@ addEventListener("scroll", () => {
   position: absolute !important;
 }
 
+.scroll-anim {
+  z-index: 101;
+}
+
 .highlight1,
 .highlight2 {
   transition: color 0.2s;
@@ -134,5 +138,14 @@ addEventListener("scroll", () => {
 .highlight2:hover {
   transition: color 0.2s;
   color: var(--text-col);
+}
+
+@media (max-width: 610px) {
+  .scroll-anim {
+    background-color: rgba(var(--background-rbg), 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px rgba(var(--background-rbg), 1);
+  }
 }
 </style>

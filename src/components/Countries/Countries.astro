@@ -17,6 +17,7 @@ import Singapore from "./Singapore/Singapore.jsx";
   .CountriesGrid {
     display: grid;
     grid-template-columns: auto 40px;
+    margin-right: 8vw;
   }
   .CountriesTitle {
     display: inline-grid;
@@ -28,11 +29,11 @@ import Singapore from "./Singapore/Singapore.jsx";
     top: 30%;
     position: sticky;
     align-self: flex-start;
-    transform: translateX(-2vw);
   }
   @media (max-width: 630px) {
     .CountriesTitle {
       top: 45%;
+      transform: translateX(8vw);
     }
     .CountriesInfo {
       transform: translateX(5%);
