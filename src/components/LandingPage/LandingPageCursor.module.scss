@@ -76,6 +76,15 @@
 .sg:hover {
   filter: drop-shadow(5px 5px 5px rgba(123, 120, 120, 0.597));
 }
+.india {
+  filter: drop-shadow(5px 5px 4px rgba(123, 120, 120, 0.597));
+  top: 90px;
+  right: 450px;
+}
+
+.india:hover {
+  filter: drop-shadow(5px 5px 5px rgba(123, 120, 120, 0.597));
+}
 
 .nlcs {
   filter: drop-shadow(5px 5px 4px rgba(74, 26, 27, 0.597));
@@ -112,6 +121,10 @@
     left: 53px;
   }
   .sg {
+    right: 170px;
+    top: 250px;
+  }
+  .india {
     right: 20px;
     top: 500px;
   }

@@ -6,7 +6,7 @@ export default function Singapore() {
       <div className={Styles.ex}>
         <div className={Styles.exGrid}>
           <div className={Styles.exTitle}>
-            <span>2013-2023</span>
+            <span>August 2023 - 2013</span>
           </div>
           <div className={Styles.exContent}>
             <div className={Styles.exContentItem}>

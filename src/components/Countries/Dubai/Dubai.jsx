@@ -1,12 +1,20 @@
 import Styles from "./Dubai.module.scss";
 import ClickyMedia from "../../Base/ClickyMedia";
+import { useEffect, useState } from "preact/hooks";
 export default function Dubai() {
+  const [month, setMonth] = useState("[current]");
+  const [year, setYear] = useState("[date]");
+  useEffect(() => {
+    const date = new Date();
+    setYear(date.toLocaleString("default", { year: "numeric" }));
+    setMonth(date.toLocaleString("default", { month: "long" }));
+  }, []);
   return (
     <div className={Styles.main} id="dubai">
       <div className={Styles.ex}>
         <div className={Styles.exGrid}>
           <div className={Styles.exTitle}>
-            <span>2023-Present</span>
+            <span>{`${month} ${year}`} - August 2023</span>
           </div>
           <div className={Styles.exContent}>
             <div className={Styles.exContentItem}>

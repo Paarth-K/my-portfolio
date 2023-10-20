@@ -24,10 +24,13 @@ export default function LandingPageCursor() {
       setMouseModifY(tempModY);
     }
     window.addEventListener("mousemove", (event) => {
+      updateMouse(event);
+    });
+    async function updateMouse(event) {
       if (window.innerWidth > 630) {
         setMousePos([event.clientX, event.clientY]);
       }
-    });
+    }
   }, []);
 
   return (
@@ -97,6 +100,19 @@ export default function LandingPageCursor() {
           className={`${Styles.movecursor} ${Styles.sg}`}
         ></Image>
       </a>
+      {/* <a href="#india"> */}
+      <Image
+        draggable={false}
+        src="/home/INDIA-flag"
+        alt="India Flag"
+        style={{
+          transform: `translateX(${
+            mouseModifX[4] * -Math.sqrt(mousePos[0])
+          }px) translateY(${mouseModifY[4] * Math.sqrt(mousePos[1])}px)`,
+        }}
+        className={`${Styles.movecursor} ${Styles.india}`}
+      ></Image>
+      {/* </a> */}
       <a href="#nlcs">
         <Image
           draggable={false}
