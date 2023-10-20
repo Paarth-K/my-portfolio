@@ -1,6 +1,15 @@
 import Styles from "./Singapore.module.scss";
 import ClickyMedia from "../../Base/ClickyMedia";
+import { useEffect, useState } from "preact/hooks";
 export default function Singapore() {
+  const [videoObj, setVideoObj] = useState(false);
+  useEffect(() => {
+    setVideoObj({
+      src: "/countries/Singapore-Video",
+      transformations:
+        "c_crop,g_west,h_2000,w_2000,x_870,y_10,q_auto:best,f_auto:video",
+    });
+  }, []);
   return (
     <div className={Styles.main} id="singapore">
       <div className={Styles.ex}>
@@ -20,11 +29,7 @@ export default function Singapore() {
                     to: "",
                     ariaLabel: "Singapore",
                   }}
-                  hoverVid={{
-                    src: "/countries/Singapore-Video",
-                    transformations:
-                      "c_crop,g_west,h_2000,w_2000,x_870,y_10,q_auto:best,f_auto:video",
-                  }}
+                  hoverVid={videoObj}
                 />
               </div>
 

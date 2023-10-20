@@ -1,6 +1,15 @@
 import Styles from "./Experiences.module.scss";
 import ClickyMedia from "../Base/ClickyMedia.jsx";
+import { useEffect, useState } from "preact/hooks";
 export default function Experiences() {
+  const [videoObj, setVideoObj] = useState(false);
+  useEffect(() => {
+    setVideoObj({
+      src: "/experience/TH_Hover_vid_e4ih61",
+      transformations:
+        "c_crop,g_west,h_710,w_710,x_470,y_40,q_auto:best,f_auto:video",
+    });
+  }, []);
   return (
     <div className={Styles.main} id="experience">
       <div className={Styles.ex}>
@@ -20,11 +29,7 @@ export default function Experiences() {
                     to: "https://www.thinkinghuts.org/",
                     ariaLabel: "Thinking huts website",
                   }}
-                  hoverVid={{
-                    src: "/experience/TH_Hover_vid_e4ih61.mov",
-                    transformations:
-                      "c_crop,g_west,h_710,w_710,x_470,y_40,q_auto:best,f_auto:video",
-                  }}
+                  hoverVid={videoObj}
                 />
               </div>
 

@@ -4,10 +4,16 @@ import { useEffect, useState } from "preact/hooks";
 export default function Dubai() {
   const [month, setMonth] = useState("[current]");
   const [year, setYear] = useState("[date]");
+  const [videoObj, setVideoObj] = useState(false);
   useEffect(() => {
     const date = new Date();
     setYear(date.toLocaleString("default", { year: "numeric" }));
     setMonth(date.toLocaleString("default", { month: "long" }));
+    setVideoObj({
+      src: "/countries/Dubai-Video",
+      transformations:
+        "c_crop,g_west,h_1800,w_1800,x_900,y_-35,q_auto:best,f_auto:video",
+    });
   }, []);
   return (
     <div className={Styles.main} id="dubai">
@@ -28,11 +34,7 @@ export default function Dubai() {
                     to: "",
                     ariaLabel: "Dubai",
                   }}
-                  hoverVid={{
-                    src: "/countries/Dubai-Video",
-                    transformations:
-                      "c_crop,g_west,h_1800,w_1800,x_900,y_-35,q_auto:best,f_auto:video",
-                  }}
+                  hoverVid={videoObj}
                 />
               </div>
 
