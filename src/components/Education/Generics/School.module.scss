@@ -1,0 +1,100 @@
+.main {
+  // margin: 0 8vw;
+  padding-top: 240px; //compensating for the TitleSection
+}
+.school {
+  padding-bottom: 70px;
+}
+.schoolGrid {
+  display: grid;
+  grid-template-columns: auto 40px;
+  // column-gap: 60px;
+}
+.schoolTitle {
+  display: inline-grid;
+  writing-mode: vertical-rl;
+  font-size: 3vw;
+  color: rgb(42, 42, 42);
+  margin: 0px 0px;
+  place-items: center;
+  // margin-right: 5vw;
+  // margin-left: 3vw;
+  transform: translateX(-2.5vw);
+}
+.schoolContent {
+  display: inline-grid;
+}
+
+.schoolContentGrid {
+  display: grid;
+  grid-template-columns: auto 35vw;
+  column-gap: 40px;
+  color: #6a738f;
+  margin-left: 2vw;
+}
+.schoolDesc {
+  display: inline-grid;
+  margin: auto;
+}
+.schoolImgContainer {
+  display: inline-grid;
+  margin: auto;
+  width: 30vw;
+  height: 30vw;
+}
+
+.schoolDescTitle {
+  font-size: 3vw;
+  font-weight: 500;
+  margin: 20px;
+}
+
+.schoolDescText {
+  font-size: 1.3vw;
+  padding-left: 20px;
+  padding-right: 55px;
+  color: rgb(62, 62, 62);
+}
+@media (max-width: 630px) {
+  .main {
+    padding-top: 100px; //compensating for the TitleSection
+  }
+  .schoolTitle {
+    position: sticky;
+    top: 50%;
+    align-self: flex-start;
+    font-size: 17px;
+    transform: translateX(-3vw);
+  }
+  .schoolContentGrid {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    // transform: translateX(2vw);
+  }
+
+  .schoolDescTitle {
+    font-size: 6vw;
+    text-align: center;
+  }
+
+  .schoolImgContainer {
+    margin-top: 20px;
+    // transform: translateX(2vw);
+    transform: translateX(-5vw);
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .schoolDescText {
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+  }
+  .schoolGrid {
+    column-gap: 0px;
+    // transform: translateX(-4vw);
+  }
+  .schoolDesc {
+    transform: translateX(-7vw);
+  }
+}

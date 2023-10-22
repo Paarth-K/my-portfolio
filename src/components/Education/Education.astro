@@ -3,21 +3,22 @@ import DCIS from "./DCIS/DCIS";
 import NLCS from "./NLCS/NLCS";
 ---
 
-<div class="EducationGrid" id="Education">
-    <div class="EducationTitle">
-        <span>Education</span>
-    </div>
-    <div class="EducationInfo">
-        <DCIS />
-        <NLCS />
-    </div>
+<div class="EducationGrid" id="education">
+  <div class="EducationTitle">
+    <span>Education</span>
+  </div>
+  <div class="EducationInfo">
+    <DCIS client:visible />
+    <NLCS client:visible />
+  </div>
 </div>
 
 <style lang="scss">
   .EducationGrid {
     display: grid;
-    grid-template-columns: 7vw 20px;
-    margin: 0px 8vw;
+    grid-template-columns: 7vw auto;
+    margin-left: 8vw;
+    margin-right: 8vw;
   }
   .EducationTitle {
     display: inline-grid;
@@ -37,6 +38,9 @@ import NLCS from "./NLCS/NLCS";
     }
     .EducationInfo {
       transform: translateX(5%);
+    }
+    .EducationGrid {
+      margin-right: 0px;
     }
   }
 </style>

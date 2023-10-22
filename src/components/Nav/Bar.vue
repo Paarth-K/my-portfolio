@@ -73,6 +73,10 @@ const navLinkData = ref([
     to: "#countries",
     display: "Countries",
   },
+  {
+    to: "#education",
+    display: "Education",
+  },
 ]);
 
 const showBar = ref(false);
@@ -131,7 +135,7 @@ const showBar = ref(false);
   height: 100px !important;
 }
 
-@media (max-width: 615px) {
+@media (max-width: 735px) {
   .container {
     padding: 0px;
     padding-top: 7px !important;
