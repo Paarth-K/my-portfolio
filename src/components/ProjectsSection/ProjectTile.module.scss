@@ -12,17 +12,22 @@
   width: 30vw;
   height: auto;
   border-radius: 15px;
-  aspect-ratio: 16/10;
-  transition: scale 0.9s ease, box-shadow 0.9s ease;
+  // aspect-ratio: 16/10;
+  transition:
+    scale 0.9s ease,
+    box-shadow 0.9s ease;
 }
 
 .projectPictureContainer {
   position: relative;
   z-index: 24 !important;
+  // aspect-ratio: 16/10;
 }
 .projectPicture:hover {
   scale: 1.01;
-  transition: scale 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    scale 0.2s ease,
+    box-shadow 0.2s ease;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.091);
 }
 .projectLink {
@@ -30,7 +35,9 @@
 }
 .projectTile:hover .descriptionTextContainer {
   margin-top: -5px;
-  transition: margin-top 0.15s ease, scale 0.2s ease;
+  transition:
+    margin-top 0.15s ease,
+    scale 0.2s ease;
 }
 .projectTile:active {
   transition: scale 0.2s ease;
