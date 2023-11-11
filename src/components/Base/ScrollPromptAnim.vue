@@ -84,9 +84,11 @@ addEventListener("scroll", (event) => {
   margin: 0 0 3px 5px;
 }
 #mouse-scroll .mouse {
-  height: 21px;
-  width: 14px;
-  border-radius: 10px;
+  height: calc(4vh - 2px);
+  width: 4vw;
+  padding: 1px;
+  padding-top: 3px;
+  border-radius: 5px;
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;
@@ -102,6 +104,8 @@ addEventListener("scroll", (event) => {
   animation: mouse-scroll 1s infinite;
   -webkit-animation: mouse-scroll 1s infinite;
   -moz-animation: mouse-scroll 1s infinite;
+  margin-right: auto;
+  margin-left: auto;
 }
 #mouse-scroll .down-arrow-1 {
   animation-delay: 0.1s;
@@ -124,8 +128,9 @@ addEventListener("scroll", (event) => {
   animation-direction: alternate;
   -webkit-animation-direction: alternate;
 }
+
 #mouse-scroll .mouse-in {
-  height: 5px;
+  height: 4px;
   width: 2px;
   display: block;
   margin: 5px auto;
@@ -133,9 +138,9 @@ addEventListener("scroll", (event) => {
   position: relative;
 }
 #mouse-scroll .mouse-in {
-  animation: animated-mouse 1.2s ease infinite;
-  -webkit-animation: animated-mouse 1.2s ease infinite;
-  -moz-animation: mouse-animated 1.2s ease infinite;
+  animation: animated-mouse 1.2s ease alternate-reverse infinite;
+  -webkit-animation: animated-mouse 1.2s ease alternate-reverse infinite;
+  -moz-animation: animated-mouse 1.2s ease alternate-reverse infinite;
 }
 
 @keyframes animated-mouse {
@@ -147,9 +152,9 @@ addEventListener("scroll", (event) => {
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateY(6px);
-    -ms-transform: translateY(6px);
-    transform: translateY(6px);
+    -webkit-transform: translateY(2vh);
+    -ms-transform: translateY(2vh);
+    transform: translateY(2vh);
   }
 }
 
@@ -162,9 +167,9 @@ addEventListener("scroll", (event) => {
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateY(6px);
-    -ms-transform: translateY(6px);
-    transform: translateY(6px);
+    -webkit-transform: translateY(2vh);
+    -ms-transform: translateY(2vh);
+    transform: translateY(2vh);
   }
 }
 @-webkit-keyframes mouse-scroll {
