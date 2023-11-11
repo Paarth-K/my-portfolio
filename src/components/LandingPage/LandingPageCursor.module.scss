@@ -4,6 +4,7 @@
   transition:
     filter 0.08s,
     scale 0.08s;
+  animation: fadeIn 1.2s;
 
   z-index: 100;
   // pointer-events: none;
@@ -135,7 +136,12 @@
   .nlcs {
     left: 20px;
   }
-  .movecursor {
-    // filter: blur(1px);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

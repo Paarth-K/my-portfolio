@@ -111,6 +111,7 @@ addEventListener("scroll", () => {
 }
 
 .vertical-center {
+  animation: fadeIn 1.2s;
   margin: 0;
   position: fixed;
   top: 50%;
@@ -126,6 +127,7 @@ addEventListener("scroll", () => {
 
 .scroll-anim {
   z-index: 101;
+  animation: fadeIn 1.2s;
 }
 
 .highlight1,
@@ -139,7 +141,14 @@ addEventListener("scroll", () => {
   transition: color 0.2s;
   color: var(--text-col);
 }
-
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media (max-width: 610px) {
   .scroll-anim {
     background-color: rgba(var(--background-rbg), 0.8);
