@@ -59,7 +59,7 @@
       <a
         aria-label="Link to Source Code (on github) for this site"
         class="src"
-        href="https://github.com/Paarth-K/my-portfolio"
+        href="/source"
       >
         <span>View the source code for this site</span>
       </a>
