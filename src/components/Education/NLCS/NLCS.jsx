@@ -27,7 +27,7 @@ export default function NLCS() {
         },
         {
           title: "My Experience",
-          text: "Being new to NCLS, I have no complaints. Although adapting to the new MYP Curriculum from IGCSE has been slightly challenging, I've been persevering through the challenges anyway. I have made a couple of great friends, and enjoy the enriching atmosphere of the school. I study subjects like Design, Geography, French, All Sciences, Maths and English. I hope my experience will be as educating and enjoying as my last school!",
+          text: "Being new to NLCS, I have no complaints. Although adapting to the new MYP Curriculum from IGCSE has been slightly challenging, I've been persevering through the challenges anyway. I have made a couple of great friends, and enjoy the enriching atmosphere of the school. I study subjects like Design, Geography, French, All Sciences, Maths and English. I hope my experience will be as educating and enjoying as my last school!",
         },
       ]}
     ></School>
