@@ -17,7 +17,12 @@
       <div class="footergriditem">
         <p class="footertitle">Want a PDF?</p>
         <div>
-          <nav-link aria-label="View my PDF Resume" class="navlink" to="/pdf">
+          <nav-link
+            aria-label="View my PDF Resume"
+            target="_blank"
+            class="navlink"
+            to="/pdf"
+          >
             View PDF Resume</nav-link
           >
         </div>
@@ -60,6 +65,7 @@
         aria-label="Link to Source Code (on github) for this site"
         class="src"
         href="/source"
+        target="_blank"
       >
         <span>View the source code for this site</span>
       </a>

@@ -23,7 +23,7 @@ export default function NLCS() {
       textObjectList={[
         {
           title: "About the School",
-          text: "International British School with ~1100 students, part of the North London Collegiate School Family of Schools. Teaching the MYP Curriculum until Grade 10, and IB DP post Grade 10.",
+          text: "North London Collegiate School (NLCS) is an International British School with ~1100 students, it is part of the North London Collegiate School Family of Schools. Teaching the MYP Curriculum until Grade 10, and IB DP post Grade 10.",
         },
         {
           title: "My Experience",

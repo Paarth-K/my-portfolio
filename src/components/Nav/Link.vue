@@ -1,5 +1,5 @@
 <template>
-  <a :href="to">
+  <a :target="target" :href="to">
     <div class="nav-link-container">
       <button>
         <slot />
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  props: ["to"],
+  props: { to: "", target: "_self" },
 };
 </script>
 
@@ -48,7 +48,9 @@ button {
   border-radius: 30px;
   border: none;
   text-transform: uppercase;
-  transition: background-color 0.25s, border 0.25s;
+  transition:
+    background-color 0.25s,
+    border 0.25s;
   /* transition: all 0.25s; */
   background-color: var(--accent);
   pointer-events: none;

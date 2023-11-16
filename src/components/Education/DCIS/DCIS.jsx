@@ -23,7 +23,7 @@ export default function DCIS() {
       textObjectList={[
         {
           title: "About the School",
-          text: "International British School with ~1800 students, part of the Nord Anglia Family of Schools. Teaching the IGCSE Curriculum until Year 11, and IB DP post Year 11.",
+          text: "Dover Court International School is an International British School with ~1800 students, it is part of the Nord Anglia Family of Schools. Teaching the iGCSE Curriculum until Year 11, and IB DP post Year 11.",
         },
         {
           title: "My Experience",
