@@ -1,62 +1,67 @@
 <template>
   <footer id="footer">
-    <div class="footergrid">
-      <div class="footergriditem">
-        <p class="footertitle">Let's get in touch</p>
-        <div>
-          <p>
-            <a
-              aria-label="paarth@paarthkukreja.com"
-              class="contact"
-              href="mailto:paarth@paarthkukreja.com"
-              >paarth@paarthkukreja.com</a
+    <div class="footercenter">
+      <div class="footergrid">
+        <div class="footergriditem">
+          <p class="footertitle">Let's get in touch</p>
+          <div>
+            <p>
+              <a
+                aria-label="paarth@paarthkukreja.com"
+                class="contact"
+                href="mailto:paarth@paarthkukreja.com"
+                >paarth@paarthkukreja.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="footergriditem">
+          <p class="footertitle">Want a PDF?</p>
+          <div>
+            <nav-link
+              aria-label="View PDF Resume"
+              target="_blank"
+              class="navlink"
+              to="/pdf"
             >
-          </p>
+              View PDF Resume</nav-link
+            >
+          </div>
         </div>
-      </div>
-      <div class="footergriditem">
-        <p class="footertitle">Want a PDF?</p>
-        <div>
-          <nav-link
-            aria-label="View PDF Resume"
-            target="_blank"
-            class="navlink"
-            to="/pdf"
-          >
-            View PDF Resume</nav-link
-          >
-        </div>
-      </div>
-      <div class="footergriditem">
-        <p class="footertitle">My Socials</p>
-        <div>
-          <a
-            aria-label="Link to Github Profile"
-            target="_blank"
-            href="https://github.com/Paarth-K"
-          >
-            <IconGithub style="color: #171515" class="socialicon"></IconGithub>
-          </a>
-          <a
-            aria-label="Link to Instagram Profile"
-            target="_blank"
-            href="https://www.instagram.com/paarth.kukreja/"
-          >
-            <IconInstagram
-              style="color: var(--text-col)"
-              class="socialicon"
-            ></IconInstagram>
-          </a>
-          <a
-            aria-label="Link to LinkedIn Profile"
-            target="_blank"
-            href="https://linkedin.com/in/paarth-kukreja/"
-          >
-            <IconLinkedin
-              style="color: var(--text-col)"
-              class="socialicon"
-            ></IconLinkedin>
-          </a>
+        <div class="footergriditem">
+          <p class="footertitle">My Socials</p>
+          <div>
+            <a
+              aria-label="Link to Github Profile"
+              target="_blank"
+              href="https://github.com/Paarth-K"
+            >
+              <IconGithub
+                style="color: #171515"
+                class="socialicon"
+              ></IconGithub>
+            </a>
+            <a
+              aria-label="Link to Instagram Profile"
+              target="_blank"
+              href="https://www.instagram.com/paarth.kukreja/"
+            >
+              <IconInstagram
+                style="color: var(--text-col)"
+                class="socialicon"
+              ></IconInstagram>
+            </a>
+            <a
+              aria-label="Link to LinkedIn Profile"
+              target="_blank"
+              href="https://linkedin.com/in/paarth-kukreja/"
+            >
+              <IconLinkedin
+                style="color: var(--text-col)"
+                class="socialicon"
+              ></IconLinkedin>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -90,11 +95,14 @@ import {
   place-items: center;
 }
 .footergrid {
-  margin: 0px 12.5vw;
   padding-bottom: 100px;
   margin-top: 50px;
   display: grid;
   grid-template-columns: 25vw 25vw 25vw;
+}
+.footercenter {
+  width: fit-content;
+  margin: auto;
 }
 .socialicon {
   display: inline-block;
