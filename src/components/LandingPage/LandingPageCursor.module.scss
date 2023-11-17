@@ -101,6 +101,7 @@
   filter: drop-shadow(5px 5px 4px rgba(123, 120, 120, 0.597));
   top: 370px;
   right: 100px;
+  z-index: 102;
 }
 
 .nas:hover {
@@ -132,6 +133,7 @@
   .nas {
     right: 30px;
     top: 250px;
+    z-index: 100;
   }
   .nlcs {
     left: 20px;
