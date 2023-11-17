@@ -5,7 +5,7 @@
     filter 0.08s,
     scale 0.08s;
   animation: fadeIn 1.2s;
-
+  transition: 0.15s ease-out;
   z-index: 100;
   // pointer-events: none;
 }
