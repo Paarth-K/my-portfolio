@@ -6,7 +6,7 @@
         <div>
           <p>
             <a
-              aria-label="My Email Address"
+              aria-label="paarth@paarthkukreja.com"
               class="contact"
               href="mailto:paarth@paarthkukreja.com"
               >paarth@paarthkukreja.com</a
@@ -18,7 +18,7 @@
         <p class="footertitle">Want a PDF?</p>
         <div>
           <nav-link
-            aria-label="View my PDF Resume"
+            aria-label="View PDF Resume"
             target="_blank"
             class="navlink"
             to="/pdf"
@@ -62,7 +62,7 @@
     </div>
     <div class="copyrights">
       <a
-        aria-label="Link to Source Code (on github) for this site"
+        aria-label="View the source code for this site"
         class="src"
         href="/source"
         target="_blank"
@@ -137,7 +137,7 @@ import {
   color: var(--text-col);
 }
 .src {
-  color: grey;
+  color: var(--text-col);
   text-decoration: none !important;
   font-size: 12pt;
   font-weight: 400;

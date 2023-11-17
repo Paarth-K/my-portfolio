@@ -133,8 +133,8 @@ export default function LandingPageCursor() {
           alt="Nord Anglia Education Singapore School Logo"
           style={{
             transform: `translateX(${
-              mouseModifX[6] * Math.sqrt(mousePos[1])
-            }px) translateY(${mouseModifY[6] * -Math.sqrt(mousePos[1])}px)`,
+              mouseModifX[6] * -Math.sqrt(mousePos[1])
+            }px) translateY(${mouseModifY[6] * Math.sqrt(mousePos[1])}px)`,
           }}
           className={`${Styles.movecursor} ${Styles.nas}`}
         ></Image>
