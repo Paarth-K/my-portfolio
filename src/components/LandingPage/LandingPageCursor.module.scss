@@ -3,9 +3,10 @@
   position: absolute;
   transition:
     filter 0.08s,
-    scale 0.08s;
+    scale 0.08s,
+    0.15s ease-out;
+
   animation: fadeIn 1.2s;
-  transition: 0.15s ease-out;
   z-index: 100;
   // pointer-events: none;
 }
@@ -13,7 +14,8 @@
 .movecursor:hover {
   transition:
     scale 0.2s,
-    filter 0.08s;
+    filter 0.08s,
+    0.15s ease-out;
   scale: 1.02;
 }
 
