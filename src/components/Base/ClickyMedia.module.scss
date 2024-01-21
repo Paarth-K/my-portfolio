@@ -5,16 +5,16 @@
   width: inherit;
   height: inherit;
 }
-.clickImgContainer:hover .clickImg {
+.clickImgContainerhover .clickImg {
   transition: transform 0.2s;
   transform: translateX(-13px) translateY(-13px);
 }
 
-.clickImgContainer:hover .clickVid {
+.clickImgContainerhover .clickVid {
   transition: all 0.2s;
   opacity: 1;
 }
-.clickImgContainer:hover .clickImgShadow {
+.clickImgContainerhover .clickImgShadow {
   transition: transform 0.2s;
   transform: scale(1.005);
 }

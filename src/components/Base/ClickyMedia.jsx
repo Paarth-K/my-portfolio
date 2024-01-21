@@ -1,3 +1,4 @@
+import { useEffect, useState } from "preact/hooks";
 import Styles from "./ClickyMedia.module.scss";
 import Image from "./Image.jsx";
 import Video from "./Video.jsx";
@@ -8,6 +9,26 @@ export default function ClickyMedia({
   hoverVid = { src: false, transformations: false },
   ...other
 }) {
+  const [scrolling, setScrolling] = useState(true);
+  const [scrollPos, setScrollPos] = useState(false);
+  const [pastScrollPos, setPastScrollPos] = useState(null);
+  useEffect(() => {
+    setInterval(() => {
+      if (scrollPos != pastScrollPos) {
+        setScrolling(false);
+      } else {
+        setPastScrollPos(scrollPos);
+      }
+    }, 500);
+    window.addEventListener("scroll", (event) => {
+      setScrolling(true);
+      setScrollPos(window.scrollY);
+    });
+    // setTimeout(() => {
+    //   setScrolling(false);
+    // }, 1000);
+  }, []);
+
   let hoverVidElement;
   if (hoverVid.src) {
     hoverVidElement = (
@@ -37,7 +58,9 @@ export default function ClickyMedia({
         <a
           href={link.to}
           target={link.target ? link.target : "_blank"}
-          className={Styles.clickImgContainer}
+          className={`${Styles.clickImgContainer} ${
+            !scrolling ? Styles.clickImgContainerhover : ""
+          }`}
         >
           <Image
             className={Styles.clickImg}
@@ -54,7 +77,11 @@ export default function ClickyMedia({
     }
   } else {
     return (
-      <div className={Styles.clickImgContainer}>
+      <div
+        className={`${Styles.clickImgContainer} ${
+          !scrolling ? Styles.clickImgContainerhover : ""
+        }`}
+      >
         <Image
           src={src}
           alt={alt}
