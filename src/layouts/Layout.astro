@@ -54,6 +54,7 @@ const { title } = Astro.props;
 </html>
 <style is:global lang="scss">
   @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
+  // @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap");
   :root {
     --background-rbg: 247, 253, 249;
     --background: #f7fdf9;
@@ -97,5 +98,6 @@ const { title } = Astro.props;
   div {
     font-family: "DM Sans", sans-serif;
     color: var(--text-col);
+    // font-optical-sizing: none;
   }
 </style>
