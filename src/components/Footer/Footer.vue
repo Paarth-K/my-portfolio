@@ -24,7 +24,7 @@
               class="navlink"
               to="/pdf"
             >
-              View PDF Resume</nav-link
+              View PDF Résumé</nav-link
             >
           </div>
         </div>
