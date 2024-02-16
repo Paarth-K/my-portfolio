@@ -10,6 +10,7 @@
                 aria-label="paarth@paarthkukreja.com"
                 class="contact"
                 href="mailto:paarth@paarthkukreja.com"
+                onclick="dataLayer.push({ event: 'footer_link_click', 'footer_link_click': 'email' })"
                 >paarth@paarthkukreja.com</a
               >
             </p>
@@ -23,6 +24,7 @@
               target="_blank"
               class="navlink"
               to="/pdf"
+              onclick="dataLayer.push({ event: 'footer_link_click', 'footer_link_click': 'pdf resume' })"
             >
               View PDF Résumé</nav-link
             >
@@ -35,6 +37,7 @@
               aria-label="Link to Github Profile"
               target="_blank"
               href="https://github.com/Paarth-K"
+              onclick="dataLayer.push({ event: 'footer_link_click', 'footer_link_click': 'github' })"
             >
               <IconGithub
                 style="color: #171515"
@@ -45,6 +48,7 @@
               aria-label="Link to Instagram Profile"
               target="_blank"
               href="https://www.instagram.com/paarth.kukreja/"
+              onclick="dataLayer.push({ event: 'footer_link_click', 'footer_link_click': 'instagram' })"
             >
               <IconInstagram
                 style="color: var(--text-col)"
@@ -55,6 +59,7 @@
               aria-label="Link to LinkedIn Profile"
               target="_blank"
               href="https://linkedin.com/in/paarth-kukreja/"
+              onclick="dataLayer.push({ event: 'footer_link_click', 'footer_link_click': 'linkedin' })"
             >
               <IconLinkedin
                 style="color: var(--text-col)"
@@ -71,6 +76,7 @@
         class="src"
         href="/source"
         target="_blank"
+        onclick="dataLayer.push({ event: 'footer_link_click', 'footer_link_click': 'source code' })"
       >
         <span>View the source code for this site</span>
       </a>
