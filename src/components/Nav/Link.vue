@@ -1,6 +1,6 @@
 <template>
   <a
-    onclick="dataLayer.push({ event: 'nav_link_click', 'nav_link_click': to })"
+    onclick="dataLayer.push({ event: 'nav_link_click', 'nav_link_click': this.to })"
     :target="target"
     :href="to"
   >
