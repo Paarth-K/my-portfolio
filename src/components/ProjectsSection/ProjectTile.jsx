@@ -15,6 +15,7 @@ export default function ProjectTile({ project }) {
             alt={project.imgalt}
             src={project.image}
             className={Styles.projectPicture}
+            transformations={"f_auto:image,q_auto,w_1000"}
             draggable={false}
           ></Image>
         </div>

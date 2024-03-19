@@ -7,6 +7,7 @@ export default function ClickyMedia({
   alt,
   link = { to: false, ariaLabel: false, target: "_blank" },
   hoverVid = { src: false, transformations: false },
+  ImgTransformations = "f_auto:image,q_auto,w_1500",
   ...other
 }) {
   const [scrolling, setScrolling] = useState(true);
@@ -66,6 +67,7 @@ export default function ClickyMedia({
             className={Styles.clickImg}
             src={src}
             alt={alt}
+            transformations={ImgTransformations}
             {...other}
           ></Image>
 
@@ -86,6 +88,7 @@ export default function ClickyMedia({
           src={src}
           alt={alt}
           className={Styles.clickImg}
+          transformations={ImgTransformations}
           {...other}
         ></Image>
         {hoverVidElement}

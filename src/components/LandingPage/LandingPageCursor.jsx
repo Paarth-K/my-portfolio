@@ -32,7 +32,7 @@ export default function LandingPageCursor() {
       }
     }
   }, []);
-
+  const imageTransformations = "f_auto:image,q_auto,w_250";
   return (
     <div>
       <a href="#projects">
@@ -40,6 +40,7 @@ export default function LandingPageCursor() {
           draggable={false}
           src="/home/React-icon"
           alt="React Icon"
+          transformations={imageTransformations}
           style={{
             transform: `translateX(${
               mouseModifX[0] * Math.sqrt(mousePos[0])
@@ -53,6 +54,7 @@ export default function LandingPageCursor() {
           draggable={false}
           src="/home/Vue-icon"
           alt="Vue Icon"
+          transformations={imageTransformations}
           style={{
             transform: `translateX(${
               -mouseModifX[1] * Math.sqrt(mousePos[0])
@@ -66,6 +68,7 @@ export default function LandingPageCursor() {
           draggable={false}
           src="/home/Astro-icon"
           alt="Astro Icon"
+          transformations={imageTransformations}
           style={{
             transform: `translateX(${
               mouseModifX[2] * -Math.sqrt(mousePos[1])
@@ -79,6 +82,7 @@ export default function LandingPageCursor() {
           draggable={false}
           src="/home/UAE-flag"
           alt="United Arab Emirates Flag"
+          transformations={imageTransformations}
           style={{
             transform: `translateX(${
               mouseModifX[3] * -Math.sqrt(mousePos[0])
@@ -92,6 +96,7 @@ export default function LandingPageCursor() {
           draggable={false}
           src="/home/SG-flag"
           alt="Singapore Flag"
+          transformations={imageTransformations}
           style={{
             transform: `translateX(${
               mouseModifX[4] * -Math.sqrt(mousePos[1])
@@ -105,6 +110,7 @@ export default function LandingPageCursor() {
         draggable={false}
         src="/home/INDIA-flag"
         alt="India Flag"
+        transformations={imageTransformations}
         style={{
           transform: `translateX(${
             mouseModifX[4] * -Math.sqrt(mousePos[0])
@@ -118,6 +124,7 @@ export default function LandingPageCursor() {
           draggable={false}
           src="/home/NLCS-Logo"
           alt="North London Collegiate School Dubai Logo"
+          transformations={imageTransformations}
           style={{
             transform: `translateX(${
               mouseModifX[5] * Math.sqrt(mousePos[1])
@@ -131,6 +138,7 @@ export default function LandingPageCursor() {
           draggable={false}
           src="/home/NAS-Logo"
           alt="Nord Anglia Education Singapore School Logo"
+          transformations={imageTransformations}
           style={{
             transform: `translateX(${
               mouseModifX[6] * -Math.sqrt(mousePos[1])
