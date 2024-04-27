@@ -14,14 +14,14 @@ export default function ClickyMedia({
   const [scrollPos, setScrollPos] = useState(false);
   const [pastScrollPos, setPastScrollPos] = useState(null);
   useEffect(() => {
-    setInterval(() => {
+    const scrollInt = setInterval(async () => {
       if (scrollPos != pastScrollPos) {
         setScrolling(false);
       } else {
         setPastScrollPos(scrollPos);
       }
     }, 500);
-    window.addEventListener("scroll", (event) => {
+    window.addEventListener("scroll", async (event) => {
       setScrolling(true);
       setScrollPos(window.scrollY);
     });
