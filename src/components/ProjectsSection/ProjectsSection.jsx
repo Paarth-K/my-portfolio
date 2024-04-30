@@ -16,7 +16,7 @@ export default function ProjectsSection() {
       imgalt: "DofE Website",
     },
     {
-      link: "https://calm-cliff-09c136403.5.azurestaticapps.net/",
+      link: "https://tachyons.eu/",
       desc: "I made this project with Astro and Preact, for my friend's Team based in Italy that is participating in the F1 in Schools Competition.",
       image: "/projects/tachyons_w_car",
       imgalt: "Tachyons F1 Website",
