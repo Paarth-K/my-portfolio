@@ -4,7 +4,7 @@ export default function ProjectsSection() {
   const projects = [
     {
       link: "https://internshipfinder.vercel.app",
-      desc: "This project is being made with a few of my friends and uses Next.js. It aims to help high school students find internships.",
+      desc: "This project uses Next.js. It aims to help high school students find internships.",
       image: "projects/internshipfinder_hdwip_preview",
       imgalt: "Internship Finder Website",
       isWIP: true,
@@ -16,10 +16,16 @@ export default function ProjectsSection() {
       imgalt: "DofE Website",
     },
     {
+      link: "https://calm-cliff-09c136403.5.azurestaticapps.net/",
+      desc: "I made this project with Astro and Preact, for my friend's Team based in Italy that is participating in the F1 in Schools Competition.",
+      image: "/projects/tachyons_w_car",
+      imgalt: "Tachyons F1 Website",
+    },
+    {
       link: "https://colab.research.google.com/drive/1rApehuk87KAJgl2RmoEk3X2eJc9l3BoW?usp=sharing",
       desc: "I made this Data Science Project with Python, for the Silicon Valley Competition by Byju's.",
       image: "/projects/SiliconVCNew",
-      imgalt: "SVC Byju's",
+      imgalt: "SVC Byju's Colab Notebook",
     },
   ];
   return (

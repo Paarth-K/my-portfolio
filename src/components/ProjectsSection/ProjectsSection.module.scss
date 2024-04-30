@@ -20,14 +20,16 @@
 }
 
 .projectContent {
-  display: grid;
+  display: flex;
   margin-top: 15px;
-  grid-template-rows: auto;
-  grid-template-columns: auto auto;
+
   column-gap: 50px !important;
   row-gap: 50px !important;
   justify-content: center;
   place-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 @media (max-width: 630px) {
