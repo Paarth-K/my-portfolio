@@ -143,8 +143,8 @@ const showBar = ref(false);
   }
   #paarth-logo {
     position: absolute;
-    left: 50vw;
-    transform: translateX(-65.5px);
+    left: 50%;
+    transform: translate(-50%, 0%);
   }
   .arrow {
     display: inline-block;

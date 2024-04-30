@@ -134,6 +134,10 @@ import {
     grid-template-columns: 75vw;
     grid-template-rows: auto auto auto;
     row-gap: 50px;
+    margin-left: 20px;
+  }
+  .copyrights {
+    margin-left: 20px;
   }
 }
 .navlink {
