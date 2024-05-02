@@ -155,7 +155,7 @@ import {
   color: var(--text-col);
 }
 .src {
-  color: grey;
+  color: rgb(86, 86, 86);
   text-decoration: none !important;
   font-size: 12pt;
   font-weight: 400;
