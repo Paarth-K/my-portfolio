@@ -11,7 +11,7 @@ export default function ProjectsSection() {
     },
     {
       link: "https://tachyons.eu/",
-      desc: "I made this project with Astro and Preact, for my friend's team based in Italy that is participating in the F1 in Schools Competition.",
+      desc: "I made this project with Astro (using React and Vue), for my friend's team based in Italy that is participating in the F1 in Schools Competition.",
       image: "/projects/tachyons_w_car",
       imgalt: "Tachyons F1 Website",
     },
