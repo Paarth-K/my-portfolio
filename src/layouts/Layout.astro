@@ -29,11 +29,17 @@ const { title } = Astro.props;
     />
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Paarth's Portfolio",
-        "alternateName": "Paarth's Portfolio",
-        "url": "https://www.paarthkukreja.com/"
+        "@context": "http://www.schema.org",
+        "@type": "person",
+        "name": "Paarth Kukreja",
+        "jobTitle": "Web Developer & Data Scientist",
+        "url": "https://www.paarthkukreja.com/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressCountry": "United Arab Emirates"
+        },
+        "email": "paarth@paarthkukreja.com"
       }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
