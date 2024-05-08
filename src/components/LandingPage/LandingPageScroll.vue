@@ -112,10 +112,10 @@ addEventListener("scroll", () => {
 
 .vertical-center {
   animation: fadeIn 1.2s;
-  margin: 0;
+  margin-left: 10px;
   position: fixed;
   top: 50lvh;
-  left: 50lvw;
+  left: 50vw;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 80vw;
@@ -123,7 +123,7 @@ addEventListener("scroll", () => {
 .title-lock {
   margin-top: 600px !important;
   position: absolute !important;
-  left: 50lvw;
+  left: 50vw;
 }
 
 .scroll-anim {
