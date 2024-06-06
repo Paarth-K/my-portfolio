@@ -7,9 +7,9 @@ export default function Image({
 }) {
   return (
     <img
-      loading={"lazy"}
+      loading={"eager"}
       draggable={draggable}
-      src={`https://wsrv.nl/?url=https://res.cloudinary.com/do5pfqw8l/image/upload/${transformations}/assets/${src}`}
+      src={`https://res.cloudinary.com/do5pfqw8l/image/upload/${transformations}/assets/${src}`}
       alt={alt}
       {...other}
     />
