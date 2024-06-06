@@ -7,7 +7,6 @@ export default function Image({
 }) {
   return (
     <img
-      loading={"eager"}
       draggable={draggable}
       src={`https://res.cloudinary.com/do5pfqw8l/image/upload/${transformations}/assets/${src}`}
       alt={alt}
