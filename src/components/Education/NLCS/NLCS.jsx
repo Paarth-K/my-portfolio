@@ -5,8 +5,7 @@ export default function NLCS() {
   useEffect(() => {
     setVideoObj({
       src: "/education/NLCS-Video",
-      transformations:
-        "c_crop,g_west,h_1080,w_1080,x_250,q_auto:best,f_auto:video",
+      transformations: "c_crop,g_west,h_1080,w_1080,x_250,q_auto,f_auto:video",
     });
   }, []);
   return (

@@ -7,7 +7,7 @@ export default function Experiences() {
     setVideoObj({
       src: "/experience/TH_Hover_vid_e4ih61",
       transformations:
-        "c_crop,g_west,h_710,w_710,x_470,y_40,q_auto:best,f_auto:video",
+        "c_crop,g_west,h_710,w_710,x_470,y_40,q_auto,f_auto:video",
     });
   }, []);
   return (

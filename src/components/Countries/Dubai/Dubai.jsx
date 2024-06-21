@@ -12,7 +12,7 @@ export default function Dubai() {
     setVideoObj({
       src: "/countries/Dubai-Video",
       transformations:
-        "c_crop,g_west,h_1800,w_1800,x_900,y_-35,q_auto:best,f_auto:video",
+        "c_crop,g_west,h_1800,w_1800,x_900,y_-35,q_auto,f_auto:video",
     });
   }, []);
   return (

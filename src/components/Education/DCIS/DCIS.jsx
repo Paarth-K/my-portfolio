@@ -5,8 +5,7 @@ export default function DCIS() {
   useEffect(() => {
     setVideoObj({
       src: "/education/DCIS-Video",
-      transformations:
-        "c_crop,g_west,h_720,w_720,x_200,q_auto:best,f_auto:video",
+      transformations: "c_crop,g_west,h_720,w_720,x_200,q_auto,f_auto:video",
     });
   }, []);
   return (
