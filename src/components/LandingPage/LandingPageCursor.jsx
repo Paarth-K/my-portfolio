@@ -1,4 +1,4 @@
-import Styles from "./LandingPageCursor.module.scss";
+import styles from "./LandingPageCursor.module.scss";
 import Image from "../Base/Image";
 import { useEffect, useState } from "preact/hooks";
 export default function LandingPageCursor() {
@@ -46,7 +46,7 @@ export default function LandingPageCursor() {
               mouseModifX[0] * Math.sqrt(mousePos[0])
             }px) translateY(${mouseModifY[0] * Math.sqrt(mousePos[1])}px)`,
           }}
-          className={`${Styles.movecursor} ${Styles.react}`}
+          className={`${styles.movecursor} ${styles.react}`}
         ></Image>
       </a>
       <a href="#projects">
@@ -60,7 +60,7 @@ export default function LandingPageCursor() {
               -mouseModifX[1] * Math.sqrt(mousePos[0])
             }px) translateY(${-mouseModifY[1] * Math.sqrt(mousePos[1])}px)`,
           }}
-          className={`${Styles.movecursor} ${Styles.vue}`}
+          className={`${styles.movecursor} ${styles.vue}`}
         ></Image>
       </a>
       <a href="#projects">
@@ -74,7 +74,7 @@ export default function LandingPageCursor() {
               mouseModifX[2] * -Math.sqrt(mousePos[1])
             }px) translateY(${mouseModifY[2] * -Math.sqrt(mousePos[0])}px)`,
           }}
-          className={`${Styles.movecursor} ${Styles.astro}`}
+          className={`${styles.movecursor} ${styles.astro}`}
         ></Image>
       </a>
       <a href="#dubai">
@@ -88,7 +88,7 @@ export default function LandingPageCursor() {
               mouseModifX[3] * -Math.sqrt(mousePos[0])
             }px) translateY(${mouseModifY[3] * Math.sqrt(mousePos[0])}px)`,
           }}
-          className={`${Styles.movecursor} ${Styles.uae}`}
+          className={`${styles.movecursor} ${styles.uae}`}
         ></Image>
       </a>
       <a href="#singapore">
@@ -102,7 +102,7 @@ export default function LandingPageCursor() {
               mouseModifX[4] * -Math.sqrt(mousePos[1])
             }px) translateY(${mouseModifY[4] * Math.sqrt(mousePos[1])}px)`,
           }}
-          className={`${Styles.movecursor} ${Styles.sg}`}
+          className={`${styles.movecursor} ${styles.sg}`}
         ></Image>
       </a>
       {/* <a href="#india"> */}
@@ -116,7 +116,7 @@ export default function LandingPageCursor() {
             mouseModifX[4] * -Math.sqrt(mousePos[0])
           }px) translateY(${mouseModifY[4] * Math.sqrt(mousePos[1])}px)`,
         }}
-        className={`${Styles.movecursor} ${Styles.india}`}
+        className={`${styles.movecursor} ${styles.india}`}
       ></Image>
       {/* </a> */}
       <a href="#nlcs">
@@ -130,7 +130,7 @@ export default function LandingPageCursor() {
               mouseModifX[5] * Math.sqrt(mousePos[1])
             }px) translateY(${mouseModifY[5] * Math.sqrt(mousePos[0])}px)`,
           }}
-          className={`${Styles.movecursor} ${Styles.nlcs}`}
+          className={`${styles.movecursor} ${styles.nlcs}`}
         ></Image>
       </a>
       <a href="#dcis">
@@ -144,7 +144,7 @@ export default function LandingPageCursor() {
               mouseModifX[6] * -Math.sqrt(mousePos[1])
             }px) translateY(${mouseModifY[6] * Math.sqrt(mousePos[1])}px)`,
           }}
-          className={`${Styles.movecursor} ${Styles.nas}`}
+          className={`${styles.movecursor} ${styles.nas}`}
         ></Image>
       </a>
     </div>

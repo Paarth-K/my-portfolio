@@ -1,4 +1,4 @@
-import Styles from "./ProjectsSection.module.scss";
+import styles from "./ProjectsSection.module.scss";
 import ProjectTile from "./ProjectTile";
 export default function ProjectsSection() {
   const projects = [
@@ -29,15 +29,15 @@ export default function ProjectsSection() {
     },
   ];
   return (
-    <div className={Styles.main} id="projects">
-      <div className={Styles.project}>
-        <div className={Styles.projectGrid}>
-          <div className={Styles.projectContent}>
+    <div className={styles.main} id="projects">
+      <div className={styles.project}>
+        <div className={styles.projectGrid}>
+          <div className={styles.projectContent}>
             {projects.map((project, index) => {
               return <ProjectTile project={project} key={index}></ProjectTile>;
             })}
           </div>
-          <div className={Styles.projectTitle}>
+          <div className={styles.projectTitle}>
             <span>My projects</span>
           </div>
         </div>

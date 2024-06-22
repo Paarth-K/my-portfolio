@@ -1,31 +1,31 @@
-import Styles from "./ProjectTile.module.scss";
+import styles from "./ProjectTile.module.scss";
 import Image from "../Base/Image";
 export default function ProjectTile({ project }) {
   return (
-    <div className={Styles.projectTile}>
+    <div className={styles.projectTile}>
       <a
-        className={Styles.projectLink}
+        className={styles.projectLink}
         href={project.link}
         target={project.linkIsBlank ? "_self" : "_blank"}
         rel="noopener"
         aria-label={project.imgalt}
       >
-        <div className={Styles.projectPictureContainer}>
+        <div className={styles.projectPictureContainer}>
           <Image
             alt={project.imgalt}
             src={project.image}
-            className={Styles.projectPicture}
+            className={styles.projectPicture}
             transformations={"f_auto:image,q_auto,w_1000"}
             draggable={false}
           ></Image>
         </div>
-        <div className={Styles.descriptionTextContainer}>
+        <div className={styles.descriptionTextContainer}>
           {project.isWIP ? (
-            <p className={Styles.descriptionWIP}>Work In Progress</p>
+            <p className={styles.descriptionWIP}>Work In Progress</p>
           ) : (
             ""
           )}
-          <p className={Styles.descriptionText}>{project.desc}</p>
+          <p className={styles.descriptionText}>{project.desc}</p>
         </div>
       </a>
     </div>

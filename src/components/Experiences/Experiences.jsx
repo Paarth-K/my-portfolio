@@ -1,4 +1,4 @@
-import Styles from "./Experiences.module.scss";
+import styles from "./Experiences.module.scss";
 import ClickyMedia from "../Base/ClickyMedia.jsx";
 import { useEffect, useState } from "preact/hooks";
 export default function Experiences() {
@@ -11,17 +11,17 @@ export default function Experiences() {
     });
   }, []);
   return (
-    <div className={Styles.main} id="experience">
-      <div className={Styles.ex}>
-        <div className={Styles.exGrid}>
-          <div className={Styles.exTitle}>
+    <div className={styles.main} id="experience">
+      <div className={styles.ex}>
+        <div className={styles.exGrid}>
+          <div className={styles.exTitle}>
             <span>My Experience</span>
           </div>
-          <div className={Styles.exContent}>
-            <div className={Styles.exContentItem}>
-              <p className={Styles.exDescTitle}>What I'm currently up to</p>
+          <div className={styles.exContent}>
+            <div className={styles.exContentItem}>
+              <p className={styles.exDescTitle}>What I'm currently up to</p>
 
-              <div className={Styles.currentImg}>
+              <div className={styles.currentImg}>
                 <ClickyMedia
                   src="/experience/thinkinghutswtext"
                   alt="Thinking huts logo"
@@ -33,7 +33,7 @@ export default function Experiences() {
                 />
               </div>
 
-              <p className={Styles.currentDesc}>
+              <p className={styles.currentDesc}>
                 I'm an intern at Thinking Huts! Which is a non-profit
                 organization in the US that 3D prints schools. My job is to help
                 integrate a CRM (HubSpot) into our workflow and see how it can

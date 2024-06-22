@@ -1,5 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
-import Styles from "./ClickyMedia.module.scss";
+import styles from "./ClickyMedia.module.scss";
 import Image from "./Image.jsx";
 import Video from "./Video.jsx";
 export default function ClickyMedia({
@@ -33,7 +33,7 @@ export default function ClickyMedia({
   let hoverVidElement;
   if (hoverVid.src) {
     hoverVidElement = (
-      <div className={`${Styles.clickVid} ${Styles.clickImg}`}>
+      <div className={`${styles.clickVid} ${styles.clickImg}`}>
         <Video
           playsInline
           loop
@@ -59,12 +59,12 @@ export default function ClickyMedia({
         <a
           href={link.to}
           target={link.target ? link.target : "_blank"}
-          className={`${Styles.clickImgContainer} ${
-            !scrolling ? Styles.clickImgContainerhover : ""
+          className={`${styles.clickImgContainer} ${
+            !scrolling ? styles.clickImgContainerhover : ""
           }`}
         >
           <Image
-            className={Styles.clickImg}
+            className={styles.clickImg}
             src={src}
             alt={alt}
             transformations={ImgTransformations}
@@ -73,26 +73,26 @@ export default function ClickyMedia({
 
           {hoverVidElement}
 
-          <div className={Styles.clickImgShadow}></div>
+          <div className={styles.clickImgShadow}></div>
         </a>
       );
     }
   } else {
     return (
       <div
-        className={`${Styles.clickImgContainer} ${
-          !scrolling ? Styles.clickImgContainerhover : ""
+        className={`${styles.clickImgContainer} ${
+          !scrolling ? styles.clickImgContainerhover : ""
         }`}
       >
         <Image
           src={src}
           alt={alt}
-          className={Styles.clickImg}
+          className={styles.clickImg}
           transformations={ImgTransformations}
           {...other}
         ></Image>
         {hoverVidElement}
-        <div className={Styles.clickImgShadow}></div>
+        <div className={styles.clickImgShadow}></div>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import Styles from "./AboutSection.module.scss";
+import styles from "./AboutSection.module.scss";
 import ClickyMedia from "../Base/ClickyMedia.jsx";
 import { useEffect, useState } from "preact/hooks";
 
@@ -24,25 +24,25 @@ export default function AboutSection(props) {
     },
   ];
   return (
-    <div className={Styles.main} id="about">
-      <div className={Styles.about}>
-        <div className={Styles.aboutGrid}>
-          <div className={Styles.aboutTitle}>
+    <div className={styles.main} id="about">
+      <div className={styles.about}>
+        <div className={styles.aboutGrid}>
+          <div className={styles.aboutTitle}>
             <span>A bit about me</span>
           </div>
-          <div className={Styles.aboutContent}>
-            <div className={Styles.aboutContentGrid}>
-              <div className={Styles.meDesc}>
+          <div className={styles.aboutContent}>
+            <div className={styles.aboutContentGrid}>
+              <div className={styles.meDesc}>
                 {aboutMeText.map((aboutMeData, index) => {
                   return (
                     <div key={index}>
-                      <p className={Styles.meDescTitle}>{aboutMeData.title}</p>
-                      <p className={Styles.meDescText}>{aboutMeData.text}</p>
+                      <p className={styles.meDescTitle}>{aboutMeData.title}</p>
+                      <p className={styles.meDescText}>{aboutMeData.text}</p>
                     </div>
                   );
                 })}
               </div>
-              <div className={Styles.meImgContainer}>
+              <div className={styles.meImgContainer}>
                 <ClickyMedia
                   alt="An image of Paarth Kukreja"
                   src="/about/me_pic"

@@ -1,4 +1,4 @@
-import Styles from "./Singapore.module.scss";
+import styles from "./Singapore.module.scss";
 import ClickyMedia from "../../Base/ClickyMedia";
 import { useEffect, useState } from "preact/hooks";
 export default function Singapore() {
@@ -11,17 +11,17 @@ export default function Singapore() {
     });
   }, []);
   return (
-    <div className={Styles.main} id="singapore">
-      <div className={Styles.ex}>
-        <div className={Styles.exGrid}>
-          <div className={Styles.exTitle}>
+    <div className={styles.main} id="singapore">
+      <div className={styles.ex}>
+        <div className={styles.exGrid}>
+          <div className={styles.exTitle}>
             <span>August 2023 - 2013</span>
           </div>
-          <div className={Styles.exContent}>
-            <div className={Styles.exContentItem}>
-              <p className={Styles.exDescTitle}>Singapore</p>
+          <div className={styles.exContent}>
+            <div className={styles.exContentItem}>
+              <p className={styles.exDescTitle}>Singapore</p>
 
-              <div className={Styles.currentImg}>
+              <div className={styles.currentImg}>
                 <ClickyMedia
                   src="/countries/Singapore-Image"
                   alt="Singapore Jewel Indoor Waterfall"
@@ -33,7 +33,7 @@ export default function Singapore() {
                 />
               </div>
 
-              <p className={Styles.currentDesc}>
+              <p className={styles.currentDesc}>
                 Having lived over 10 years of my life in Singapore, it has
                 become a huge part of my life. I have so many fond memories, so
                 many friends, and so much more I've left behind. Living on a

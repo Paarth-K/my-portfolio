@@ -1,4 +1,4 @@
-import Styles from "./Dubai.module.scss";
+import styles from "./Dubai.module.scss";
 import ClickyMedia from "../../Base/ClickyMedia";
 import { useEffect, useState } from "preact/hooks";
 export default function Dubai() {
@@ -16,17 +16,17 @@ export default function Dubai() {
     });
   }, []);
   return (
-    <div className={Styles.main} id="dubai">
-      <div className={Styles.ex}>
-        <div className={Styles.exGrid}>
-          <div className={Styles.exTitle}>
+    <div className={styles.main} id="dubai">
+      <div className={styles.ex}>
+        <div className={styles.exGrid}>
+          <div className={styles.exTitle}>
             <span>{`${month} ${year}`} - August 2023</span>
           </div>
-          <div className={Styles.exContent}>
-            <div className={Styles.exContentItem}>
-              <p className={Styles.exDescTitle}>Dubai</p>
+          <div className={styles.exContent}>
+            <div className={styles.exContentItem}>
+              <p className={styles.exDescTitle}>Dubai</p>
 
-              <div className={Styles.currentImg}>
+              <div className={styles.currentImg}>
                 <ClickyMedia
                   src="/countries/Dubai-Image"
                   alt="Dubai Burj Khalifa"
@@ -38,7 +38,7 @@ export default function Dubai() {
                 />
               </div>
 
-              <p className={Styles.currentDesc}>
+              <p className={styles.currentDesc}>
                 I've just recently moved to Dubai from Singapore. And I
                 absolutely love the place! I have joined a new school (NLCS
                 Dubai) and made a few new friends. I've explored some malls and
