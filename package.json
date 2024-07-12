@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=18.17.1"
+    "node": ">=20.14.0"
   },
   "scripts": {
     "dev": "astro dev --host",
@@ -17,7 +17,7 @@
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/vue": "^4.5.0",
     "@iconify-prerendered/vue-mdi": "^0.23.1689058119",
-    "astro": "^4.11.0",
+    "astro": "^4.11.5",
     "preact": "^10.18.1",
     "sass": "^1.69.3",
     "vue": "^3.3.4"
