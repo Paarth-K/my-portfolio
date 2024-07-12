@@ -38,7 +38,7 @@ export default function ProjectsSection() {
             })}
           </div>
           <div className={styles.projectTitle}>
-            <span>My projects</span>
+            <span>Projects</span>
           </div>
         </div>
       </div>

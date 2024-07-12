@@ -1,0 +1,46 @@
+---
+import OSN from "./OSN/OSN";
+import TH from "./TH/TH";
+---
+
+<div class="ExperienceGrid" id="experience">
+  <div class="ExperienceTitle">
+    <span>Experience</span>
+  </div>
+  <div class="ExperienceInfo">
+    <OSN client:visible />
+    <TH client:visible />
+  </div>
+</div>
+
+<style lang="scss">
+  .ExperienceGrid {
+    display: grid;
+    grid-template-columns: 7vw auto;
+    margin-left: 8vw;
+    margin-right: 8vw;
+  }
+  .ExperienceTitle {
+    display: inline-grid;
+    writing-mode: vertical-rl;
+    font-size: 6vw;
+    color: rgb(42, 42, 42);
+    margin: 0px 0px;
+    place-items: center;
+    top: 30%;
+    position: sticky;
+    align-self: flex-start;
+  }
+  @media (max-width: 630px) {
+    .ExperienceTitle {
+      top: 45%;
+      transform: translateX(-4vw);
+    }
+    .ExperienceInfo {
+      transform: translateX(5%);
+    }
+    .ExperienceGrid {
+      margin-right: 0px;
+    }
+  }
+</style>
