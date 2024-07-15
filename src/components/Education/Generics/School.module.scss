@@ -61,8 +61,13 @@
     padding-top: 100px; //compensating for the TitleSection
   }
   .schoolTitle {
-    position: sticky;
+    display: inline-grid;
+    writing-mode: vertical-rl;
+    color: rgb(42, 42, 42);
+    margin: 0px 0px;
+    place-items: center;
     top: 50%;
+    position: sticky;
     align-self: flex-start;
     font-size: 17px;
     transform: translateX(-3vw);
