@@ -8,9 +8,9 @@ export default function Image({
   return (
     <img
       decoding="async"
-      loading="lazy"
+      // loading="lazy"
       draggable={draggable}
-      src={`//wsrv.nl/?url=https://res.cloudinary.com/do5pfqw8l/image/upload/${transformations}/assets/${src}`}
+      src={`//wsrv.nl/?url=https://res.cloudinary.com/do5pfqw8l/image/upload/${transformations}/assets/${src}&il&af`}
       alt={alt}
       {...other}
     />
