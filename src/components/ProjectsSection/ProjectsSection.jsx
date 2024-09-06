@@ -3,7 +3,7 @@ import ProjectTile from "./ProjectTile";
 export default function ProjectsSection() {
   const projects = [
     {
-      link: "https://nlcsopp.paarthkukreja.com",
+      link: "https://www.nlcsopp.org/",
       desc: "This project uses Next.js. It aims to help high school students in my school (NLCS Dubai) to find internships and opportunities they can participate in.",
       image: "projects/nlcs_opp_wip",
       imgalt: "NLCS Opportunities Website",
@@ -16,7 +16,7 @@ export default function ProjectsSection() {
       imgalt: "Tachyons F1 Website",
     },
     {
-      link: "https://dofe.paarthkukreja.com",
+      link: "https://dofe.paarthkukreja.com/",
       desc: "I made this project with Nuxt3, for the Skills section of the Duke of Edinburgh Award.",
       image: "/projects/dofeweb_dark",
       imgalt: "DofE Website",
