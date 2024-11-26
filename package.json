@@ -17,7 +17,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/vue": "^4.5.3",
     "@iconify-prerendered/vue-mdi": "^0.23.1689058119",
-    "astro": "^4.16.14",
+    "astro": "^4.16.15",
     "preact": "^10.18.1",
     "sass": "^1.69.3",
     "vue": "^3.3.4"
