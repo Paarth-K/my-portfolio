@@ -8,13 +8,4 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://www.paarthkukreja.com",
   integrations: [preact(), vue(), sitemap()],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: "modern-compiler",
-        },
-      },
-    },
-  },
 });
