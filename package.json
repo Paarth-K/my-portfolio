@@ -13,11 +13,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^4.0.0",
+    "@astrojs/preact": "^4.0.1",
     "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/vue": "^5.0.2",
+    "@astrojs/vue": "^5.0.3",
     "@iconify-prerendered/vue-mdi": "^0.23.1689058119",
-    "astro": "^5.0.9",
+    "astro": "^5.1.1",
     "preact": "^10.18.1",
     "sass": "^1.69.3",
     "vue": "^3.3.4"
