@@ -24,7 +24,7 @@ export default function TH() {
       textObjectList={[
         {
           title: "About the Non-Profit",
-          text: "Thinking Huts is an American non-profit organization that uses innovative 3D printing technology to construct schools in lower-income countries, closing the global education gap. Their mission also includes creating local jobs and promoting sustainable construction methods.",
+          text: "Thinking Huts is an American non-profit organisation that uses innovative 3D printing technology to construct schools in lower-income countries, closing the global education gap. Their mission also includes creating local jobs and promoting sustainable construction methods.",
         },
         {
           title: "What I'm Doing There",

@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="footergriditem">
-          <p class="footertitle">Want a PDF?</p>
+          <p class="footertitle">Still want a PDF?</p>
           <div>
             <nav-link
               aria-label="View PDF Resume"

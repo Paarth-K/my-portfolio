@@ -39,11 +39,17 @@ export default function Dubai() {
               </div>
 
               <p className={styles.currentDesc}>
-                I've just recently moved to Dubai from Singapore. And I
-                absolutely love the place! I have joined a new school (NLCS
-                Dubai) and made a few new friends. I've explored some malls and
-                the Burj Khalifa, but there's still much more to see. I can't
-                wait to start this new chapter in my life!
+                Moving to Dubai from Singapore has been one of the toughest yet
+                best experiences in my life. Living in a city that is so
+                diverse, so modern, and just as safe as Singapore has been an
+                amazing experience. Dubai is a city that has a lot to offer,
+                from the world's tallest building, the Burj Khalifa, to the
+                world's largest mall, the Dubai Mall. The city is also home to
+                some of the best restaurants, hotels, and shopping centres in
+                the world. The people in Dubai are also very friendly and
+                welcoming, which has made my transition to the city much easier.
+                I'm very happy to be living in Dubai and I'm excited to see what
+                the future holds for me.
               </p>
             </div>
           </div>

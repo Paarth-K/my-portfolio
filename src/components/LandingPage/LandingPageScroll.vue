@@ -16,9 +16,11 @@
           <span :class="showMyName ? '' : 'highlight2'">Paarth</span>
         </p>
         <p key="name" v-if="showMyName" class="interactive-text">
-          <span :class="showMyName ? 'highlight1' : ''"> Welcome </span>
-          to my
-          <span :class="showMyName ? 'highlight2' : ''">Portfolio</span>
+          <span :class="showMyName ? 'highlight1' : ''"> Let's </span>
+          get to know
+          <span :class="showMyName ? 'highlight2' : ''">{{
+            personName ? "each other" : "me"
+          }}</span>
         </p>
       </TransitionGroup>
     </div>

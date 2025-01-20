@@ -22,11 +22,11 @@ export default function NLCS() {
       textObjectList={[
         {
           title: "About the School",
-          text: "North London Collegiate School (NLCS) is an International British School with ~1100 students, it is part of the North London Collegiate School Family of Schools. Teaching the MYP Curriculum until Grade 10, and IB DP post Grade 10.",
+          text: "North London Collegiate School (NLCS) is an international British school in Dubai with ~1100 students. It is part of the North London Collegiate School Family of Schools. Teaching the MYP curriculum until Grade 10, and IB DP post Grade 10.",
         },
         {
           title: "My Experience",
-          text: "Being new to NLCS, I have no complaints. Although adapting to the new MYP Curriculum from IGCSE has been slightly challenging, I've been persevering through the challenges anyway. I have made a couple of great friends, and enjoy the enriching atmosphere of the school. I study subjects like Design, Geography, French, All Sciences, Maths and English. I hope my experience will be as educating and enjoying as my last school!",
+          text: "NLCS is by far the best school I've been to. Being reputed as one of the best schools in the region, it definitely holds up to its name as an NLCS School. I've made many great friends and enjoy the enriching and challenging atmosphere of the school. I'm currently pursuing the   International Baccalaureate Diploma and have taken Mathematics (AA HL), Computer Science (HL), Physics (HL), French (Ab Initio), Economics (SL), and English (Language & Literature SL) as my subject choices. Before Sixth Form,  adapting to the new IB MYP Curriculum from IGCSE had been slightly challenging, but I've managed to persevere through that and perform well during the examinations.",
         },
       ]}
     ></School>

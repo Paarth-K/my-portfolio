@@ -4,7 +4,7 @@ export default function ProjectsSection() {
   const projects = [
     {
       link: "https://www.nlcsopp.org/",
-      desc: "This project uses Next.js. It aims to help high school students in my school (NLCS Dubai) to find internships and opportunities they can participate in.",
+      desc: "This project uses Next.js. It aims to help high school students in my school (NLCS Dubai) to find internships and opportunities that they can participate in.",
       image: "projects/nlcs_opp_wip",
       imgalt: "NLCS Opportunities Website",
       isWIP: true,

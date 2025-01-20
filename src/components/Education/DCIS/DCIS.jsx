@@ -22,11 +22,11 @@ export default function DCIS() {
       textObjectList={[
         {
           title: "About the School",
-          text: "Dover Court International School (DCIS) is an International British School with ~1800 students, it is part of the Nord Anglia Family of Schools. Teaching the iGCSE Curriculum until Year 11, and IB DP post Year 11.",
+          text: "Dover Court International School (DCIS) is an international British school in Singapore with ~1800 students. It is part of the Nord Anglia Family of Schools. Teaching the iGCSE curriculum until Year 11, and IB DP post Year 11.",
         },
         {
           title: "My Experience",
-          text: "From Year 2 to Year 10, I've been in DCIS and my time there has been amazing! Over the years, I made many friends and studied subjects such as Computer Science, Business Studies, Maths, English, Design and Technology, All Sciences, and Global Citizenship. Unfortunately, I couldn't finish Year 11 in this school as we had to relocate to Dubai. Nonetheless, this school has given me vital knowledge and helped me become who I am today!",
+          text: "From Year 2 to Year 10, I've been in DCIS, and my time there has been amazing! Over the years, I made many friends and studied subjects such as Computer Science, Business Studies, Maths, English, Design and Technology, All Sciences, and Global Citizenship. Unfortunately, I couldn't finish Year 11 in this school as we had to relocate to Dubai. Nonetheless, this school has given me vital knowledge and helped me become who I am today!",
         },
       ]}
     ></School>
