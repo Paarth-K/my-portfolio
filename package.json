@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.4",
   "dependencies": {
     "@astrojs/preact": "^4.0.5",
     "@astrojs/sitemap": "^3.2.1",
