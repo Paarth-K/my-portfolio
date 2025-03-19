@@ -5,9 +5,9 @@
     :href="to"
   >
     <div class="nav-link-container">
-      <button>
+      <div class="nav-link">
         <slot />
-      </button>
+      </div>
     </div>
   </a>
 </template>
@@ -39,16 +39,15 @@ export default {
   }
 }
 
-.nav-link-container:hover button {
+.nav-link-container:hover .nav-link {
   background-color: var(--background);
 }
-button {
+.nav-link {
   /* filter: invert(); */
   display: inline-block;
   padding: 14px;
   padding-top: 15px !important;
-  width: 100%;
-  height: 100%;
+  font-size: 10pt;
   border-radius: 30px;
   border: none;
   text-transform: uppercase;
