@@ -10,7 +10,7 @@ export default function Image({
       decoding="async"
       // loading="lazy"
       draggable={draggable}
-      src={`//wsrv.nl/?url=https://res.cloudinary.com/dgo87obt6/image/upload/${transformations}/portfolio-assets/${src}&il&af`}
+      src={`https://cdn.paarthkukreja.com/?url=https://res.cloudinary.com/dgo87obt6/image/upload/${transformations}/portfolio-assets/${src}&il&af`}
       alt={alt}
       {...other}
     />

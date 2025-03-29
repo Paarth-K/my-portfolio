@@ -5,19 +5,19 @@
 # How to build
 
 ```
-npm install
+pnpm install
 ```
 
 ```
-npm run build
+pnpm run build
 ```
 
 # How to preview
 
 ```
-npm install
+pnpm install
 ```
 
 ```
-npm run dev
+pnpm run dev
 ```
