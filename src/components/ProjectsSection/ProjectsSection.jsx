@@ -5,9 +5,8 @@ export default function ProjectsSection() {
     {
       link: "https://www.nlcsopp.org/",
       desc: "This project uses Next.js. It aims to help high school students in my school (NLCS Dubai) to find internships and opportunities that they can participate in.",
-      image: "projects/nlcs_opp_wip",
+      image: "projects/nlcsopp-org",
       imgalt: "NLCS Opportunities Website",
-      isWIP: true,
     },
     {
       link: "https://tachyons.eu/",
