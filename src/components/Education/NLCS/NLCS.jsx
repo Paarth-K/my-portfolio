@@ -22,7 +22,7 @@ export default function NLCS() {
       textObjectList={[
         {
           title: "About the School",
-          text: "North London Collegiate School (NLCS) is an international British school in Dubai with ~1100 students. It is part of the North London Collegiate School Family of Schools. Teaching the MYP curriculum until Grade 10, and IB DP post Grade 10.",
+          text: "North London Collegiate School (NLCS) is an international British school in Dubai with ~1800 students. It is part of the North London Collegiate School Family of Schools. Teaching the MYP curriculum until Grade 10, and IB DP post Grade 10.",
         },
         {
           title: "My Experience",
