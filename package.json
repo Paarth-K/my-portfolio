@@ -12,20 +12,20 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.12.3",
   "dependencies": {
-    "@astrojs/cloudflare": "^12.5.4",
+    "@astrojs/cloudflare": "^12.6.0",
     "@astrojs/preact": "^4.1.0",
     "@astrojs/sitemap": "^3.4.1",
     "@astrojs/vue": "^5.1.0",
     "@iconify-prerendered/vue-mdi": "^0.28.1737398331",
-    "astro": "^5.9.2",
+    "astro": "^5.10.1",
     "preact": "^10.26.9",
     "sass": "^1.89.2",
-    "vue": "^3.5.16"
+    "vue": "^3.5.17"
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.0",
     "prettier-plugin-astro": "^0.14.1"
   },
   "pnpm": {
