@@ -12,17 +12,17 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.3",
+    "@astrojs/cloudflare": "^12.6.5",
     "@astrojs/preact": "^4.1.0",
-    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/sitemap": "^3.5.1",
     "@astrojs/vue": "^5.1.0",
     "@iconify-prerendered/vue-mdi": "^0.28.1737398331",
-    "astro": "^5.12.9",
-    "preact": "^10.27.0",
+    "astro": "^5.13.3",
+    "preact": "^10.27.1",
     "sass": "^1.90.0",
-    "vue": "^3.5.18"
+    "vue": "^3.5.19"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
