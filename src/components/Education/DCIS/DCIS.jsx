@@ -17,7 +17,7 @@ export default function DCIS() {
         ariaLabel: "Dover Court International School",
       }}
       hoverImageAlt={"Dover Court International School"}
-      hoverImageSrc={"/education/DCIS-Image"}
+      hoverImageSrc={"/education/DCIS-Image-new"}
       hoverVidObj={videoObj}
       textObjectList={[
         {
