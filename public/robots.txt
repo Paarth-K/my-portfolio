@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://www.paarthkukreja.com/sitemap-index.xml
+Sitemap: https://www.paarthk.dev/sitemap-index.xml

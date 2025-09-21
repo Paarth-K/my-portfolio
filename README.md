@@ -1,6 +1,6 @@
 # Check it out
 
-[www.paarthkukreja.com](https://www.paarthkukreja.com)
+[www.paarthk.dev](https://www.paarthk.dev)
 
 # How to build
 
