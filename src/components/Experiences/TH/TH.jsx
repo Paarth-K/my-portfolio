@@ -5,7 +5,8 @@ export default function TH() {
   useEffect(() => {
     setVideoObj({
       src: "/experience/th/th_hover_vid",
-      transformations: "c_crop,g_west,h_710,w_710,x_470,y_40,f_auto:video",
+      transformations:
+        "c_crop,g_west,h_710,w_710,x_470,y_40,e_volume:mute,f_auto:video",
     });
   }, []);
   return (

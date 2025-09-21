@@ -7,7 +7,7 @@ export default function Singapore() {
     setVideoObj({
       src: "/countries/Singapore-Video",
       transformations:
-        "c_crop,g_west,h_2000,w_2000,x_870,y_10,q_auto,f_auto:video",
+        "c_crop,g_west,h_2000,w_2000,x_870,y_10,q_auto,e_volume:mute,f_auto:video",
     });
   }, []);
   return (

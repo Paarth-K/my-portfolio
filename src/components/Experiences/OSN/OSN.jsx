@@ -5,7 +5,7 @@ export default function DCIS() {
   useEffect(() => {
     setVideoObj({
       src: "/experience/osn/osn_trailer_edited",
-      transformations: "q_auto:best,f_auto:video",
+      transformations: "q_auto:best,e_volume:mute,f_auto:video",
     });
   }, []);
   return (
