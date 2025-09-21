@@ -4,8 +4,8 @@ export default function DCIS() {
   const [videoObj, setVideoObj] = useState(false);
   useEffect(() => {
     setVideoObj({
-      src: "/experience/osn/osn_trailer",
-      transformations: "c_crop,g_west,h_1080,w_1080,q_auto,f_auto:video",
+      src: "/experience/osn/osn_trailer_edited",
+      transformations: "q_auto:best,f_auto:video",
     });
   }, []);
   return (
