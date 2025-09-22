@@ -22,7 +22,7 @@ export default function DCIS() {
       textObjectList={[
         {
           title: "About the Company",
-          text: "Orbit Showtime Network (OSN) is a Dubai-based satellite TV company that serves the Middle East and North Africa region. They offer a wide range of content, including trending series, award-winning movies, documentaries, and more. You can watch live TV and stream exclusive content on OSN+, which features offerings from giants like HBO, Paramount+, Marvel, and OSN Originals.",
+          text: "Orbit Showtime Network (OSN) is a Dubai-based TV company that serves the Middle East and North Africa region. They offer a wide range of content on their streaming platform (OSN+) including trending series, award-winning movies, and documentaries, from giants like HBO, Paramount+, Marvel, and OSN Originals.",
         },
         {
           title: "What I'm Doing There",
