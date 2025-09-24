@@ -3,6 +3,13 @@ import ClickyMedia from "../Base/ClickyMedia.jsx";
 import { useEffect, useState } from "preact/hooks";
 
 export default function AboutSection(props) {
+  const [videoObj, setVideoObj] = useState(false);
+  useEffect(() => {
+    setVideoObj({
+      src: "/about/about_me_hover_vid",
+      transformations: "e_volume:mute,f_auto:video,q_auto:best",
+    });
+  }, []);
   function calculate_age(dob) {
     var diff_ms = Date.now() - dob.getTime();
     var age_dt = new Date(diff_ms);
@@ -46,6 +53,7 @@ export default function AboutSection(props) {
                 <ClickyMedia
                   alt="An image of Paarth Kukreja"
                   src="/about/me_pic_2025"
+                  hoverVid={videoObj}
                 ></ClickyMedia>
               </div>
             </div>

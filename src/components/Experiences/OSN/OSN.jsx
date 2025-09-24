@@ -26,7 +26,7 @@ export default function DCIS() {
         },
         {
           title: "What I'm Doing There",
-          text: "During my time at OSN, I helped make an Image Tagger that takes an image of the poster of a TV show or a movie and identifies relevant tags for it, such as genre, media type, people, and objects from the poster. This was done by using a pre-trained AI model from OpenAI (GPT-4o).",
+          text: "During my time at OSN, I made an Image Tagger that takes an image of the poster of a TV show or a movie and identifies relevant tags for it, such as genre, media type, people, and objects from the poster. This was done by using a pre-trained AI model from OpenAI (GPT-4o).",
         },
       ]}
     ></Experience>

@@ -20,7 +20,7 @@ export default function ClickyMedia({
       } else {
         setPastScrollPos(scrollPos);
       }
-    }, 500);
+    }, 550);
     window.addEventListener("scroll", async (event) => {
       setScrolling(true);
       setScrollPos(window.scrollY);
