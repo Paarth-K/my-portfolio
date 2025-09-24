@@ -26,7 +26,7 @@
               to="/pdf"
               onclick="dataLayer.push({ event: 'footer_link_click', 'footer_link_click': 'pdf resume' })"
             >
-              View PDF Résumé</nav-link
+              View PDF CV</nav-link
             >
           </div>
         </div>
