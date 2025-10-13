@@ -20,9 +20,6 @@ importers:
       '@astrojs/vue':
         specifier: ^5.1.1
         version: 5.1.1(@types/node@24.7.2)(astro@5.14.4(@types/node@24.7.2)(rollup@4.52.4)(sass@1.93.2)(typescript@5.8.2))(rollup@4.52.4)(sass@1.93.2)(vue@3.5.22(typescript@5.8.2))
-      '@iconify-prerendered/vue-mdi':
-        specifier: ^0.28.1737398331
-        version: 0.28.1737398331(vue@3.5.22(typescript@5.8.2))
       astro:
         specifier: ^5.14.4
         version: 5.14.4(@types/node@24.7.2)(rollup@4.52.4)(sass@1.93.2)(typescript@5.8.2)
@@ -603,11 +600,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@iconify-prerendered/vue-mdi@0.28.1737398331':
-    resolution: {integrity: sha512-VzBgRTfdhrUZeuaImPGX+l+Eb94qEQSSLGKKHs6BxQXJV9jPoDGqgQkzsUbZHThC81WQ1aY2EvlhmTgGq9yKEA==}
-    peerDependencies:
-      vue: ^3.0.0
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -3240,10 +3232,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.4':
     optional: true
-
-  '@iconify-prerendered/vue-mdi@0.28.1737398331(vue@3.5.22(typescript@5.8.2))':
-    dependencies:
-      vue: 3.5.22(typescript@5.8.2)
 
   '@img/colour@1.0.0':
     optional: true

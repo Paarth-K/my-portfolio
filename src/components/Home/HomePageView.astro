@@ -5,7 +5,7 @@ import ProjectsSection from "../ProjectsSection/ProjectsSection.jsx";
 import Experiences from "../Experiences/Experiences.astro";
 import Countries from "../Countries/Countries.astro";
 import Education from "../Education/Education.astro";
-import Footer from "../Footer/Footer.vue";
+import Footer from "../Footer/Footer.jsx";
 ---
 
 <div>
@@ -23,5 +23,5 @@ import Footer from "../Footer/Footer.vue";
 
   <Education />
 
-  <Footer />
+  <Footer client:load />
 </div>

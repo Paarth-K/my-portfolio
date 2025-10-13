@@ -1,5 +1,5 @@
 ---
-import NavBar from "../components/Nav/Bar.vue";
+import NavBar from "../components/Nav/Bar.jsx";
 export interface Props {
   title: string;
 }
@@ -118,7 +118,7 @@ const { title } = Astro.props;
     >
     <!-- End Google Tag Manager (noscript) -->
     <div>
-      <NavBar />
+      <NavBar client:load />
     </div>
     <slot />
   </body>
