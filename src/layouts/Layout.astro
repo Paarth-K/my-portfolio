@@ -166,15 +166,11 @@ const { title } = Astro.props;
     /* Comfortable line length for running copy */
     --measure: 64ch;
 
-    /* Rendered height of the fixed bar; drives scroll-padding-top so anchor
-       targets do not land underneath it. */
-    --nav-h: 82px;
-  }
-
-  @media (max-width: 735px) {
-    :root {
-      --nav-h: 69px;
-    }
+    /* Rendered height of the fixed bar (border-box). Drives scroll-padding-top
+       so anchor targets do not land underneath it. Kept just above the
+       wordmark's own height — the landing marks start at 90px, and the bar
+       plus its fade must stay clear of them. */
+    --nav-h: 68px;
   }
 
   /* On phones the rails are the visual frame, so spend less on the outer

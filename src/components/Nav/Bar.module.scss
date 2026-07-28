@@ -8,6 +8,10 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  // Nothing sets border-box globally here, so without this the padding is
+  // added on top of --nav-h and the bar renders taller than the token says —
+  // far enough down to cover the drifting marks below it.
+  box-sizing: border-box;
   min-height: var(--nav-h);
   padding: 7px 15px 7px 10px;
 
