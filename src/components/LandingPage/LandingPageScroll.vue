@@ -30,7 +30,7 @@
 
 <script setup>
 import ScrollPromptAnim from "../Base/ScrollPromptAnim.vue";
-import { onMounted, ref } from "vue";
+import { onMounted, onBeforeUnmount, ref } from "vue";
 
 const showMyName = ref(false);
 const lockPos = ref(false);
@@ -45,24 +45,18 @@ function getParameterByName(name) {
 }
 const personName = ref(getParameterByName("to"));
 
+function checkPos() {
+  showMyName.value = window.scrollY >= 250;
+  lockPos.value = window.scrollY >= 600;
+}
+
 onMounted(() => {
   checkPos();
+  window.addEventListener("scroll", checkPos, { passive: true });
 });
 
-function checkPos() {
-  if (window.scrollY >= 250) {
-    showMyName.value = true;
-  } else {
-    showMyName.value = false;
-  }
-  if (window.scrollY >= 600) {
-    lockPos.value = true;
-  } else {
-    lockPos.value = false;
-  }
-}
-addEventListener("scroll", () => {
-  checkPos();
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", checkPos);
 });
 </script>
 
@@ -70,49 +64,58 @@ addEventListener("scroll", () => {
 .title-card {
   text-align: center;
   cursor: default;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.v-enter-active,
-.v-leave-active {
+/* Qualified with `.interactive-text`: an unqualified `.v-*` rule here also
+   matches the root element of any child component, because scoped styles
+   apply the parent's scope id to it. That is how this block used to fling
+   the scroll hint to `top: 85%` as it left. */
+.interactive-text.v-enter-active,
+.interactive-text.v-leave-active {
   transition: opacity 0.5s ease;
 }
 
-.v-enter-from,
-.v-leave-to {
+.interactive-text.v-enter-from,
+.interactive-text.v-leave-to {
   opacity: 0;
 }
 
-.v-leave-active {
+.interactive-text.v-leave-active {
   position: absolute;
   margin: 0;
   top: 85%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 80vw;
 }
 
 .interactive-text {
-  font-size: 200%;
+  font-size: var(--type-hero);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  /* `all` is load-bearing: TransitionGroup's FLIP move animation rides this
+     transition, and it is what carries the greeting upwards as the second
+     line arrives. Narrowing it stops the line from gliding. */
   transition: all 0.4s;
 }
 
 .vertical-center {
   animation: fadeIn 1.2s;
-  margin-left: 10px;
   position: fixed;
   top: 50lvh;
   left: 50vw;
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 80vw;
 }
+
 .title-lock {
-  margin-top: 600px !important;
-  position: absolute !important;
+  /* Matches the fixed position exactly at the 600px handover, so the title
+     hands off from viewport-anchored to page-anchored without a jump. */
+  margin-top: 600px;
+  position: absolute;
   left: 50vw;
 }
 
@@ -129,9 +132,9 @@ addEventListener("scroll", () => {
 
 .highlight1:hover,
 .highlight2:hover {
-  transition: color 0.2s;
   color: var(--text-col);
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -140,12 +143,14 @@ addEventListener("scroll", () => {
     opacity: 1;
   }
 }
+
 @media (max-width: 610px) {
   .scroll-anim {
-    background-color: rgba(var(--background-rbg), 0.8);
+    padding: 10px 6px;
+    background-color: rgba(var(--background-rbg), 0.85);
     backdrop-filter: blur(5px);
-    border-radius: 10px;
-    box-shadow: 1px 2px 3px rgba(var(--background-rbg), 1);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 14px;
   }
 }
 </style>

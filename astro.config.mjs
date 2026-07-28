@@ -7,5 +7,13 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.paarthk.dev",
-  integrations: [preact(), vue(), sitemap()],
+  integrations: [
+    preact(),
+    vue(),
+    // /source and /pdf are redirect stubs, not destinations.
+    sitemap({
+      filter: (page) =>
+        !["/source/", "/pdf/"].includes(new URL(page).pathname),
+    }),
+  ],
 });

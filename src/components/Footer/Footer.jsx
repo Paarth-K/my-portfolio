@@ -2,9 +2,9 @@ import NavLink from "../Nav/Link";
 import styles from "./Footer.module.scss";
 
 // Simple SVG components for social icons
-const IconGithub = ({ style, className }) => (
+const IconGithub = ({ className }) => (
   <svg
-    style={style}
+    aria-hidden="true"
     className={className}
     width="24"
     height="24"
@@ -15,9 +15,9 @@ const IconGithub = ({ style, className }) => (
   </svg>
 );
 
-const IconInstagram = ({ style, className }) => (
+const IconInstagram = ({ className }) => (
   <svg
-    style={style}
+    aria-hidden="true"
     className={className}
     width="24"
     height="24"
@@ -28,9 +28,9 @@ const IconInstagram = ({ style, className }) => (
   </svg>
 );
 
-const IconLinkedin = ({ style, className }) => (
+const IconLinkedin = ({ className }) => (
   <svg
-    style={style}
+    aria-hidden="true"
     className={className}
     width="24"
     height="24"
@@ -113,39 +113,36 @@ export default function Footer() {
           </div>
           <div className={styles.footergriditem}>
             <p className={styles.footertitle}>My Socials</p>
-            <div>
+            <div className={styles.socialrow}>
               <a
                 aria-label="Link to Github Profile"
                 target="_blank"
+                rel="noopener"
+                className={styles.sociallink}
                 href="https://github.com/Paarth-K"
                 onClick={() => handleSocialClick("github")}
               >
-                <IconGithub
-                  style={{ color: "#171515" }}
-                  className={styles.socialicon}
-                />
+                <IconGithub className={styles.socialicon} />
               </a>
               <a
                 aria-label="Link to Instagram Profile"
                 target="_blank"
+                rel="noopener"
+                className={styles.sociallink}
                 href="https://www.instagram.com/paarth.kukreja/"
                 onClick={() => handleSocialClick("instagram")}
               >
-                <IconInstagram
-                  style={{ color: "var(--text-col)" }}
-                  className={styles.socialicon}
-                />
+                <IconInstagram className={styles.socialicon} />
               </a>
               <a
                 aria-label="Link to LinkedIn Profile"
                 target="_blank"
+                rel="noopener"
+                className={styles.sociallink}
                 href="https://linkedin.com/in/paarth-kukreja/"
                 onClick={() => handleSocialClick("linkedin")}
               >
-                <IconLinkedin
-                  style={{ color: "var(--text-col)" }}
-                  className={styles.socialicon}
-                />
+                <IconLinkedin className={styles.socialicon} />
               </a>
             </div>
           </div>
@@ -153,13 +150,13 @@ export default function Footer() {
       </div>
       <div className={styles.copyrights}>
         <a
-          aria-label="View the source code for this site"
           className={styles.src}
           href="/source"
           target="_blank"
+          rel="noopener"
           onClick={handleSourceClick}
         >
-          <span>View the source code for this site</span>
+          View the source code for this site
         </a>
       </div>
     </footer>

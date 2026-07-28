@@ -1,42 +1,52 @@
 .main {
-  // margin: 0 8vw;
-  padding-top: 100px; //compensating for the TitleSection
+  padding-top: var(--gap-section);
 }
+
 .experience {
-  padding-bottom: 70px;
+  padding-bottom: var(--gap-stack);
 }
+
 .experienceGrid {
   display: grid;
-  grid-template-columns: auto 40px;
-  // column-gap: 60px;
+  // Same track as the section rail, so "Thinking Huts" and "Countries" sit
+  // on one axis even though the glyphs are different sizes.
+  grid-template-columns: minmax(0, auto) min-content;
+  column-gap: var(--rail-gap);
 }
+
 .experienceTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
-  font-size: 3vw;
-  color: rgb(42, 42, 42);
-  margin: 0px 0px;
+  // Hugs the em so rails of different sizes share one edge.
+  line-height: 1;
+  font-size: var(--type-rail-sub);
+  color: var(--ink-strong);
   place-items: center;
-  margin: auto;
-  // margin-right: 5vw;
-  // margin-left: 3vw;
-  transform: translateX(-2.5vw);
+  // `top` arrives as an inline style from the component; it was previously
+  // inert on desktop because sticky was only declared in the mobile query.
+  position: sticky;
+  align-self: flex-start;
 }
+
 .experienceContent {
   display: inline-grid;
 }
 
 .experienceContentGrid {
   display: grid;
-  grid-template-columns: auto 35vw;
-  column-gap: 40px;
-  color: #6a738f;
-  margin-left: 2vw;
+  // The copy takes what is left rather than a fixed 35vw, so widening the
+  // rails can never push the pair out of its track.
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  column-gap: clamp(1.5rem, 2.6vw, 3rem);
+  align-items: center;
 }
+
 .experienceDesc {
   display: inline-grid;
   margin: auto;
+  max-width: var(--measure);
 }
+
 .experienceImgContainer {
   display: inline-grid;
   margin: auto;
@@ -45,62 +55,37 @@
 }
 
 .experienceDescTitle {
-  font-size: 3vw;
+  font-size: var(--type-heading);
   font-weight: 500;
-  margin: 20px;
+  line-height: 1.1;
+  margin: 1.4em 0 0.35em;
 }
 
 .experienceDescText {
-  font-size: 1.3vw;
-  // padding-left: 20px;
-  padding-right: 55px;
-  color: rgb(62, 62, 62);
+  font-size: var(--type-body);
+  line-height: 1.55;
+  margin: 0;
+  color: var(--ink-body);
 }
+
 @media (max-width: 630px) {
-  .main {
-    padding-top: 100px; //compensating for the TitleSection
-  }
-  .experienceTitle {
-    display: inline-grid;
-    writing-mode: vertical-rl;
-    color: rgb(42, 42, 42);
-    margin: 0px 0px;
-    place-items: center;
-    /* top: 30%; */
-    position: sticky;
-    align-self: flex-start;
-    font-size: 17px;
-    transform: translateX(-3vw);
-  }
   .experienceContentGrid {
-    grid-template-columns: auto;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto;
-    // transform: translateX(2vw);
+    margin-left: 0;
   }
 
   .experienceDescTitle {
-    font-size: 6vw;
     text-align: center;
   }
 
   .experienceImgContainer {
     margin-top: 20px;
-    // transform: translateX(2vw);
-    transform: translateX(-5vw);
     width: 60vw;
     height: 60vw;
   }
 
   .experienceDescText {
-    font-size: 14px;
     text-align: center;
-    padding: 5px;
-  }
-  .experienceGrid {
-    column-gap: 0px;
-    // transform: translateX(-4vw);
-  }
-  .experienceDesc {
-    transform: translateX(-7vw);
   }
 }

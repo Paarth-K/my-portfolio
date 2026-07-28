@@ -2,98 +2,85 @@ import { useEffect, useState } from "preact/hooks";
 import styles from "./ClickyMedia.module.scss";
 import Image from "./Image.jsx";
 import Video from "./Video.jsx";
+
+// The media sits flat while the page is moving and lifts off its shadow once
+// the reader settles. Previously this ran a 550ms interval per instance that
+// compared two pieces of state the effect's closure could never see, so it
+// never cleaned up and re-rendered every card on every scroll frame.
+const SETTLE_MS = 400;
+
 export default function ClickyMedia({
   src,
   alt,
   link = { to: false, ariaLabel: false, target: "_blank" },
   hoverVid = { src: false, transformations: false },
   ImgTransformations = "f_auto:image,q_auto,w_1500",
+  loading = "lazy",
   ...other
 }) {
-  const [scrolling, setScrolling] = useState(true);
-  const [scrollPos, setScrollPos] = useState(false);
-  const [pastScrollPos, setPastScrollPos] = useState(null);
+  const [settled, setSettled] = useState(false);
+
   useEffect(() => {
-    const scrollInt = setInterval(async () => {
-      if (scrollPos != pastScrollPos) {
-        setScrolling(false);
-      } else {
-        setPastScrollPos(scrollPos);
-      }
-    }, 550);
-    window.addEventListener("scroll", async (event) => {
-      setScrolling(true);
-      setScrollPos(window.scrollY);
-    });
-    // setTimeout(() => {
-    //   setScrolling(false);
-    // }, 1000);
+    let timer = window.setTimeout(() => setSettled(true), SETTLE_MS);
+
+    const handleScroll = () => {
+      setSettled(false);
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => setSettled(true), SETTLE_MS);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  let hoverVidElement;
-  if (hoverVid.src) {
-    hoverVidElement = (
-      <div className={`${styles.clickVid} ${styles.clickImg}`}>
-        <Video
-          playsInline
-          loop
-          autoPlay
-          muted
-          src={hoverVid.src}
-          transformations={hoverVid.transformations}
-        ></Video>
-      </div>
-    );
-  } else {
-    hoverVidElement = null;
-  }
+  const hoverVidElement = hoverVid.src ? (
+    <div className={`${styles.clickVid} ${styles.clickImg}`}>
+      <Video
+        playsInline
+        loop
+        autoPlay
+        muted
+        src={hoverVid.src}
+        transformations={hoverVid.transformations}
+      ></Video>
+    </div>
+  ) : null;
+
+  const media = (
+    <>
+      <Image
+        className={styles.clickImg}
+        src={src}
+        alt={alt}
+        loading={loading}
+        transformations={ImgTransformations}
+        {...other}
+      ></Image>
+      {hoverVidElement}
+      <div className={styles.clickImgShadow}></div>
+    </>
+  );
+
+  const containerClass = `${styles.clickImgContainer} ${
+    settled ? styles.clickImgContainerhover : ""
+  }`;
+
   if (link.to) {
-    if (!link.ariaLabel) {
-      return (
-        <div>
-          <h2>Aria Label Missing!</h2>
-        </div>
-      );
-    } else {
-      return (
-        <a
-          href={link.to}
-          target={link.target ? link.target : "_blank"}
-          className={`${styles.clickImgContainer} ${
-            !scrolling ? styles.clickImgContainerhover : ""
-          }`}
-        >
-          <Image
-            className={styles.clickImg}
-            src={src}
-            alt={alt}
-            transformations={ImgTransformations}
-            {...other}
-          ></Image>
-
-          {hoverVidElement}
-
-          <div className={styles.clickImgShadow}></div>
-        </a>
-      );
-    }
-  } else {
     return (
-      <div
-        className={`${styles.clickImgContainer} ${
-          !scrolling ? styles.clickImgContainerhover : ""
-        }`}
+      <a
+        href={link.to}
+        target={link.target ? link.target : "_blank"}
+        rel="noopener"
+        aria-label={link.ariaLabel || alt}
+        className={containerClass}
       >
-        <Image
-          src={src}
-          alt={alt}
-          className={styles.clickImg}
-          transformations={ImgTransformations}
-          {...other}
-        ></Image>
-        {hoverVidElement}
-        <div className={styles.clickImgShadow}></div>
-      </div>
+        {media}
+      </a>
     );
   }
+
+  return <div className={containerClass}>{media}</div>;
 }

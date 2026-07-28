@@ -1,42 +1,48 @@
 .main {
-  // margin: 0 8vw;
-  padding-top: 240px; //compensating for the TitleSection
+  padding-top: var(--gap-section);
 }
+
 .school {
-  padding-bottom: 70px;
+  padding-bottom: var(--gap-stack);
 }
+
 .schoolGrid {
   display: grid;
-  grid-template-columns: auto 40px;
-  // column-gap: 60px;
+  // Same track as the section rail — see Experience.module.scss.
+  grid-template-columns: minmax(0, auto) min-content;
+  column-gap: var(--rail-gap);
 }
+
 .schoolTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
-  font-size: 3vw;
-  color: rgb(42, 42, 42);
-  margin: 0px 0px;
+  // Hugs the em so rails of different sizes share one edge.
+  line-height: 1;
+  font-size: var(--type-rail-sub);
+  color: var(--ink-strong);
   place-items: center;
-  margin: auto;
-  // margin-right: 5vw;
-  // margin-left: 3vw;
-  transform: translateX(-2.5vw);
+  position: sticky;
+  top: 45%;
+  align-self: flex-start;
 }
+
 .schoolContent {
   display: inline-grid;
 }
 
 .schoolContentGrid {
   display: grid;
-  grid-template-columns: auto 35vw;
-  column-gap: 40px;
-  color: #6a738f;
-  margin-left: 2vw;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  column-gap: clamp(1.5rem, 2.6vw, 3rem);
+  align-items: center;
 }
+
 .schoolDesc {
   display: inline-grid;
   margin: auto;
+  max-width: var(--measure);
 }
+
 .schoolImgContainer {
   display: inline-grid;
   margin: auto;
@@ -45,62 +51,37 @@
 }
 
 .schoolDescTitle {
-  font-size: 3vw;
+  font-size: var(--type-heading);
   font-weight: 500;
-  margin: 20px;
+  line-height: 1.1;
+  margin: 1.4em 0 0.35em;
 }
 
 .schoolDescText {
-  font-size: 1.3vw;
-  // padding-left: 20px;
-  padding-right: 55px;
-  color: rgb(62, 62, 62);
+  font-size: var(--type-body);
+  line-height: 1.55;
+  margin: 0;
+  color: var(--ink-body);
 }
+
 @media (max-width: 630px) {
-  .main {
-    padding-top: 100px; //compensating for the TitleSection
-  }
-  .schoolTitle {
-    display: inline-grid;
-    writing-mode: vertical-rl;
-    color: rgb(42, 42, 42);
-    margin: 0px 0px;
-    place-items: center;
-    top: 50%;
-    position: sticky;
-    align-self: flex-start;
-    font-size: 17px;
-    transform: translateX(-3vw);
-  }
   .schoolContentGrid {
-    grid-template-columns: auto;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto;
-    // transform: translateX(2vw);
+    margin-left: 0;
   }
 
   .schoolDescTitle {
-    font-size: 6vw;
     text-align: center;
   }
 
   .schoolImgContainer {
     margin-top: 20px;
-    // transform: translateX(2vw);
-    transform: translateX(-5vw);
     width: 60vw;
     height: 60vw;
   }
 
   .schoolDescText {
-    font-size: 14px;
     text-align: center;
-    padding: 5px;
-  }
-  .schoolGrid {
-    column-gap: 0px;
-    // transform: translateX(-4vw);
-  }
-  .schoolDesc {
-    transform: translateX(-7vw);
   }
 }

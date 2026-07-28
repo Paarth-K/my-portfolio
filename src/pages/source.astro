@@ -1,59 +1,11 @@
 ---
+import Redirect from "../components/Base/Redirect.astro";
+
 const sourceUrl = "https://github.com/Paarth-K/my-portfolio";
 ---
 
-<html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PWJ5Z5RY1"
-    ></script>
-    <script type="text/javascript">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-2PWJ5Z5RY1");
-    </script>
-    <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/icons/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
-    <link rel="shortcut icon" href="/icons/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/icons/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="Paarth" />
-    <link rel="manifest" href="/icons/site.webmanifest" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content=`0;url=${sourceUrl}` />
-    <title>Redirecting to Source Code</title>
-    <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "hui597fchn");
-    </script>
-  </head>
-  <body>
-    <p>
-      Redirecting you to the Source Code of the website. If it doesn't open
-      automatically please <a href={sourceUrl}>click here</a>
-    </p>
-  </body>
-</html>
+<Redirect
+  to={sourceUrl}
+  title="Redirecting to Source Code"
+  destination="the source code for this site"
+/>

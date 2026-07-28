@@ -16,15 +16,17 @@ import Singapore from "./Singapore/Singapore.jsx";
 <style lang="scss">
   .CountriesGrid {
     display: grid;
-    grid-template-columns: auto 40px;
-    margin-right: 8vw;
+    grid-template-columns: minmax(0, auto) min-content;
+    column-gap: var(--rail-gap);
+    margin-right: var(--gutter);
   }
   .CountriesTitle {
     display: inline-grid;
     writing-mode: vertical-rl;
-    font-size: 6vw;
-    color: rgb(42, 42, 42);
-    margin: 0px 0px;
+    // Hugs the em so rails of different sizes share one edge.
+    line-height: 1;
+    font-size: var(--type-rail);
+    color: var(--ink-strong);
     place-items: center;
     top: 30%;
     position: sticky;
@@ -33,10 +35,6 @@ import Singapore from "./Singapore/Singapore.jsx";
   @media (max-width: 630px) {
     .CountriesTitle {
       top: 45%;
-      transform: translateX(8vw);
-    }
-    .CountriesInfo {
-      transform: translateX(5%);
     }
   }
 </style>

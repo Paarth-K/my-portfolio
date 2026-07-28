@@ -11,7 +11,7 @@ import Footer from "../Footer/Footer.jsx";
 <div>
   <LandingPage />
 
-  <div style="height: 1300px;"></div>
+  <div class="landing-runway"></div>
 
   <AboutSection client:visible />
 
@@ -25,3 +25,14 @@ import Footer from "../Footer/Footer.jsx";
 
   <Footer client:load />
 </div>
+
+<style>
+  /*
+   * Scroll runway for the landing: the title hands off from fixed to
+   * absolute at 600px and the drifting marks are placed down to 1200px,
+   * so the first section must not start before that.
+   */
+  .landing-runway {
+    height: 1300px;
+  }
+</style>

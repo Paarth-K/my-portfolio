@@ -1,37 +1,49 @@
 .main {
-  margin: 0 8vw;
-  padding-top: 150px; //compensating for the TitleSection
+  margin: 0 var(--gutter);
+  padding-top: var(--gap-section);
 }
+
 .about {
-  padding-bottom: 70px;
+  padding-bottom: var(--gap-stack);
 }
+
 .aboutGrid {
   display: grid;
-  grid-template-columns: 7vw auto;
-  column-gap: 2vw;
+  grid-template-columns: min-content auto;
+  column-gap: var(--rail-gap);
 }
+
 .aboutTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
-  font-size: 6vw;
-  color: rgb(42, 42, 42);
-  margin: 0px 0px;
+  // Hugs the em so rails of different sizes share one edge.
+  line-height: 1;
+  font-size: var(--type-rail);
+  color: var(--ink-strong);
   place-items: center;
+  // Matches the other four sections, which were already sticky on desktop.
+  position: sticky;
+  top: 30%;
+  align-self: flex-start;
 }
+
 .aboutContent {
   display: inline-grid;
 }
 
 .aboutContentGrid {
   display: grid;
-  grid-template-columns: auto 35vw;
+  grid-template-columns: minmax(0, auto) 35vw;
   column-gap: 40px;
-  color: #6a738f;
+  align-items: center;
 }
+
 .meDesc {
   display: inline-grid;
   margin: auto;
+  max-width: var(--measure);
 }
+
 .meImgContainer {
   display: inline-grid;
   margin: auto;
@@ -40,49 +52,41 @@
 }
 
 .meDescTitle {
-  font-size: 3vw;
+  font-size: var(--type-heading);
   font-weight: 500;
-  margin: 20px;
+  line-height: 1.1;
+  // More air above a heading than below it.
+  margin: 1.4em 0 0.35em;
 }
 
 .meDescText {
-  font-size: 1.3vw;
-  // padding-left: 20px;
-  color: rgb(62, 62, 62);
+  font-size: var(--type-body);
+  line-height: 1.55;
+  margin: 0;
+  color: var(--ink-body);
 }
+
 @media (max-width: 630px) {
   .aboutTitle {
-    position: sticky;
     top: 45%;
-    align-self: flex-start;
   }
+
   .aboutContentGrid {
-    grid-template-columns: auto;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto;
   }
 
   .meDescTitle {
-    font-size: 6vw;
     text-align: center;
-  }
-
-  .meDesc {
-    margin-left: 20px;
   }
 
   .meImgContainer {
     margin-top: 20px;
-    transform: translateX(2vw);
     width: 60vw;
     height: 60vw;
   }
 
   .meDescText {
-    font-size: 14px;
     text-align: center;
-  }
-  .aboutGrid {
-    column-gap: 0px;
-    transform: translateX(-4vw);
   }
 }

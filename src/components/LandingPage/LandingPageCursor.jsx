@@ -1,275 +1,182 @@
 import styles from "./LandingPageCursor.module.scss";
 import Image from "../Base/Image";
-import { useEffect, useState, useRef } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
+
+// Each mark drifts against the pointer on its own axis mix, so the cluster
+// never moves as one plane. `negateX`/`negateY` flip a direction and `swapXY`
+// feeds the vertical reading into the horizontal offset.
+const MARKS = [
+  {
+    key: "react",
+    href: "#projects",
+    src: "/home/React-icon",
+    alt: "React Icon",
+    negateX: false,
+    negateY: false,
+    swapXY: false,
+  },
+  {
+    key: "vue",
+    href: "#projects",
+    src: "/home/Vue-icon",
+    alt: "Vue Icon",
+    negateX: true,
+    negateY: true,
+    swapXY: false,
+  },
+  {
+    key: "astro",
+    href: "#projects",
+    src: "/home/Astro-icon",
+    alt: "Astro Icon",
+    negateX: false,
+    negateY: true,
+    swapXY: true,
+  },
+  {
+    key: "uae",
+    href: "#dubai",
+    src: "/home/UAE-flag",
+    alt: "United Arab Emirates Flag",
+    negateX: true,
+    negateY: false,
+    swapXY: false,
+  },
+  {
+    key: "sg",
+    href: "#singapore",
+    src: "/home/SG-flag",
+    alt: "Singapore Flag",
+    negateX: false,
+    negateY: false,
+    swapXY: true,
+  },
+  {
+    key: "india",
+    href: null,
+    src: "/home/INDIA-flag",
+    alt: "India Flag",
+    negateX: true,
+    negateY: false,
+    swapXY: false,
+  },
+  {
+    key: "nlcs",
+    href: "#nlcs",
+    src: "/home/NLCS-Logo",
+    alt: "North London Collegiate School Dubai Logo",
+    negateX: false,
+    negateY: false,
+    swapXY: true,
+  },
+  {
+    key: "nas",
+    href: "#dcis",
+    src: "/home/NAS-Logo",
+    alt: "Nord Anglia Education Singapore School Logo",
+    negateX: false,
+    negateY: false,
+    swapXY: true,
+  },
+];
+
+const IMAGE_TRANSFORMATIONS = "f_auto:image,q_auto,w_250";
+const EASE = 0.08; // lower is smoother and lazier
+const PARALLAX_MIN_WIDTH = 630;
 
 export default function LandingPageCursor() {
-  const [mousePos, setMousePos] = useState([0, 0]);
-  const [smoothMousePos, setSmoothMousePos] = useState([0, 0]);
-  const [mouseModifX, setMouseModifX] = useState([1, 1, 1, 1, 1, 1, 1]);
-  const [mouseModifY, setMouseModifY] = useState([1, 1, 1, 1, 1, 1, 1]);
-  const rafId = useRef();
-  const targetPos = useRef([0, 0]);
-  const currentPos = useRef([0, 0]);
+  const containerRef = useRef(null);
+  const rafId = useRef(null);
 
   useEffect(() => {
-    function randomNumFromInterval(min, max) {
-      // min and max included
-      return (Math.random() * (max - min) + min).toFixed(4);
-    }
-    const tempModX = [];
-    const tempModY = [];
-    const min = 1;
-    const max = 2.1;
-    const iter = 7;
-    while (tempModX.length != iter && tempModY.length != iter) {
-      tempModX.push(randomNumFromInterval(min, max));
-      tempModY.push(randomNumFromInterval(min, max));
-    }
-    if (tempModX.length == iter && tempModY.length == iter) {
-      setMouseModifX(tempModX);
-      setMouseModifY(tempModY);
-    }
+    // One node per mark, in source order.
+    const nodes = Array.from(
+      containerRef.current?.querySelectorAll("img") || [],
+    );
+    const random = (min, max) => Math.random() * (max - min) + min;
+    const modifiers = MARKS.map(() => [random(1, 2.1), random(1, 2.1)]);
 
-    // Smooth easing function - adjust this value to control smoothness
-    const easeAmount = 0.08; // Lower = smoother/slower, Higher = more responsive
+    const target = [0, 0];
+    const current = [0, 0];
+    let live = window.innerWidth > PARALLAX_MIN_WIDTH;
 
-    function lerp(start, end, factor) {
-      return start + (end - start) * factor;
-    }
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
 
-    function animate() {
-      // Smoothly interpolate between current and target positions
-      currentPos.current[0] = lerp(
-        currentPos.current[0],
-        targetPos.current[0],
-        easeAmount
-      );
-      currentPos.current[1] = lerp(
-        currentPos.current[1],
-        targetPos.current[1],
-        easeAmount
-      );
+    // Transforms are written straight to the nodes. Holding the pointer in
+    // component state re-rendered all eight images on every frame.
+    function paint() {
+      current[0] += (target[0] - current[0]) * EASE;
+      current[1] += (target[1] - current[1]) * EASE;
 
-      if (window.innerWidth > 630) {
-        setSmoothMousePos([currentPos.current[0], currentPos.current[1]]);
+      for (let i = 0; i < MARKS.length; i++) {
+        const node = nodes[i];
+        if (!node) continue;
+
+        const { negateX, negateY, swapXY } = MARKS[i];
+        const [modX, modY] = modifiers[i];
+        const sourceX = swapXY ? current[1] : current[0];
+        const sourceY = swapXY ? current[0] : current[1];
+
+        const x = (negateX ? -1 : 1) * modX * Math.sqrt(Math.max(sourceX, 0));
+        const y = (negateY ? -1 : 1) * modY * Math.sqrt(Math.max(sourceY, 0));
+
+        node.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       }
 
-      // Continue animation
-      rafId.current = requestAnimationFrame(animate);
+      rafId.current = requestAnimationFrame(paint);
     }
 
-    function handleMouseMove(event) {
-      // Update target position immediately
-      targetPos.current = [event.clientX, event.clientY];
-      setMousePos([event.clientX, event.clientY]);
+    const handleMouseMove = (event) => {
+      if (!live) return;
+      target[0] = event.clientX;
+      target[1] = event.clientY;
+    };
+
+    const handleResize = () => {
+      live = window.innerWidth > PARALLAX_MIN_WIDTH;
+      if (!live) {
+        target[0] = 0;
+        target[1] = 0;
+      }
+    };
+
+    if (!reduceMotion) {
+      rafId.current = requestAnimationFrame(paint);
+      window.addEventListener("mousemove", handleMouseMove, { passive: true });
+      window.addEventListener("resize", handleResize, { passive: true });
     }
-
-    // Start the animation loop
-    rafId.current = requestAnimationFrame(animate);
-
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current);
-      }
+      window.removeEventListener("resize", handleResize);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
     };
   }, []);
 
-  // Optimized transform calculator for hardware acceleration
-  const getTransform = (
-    mouseX,
-    mouseY,
-    modifX,
-    modifY,
-    index,
-    negateX = false,
-    negateY = false,
-    swapXY = false
-  ) => {
-    const x = mouseX || 0;
-    const y = mouseY || 0;
-
-    let transformX, transformY;
-
-    if (swapXY) {
-      transformX = (negateX ? -1 : 1) * modifX * Math.sqrt(y);
-      transformY = (negateY ? -1 : 1) * modifY * Math.sqrt(x);
-    } else {
-      transformX = (negateX ? -1 : 1) * modifX * Math.sqrt(x);
-      transformY = (negateY ? -1 : 1) * modifY * Math.sqrt(y);
-    }
-
-    // Use translate3d for hardware acceleration
-    return `translate3d(${transformX}px, ${transformY}px, 0)`;
-  };
-
-  const imageTransformations = "f_auto:image,q_auto,w_250";
   return (
-    <div>
-      <a href="#projects">
-        <Image
-          draggable={false}
-          src="/home/React-icon"
-          alt="React Icon"
-          transformations={imageTransformations}
-          style={{
-            transform: getTransform(
-              smoothMousePos[0],
-              smoothMousePos[1],
-              mouseModifX[0],
-              mouseModifY[0],
-              0
-            ),
-          }}
-          className={`${styles.movecursor} ${styles.react}`}
-        ></Image>
-      </a>
-      <a href="#projects">
-        <Image
-          draggable={false}
-          src="/home/Vue-icon"
-          alt="Vue Icon"
-          transformations={imageTransformations}
-          style={{
-            transform: getTransform(
-              smoothMousePos[0],
-              smoothMousePos[1],
-              mouseModifX[1],
-              mouseModifY[1],
-              1,
-              true,
-              true
-            ),
-          }}
-          className={`${styles.movecursor} ${styles.vue}`}
-        ></Image>
-      </a>
-      <a href="#projects">
-        <Image
-          draggable={false}
-          src="/home/Astro-icon"
-          alt="Astro Icon"
-          transformations={imageTransformations}
-          style={{
-            transform: getTransform(
-              smoothMousePos[0],
-              smoothMousePos[1],
-              mouseModifX[2],
-              mouseModifY[2],
-              2,
-              false,
-              true,
-              true
-            ),
-          }}
-          className={`${styles.movecursor} ${styles.astro}`}
-        ></Image>
-      </a>
-      <a href="#dubai">
-        <Image
-          draggable={false}
-          src="/home/UAE-flag"
-          alt="United Arab Emirates Flag"
-          transformations={imageTransformations}
-          style={{
-            transform: getTransform(
-              smoothMousePos[0],
-              smoothMousePos[1],
-              mouseModifX[3],
-              mouseModifY[3],
-              3,
-              true,
-              false
-            ),
-          }}
-          className={`${styles.movecursor} ${styles.uae}`}
-        ></Image>
-      </a>
-      <a href="#singapore">
-        <Image
-          draggable={false}
-          src="/home/SG-flag"
-          alt="Singapore Flag"
-          transformations={imageTransformations}
-          style={{
-            transform: getTransform(
-              smoothMousePos[0],
-              smoothMousePos[1],
-              mouseModifX[4],
-              mouseModifY[4],
-              4,
-              false,
-              false,
-              true
-            ),
-          }}
-          className={`${styles.movecursor} ${styles.sg}`}
-        ></Image>
-      </a>
-      {/* <a href="#india"> */}
-      <Image
-        draggable={false}
-        src="/home/INDIA-flag"
-        alt="India Flag"
-        transformations={imageTransformations}
-        style={{
-          transform: getTransform(
-            smoothMousePos[0],
-            smoothMousePos[1],
-            mouseModifX[4],
-            mouseModifY[4],
-            4,
-            true,
-            false
-          ),
-        }}
-        className={`${styles.movecursor} ${styles.india}`}
-      ></Image>
-      {/* </a> */}
-      <a href="#nlcs">
-        <Image
-          draggable={false}
-          src="/home/NLCS-Logo"
-          alt="North London Collegiate School Dubai Logo"
-          transformations={imageTransformations}
-          style={{
-            transform: getTransform(
-              smoothMousePos[0],
-              smoothMousePos[1],
-              mouseModifX[5],
-              mouseModifY[5],
-              5,
-              false,
-              false,
-              true
-            ),
-          }}
-          className={`${styles.movecursor} ${styles.nlcs}`}
-        ></Image>
-      </a>
-      <a href="#dcis">
-        <Image
-          draggable={false}
-          src="/home/NAS-Logo"
-          alt="Nord Anglia Education Singapore School Logo"
-          transformations={imageTransformations}
-          style={{
-            transform: getTransform(
-              smoothMousePos[0],
-              smoothMousePos[1],
-              mouseModifX[6],
-              mouseModifY[6],
-              6,
-              false,
-              false,
-              true
-            ),
-          }}
-          className={`${styles.movecursor} ${styles.nas}`}
-        ></Image>
-      </a>
+    <div ref={containerRef}>
+      {MARKS.map((mark) => {
+        const image = (
+          <Image
+            draggable={false}
+            src={mark.src}
+            alt={mark.alt}
+            loading="eager"
+            transformations={IMAGE_TRANSFORMATIONS}
+            className={`${styles.movecursor} ${styles[mark.key]}`}
+          />
+        );
+
+        return mark.href ? (
+          <a key={mark.key} className={styles.markLink} href={mark.href}>
+            {image}
+          </a>
+        ) : (
+          <span key={mark.key}>{image}</span>
+        );
+      })}
     </div>
   );
 }

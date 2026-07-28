@@ -13,11 +13,11 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Paarth is a 17-year-old tech enthusiast from Singapore and India, and he's passionate about web development and data science. Currently studying at North London Collegiate School in Dubai, he brings creativity, curiosity, and a keen eye for innovation to every project. Explore his journey and insights!"
+      content="Paarth is a tech enthusiast from Singapore and India, and he's passionate about web development and data science. Currently studying at North London Collegiate School in Dubai, he brings creativity, curiosity, and a keen eye for innovation to every project. Explore his journey and insights!"
     />
     <meta
       property="og:description"
-      content="Paarth is a 17-year-old tech enthusiast from Singapore and India, and he's passionate about web development and data science. Currently studying at North London Collegiate School in Dubai, he brings creativity, curiosity, and a keen eye for innovation to every project. Explore his journey and insights!"
+      content="Paarth is a tech enthusiast from Singapore and India, and he's passionate about web development and data science. Currently studying at North London Collegiate School in Dubai, he brings creativity, curiosity, and a keen eye for innovation to every project. Explore his journey and insights!"
     />
     <meta property="og:title" content="Paarth's Portfolio" />
     <meta property="og:site_name" content="Paarth's Portfolio" />
@@ -52,8 +52,9 @@ const { title } = Astro.props;
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Roman 400-500 only; the site uses no italics and no other weights. -->
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..500&display=swap"
       rel="stylesheet"
     />
     <meta name="msvalidate.01" content="622A45E977551F2CE287EF2B1BDE1067" />
@@ -72,7 +73,8 @@ const { title } = Astro.props;
     </script>
     <!-- End Google Tag Manager -->
 
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7fdf9" />
     <link
       rel="icon"
       type="image/png"
@@ -117,58 +119,147 @@ const { title } = Astro.props;
         style="display:none;visibility:hidden"></iframe></noscript
     >
     <!-- End Google Tag Manager (noscript) -->
-    <div>
-      <NavBar client:load />
-    </div>
+    <NavBar client:load />
     <slot />
   </body>
 </html>
 <style is:global lang="scss">
-  // @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
-  // @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap");
   :root {
+    color-scheme: light;
+
+    /* Brand palette */
     --background-rbg: 247, 253, 249;
     --background: #f7fdf9;
     --primary: #3299cd;
     --secondary: #ff5900;
     --text-col: #0b181e;
     --accent: #84e1d2;
+
+    /* Ink scale — names the greys that were hardcoded per component */
+    --ink-strong: #2a2a2a; // rotated section titles
+    --ink-body: #3e3e3e; // running copy
+    --ink-muted: #565656; // footnotes, captions
+    --ink-line: #1e1d1d; // offset shadow + pill outline
+
+    /* Fluid type. Every step carries a floor and a ceiling: the old raw `vw`
+       sizes bottomed out around 9px between 630px and 1080px wide, and grew
+       unbounded past that. */
+    --type-body: clamp(1rem, 0.81rem + 0.43vw, 1.35rem);
+    --type-heading: clamp(1.6rem, 1.23rem + 1.6vw, 3.5rem);
+    --type-hero: clamp(1.75rem, 1.58rem + 0.7vw, 2.6rem);
+
+    /* Rotated rails. One track width for every rail — section titles and the
+       smaller sub-labels alike — so each rotated word centres on the same
+       axis and they stay in line as you scroll from section to section.
+       Only the glyph size changes between the two levels. */
+    --rail: clamp(2.5rem, 7vw, 8rem);
+    --type-rail: clamp(2.15rem, 6vw, 6.85rem);
+    --type-rail-sub: clamp(1.6rem, 3vw, 3.4rem);
+
+    /* Rhythm */
+    --gutter: 8vw;
+    /* Air between a rotated rail and the content beside it. */
+    --rail-gap: 2vw;
+    --gap-section: clamp(4.5rem, 8vw, 8rem);
+    --gap-stack: clamp(3rem, 5vw, 5rem);
+
+    /* Comfortable line length for running copy */
+    --measure: 64ch;
+
+    /* Rendered height of the fixed bar; drives scroll-padding-top so anchor
+       targets do not land underneath it. */
+    --nav-h: 82px;
   }
+
+  @media (max-width: 735px) {
+    :root {
+      --nav-h: 69px;
+    }
+  }
+
+  /* On phones the rails are the visual frame, so spend less on the outer
+     gutter and more on the space between a rail and the copy. The trade is
+     roughly even, which keeps the line measure where it is. */
+  @media (max-width: 630px) {
+    :root {
+      --gutter: 5vw;
+      --rail-gap: 4.5vw;
+    }
+  }
+
   ::-moz-selection {
-    /* Code for Firefox */
-    color: var(--background);
+    color: var(--text-col);
     background: var(--secondary);
   }
 
   ::selection {
-    color: var(--background);
+    /* Dark ink on the orange reads at 5.7:1; the old near-white sat at 3:1. */
+    color: var(--text-col);
     background: var(--secondary);
   }
+
   html,
   body {
     height: 100%;
     padding: 0;
     margin: 0;
+  }
 
+  html {
     scroll-behavior: smooth;
+    /* Anchor targets used to land underneath the fixed bar. */
+    scroll-padding-top: calc(var(--nav-h) + 1.5rem);
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     background-color: var(--background);
+    color: var(--text-col);
+    font-family: "DM Sans", sans-serif;
     margin: 0 !important;
+    overflow-x: hidden; // guards the rotated rails' overhang on small screens
   }
 
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
+  /* Form controls and links do not inherit colour by default. Every link on
+     this site is a pill, an image, or carries its own colour, so inheriting
+     keeps UA link blue out of the design. */
+  a {
+    color: inherit;
+  }
+
   button,
-  div {
-    font-family: "DM Sans", sans-serif;
-    color: var(--text-col);
-    // font-optical-sizing: none;
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+  }
+
+  /* One focus treatment for the whole site: the same lift the pointer gets,
+     plus a ring that survives on top of imagery. */
+  :focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 </style>

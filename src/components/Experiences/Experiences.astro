@@ -16,16 +16,18 @@ import TH from "./TH/TH";
 <style lang="scss">
   .ExperienceGrid {
     display: grid;
-    grid-template-columns: 7vw auto;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    grid-template-columns: min-content minmax(0, auto);
+    column-gap: var(--rail-gap);
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
   }
   .ExperienceTitle {
     display: inline-grid;
     writing-mode: vertical-rl;
-    font-size: 6vw;
-    color: rgb(42, 42, 42);
-    margin: 0px 0px;
+    // Hugs the em so rails of different sizes share one edge.
+    line-height: 1;
+    font-size: var(--type-rail);
+    color: var(--ink-strong);
     place-items: center;
     top: 30%;
     position: sticky;
@@ -34,13 +36,6 @@ import TH from "./TH/TH";
   @media (max-width: 630px) {
     .ExperienceTitle {
       top: 45%;
-      transform: translateX(-4vw);
-    }
-    .ExperienceInfo {
-      transform: translateX(5%);
-    }
-    .ExperienceGrid {
-      margin-right: 0px;
     }
   }
 </style>

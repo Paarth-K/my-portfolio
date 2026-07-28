@@ -1,32 +1,40 @@
 .main {
-  margin: 0 8vw;
-  padding-top: 100px; //compensating for the TitleSection
+  margin: 0 var(--gutter);
+  padding-top: var(--gap-section);
 }
+
 .project {
-  padding-bottom: 70px;
+  padding-bottom: var(--gap-stack);
 }
+
 .projectGrid {
   display: grid;
-  grid-template-columns: auto 7vw;
-  // column-gap: 60px;
+  grid-template-columns: minmax(0, auto) min-content;
+  column-gap: var(--rail-gap);
 }
+
 .projectTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
-  font-size: 6vw;
-  color: rgb(42, 42, 42);
-  margin: 0px 0px;
+  // Hugs the em so rails of different sizes share one edge.
+  line-height: 1;
+  font-size: var(--type-rail);
+  color: var(--ink-strong);
   place-items: center;
+  position: sticky;
+  top: 30%;
+  align-self: flex-start;
 }
 
 .projectContent {
   display: flex;
   margin-top: 15px;
 
-  column-gap: 50px !important;
-  row-gap: 50px !important;
+  column-gap: 50px;
+  // Leaves standing room for the description that reveals below each tile,
+  // so revealing it never reflows the row beneath.
+  row-gap: clamp(5.5rem, 7vw, 7.5rem);
   justify-content: center;
-  place-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -35,13 +43,9 @@
 @media (max-width: 630px) {
   .projectTitle {
     top: 45%;
-    position: sticky;
-    align-self: flex-start;
-    transform: translateX(8vw);
   }
+
   .projectContent {
-    grid-template-rows: auto !important;
-    grid-template-columns: auto !important;
-    transform: translateX(8vw);
+    row-gap: var(--gap-stack);
   }
 }

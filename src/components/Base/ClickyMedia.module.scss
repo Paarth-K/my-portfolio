@@ -4,8 +4,12 @@
   margin: auto;
   width: inherit;
   height: inherit;
+  text-decoration: none;
+  border-radius: 25px;
 }
-.clickImgContainerhover .clickImg {
+
+.clickImgContainerhover .clickImg,
+.clickImgContainer:focus-visible .clickImg {
   transition: transform 0.2s;
   transform: translateX(-13px) translateY(-13px);
 }
@@ -14,54 +18,48 @@
   transition: all 0.2s;
   opacity: 1;
 }
-.clickImgContainerhover .clickImgShadow {
+
+.clickImgContainerhover .clickImgShadow,
+.clickImgContainer:focus-visible .clickImgShadow {
   transition: transform 0.2s;
   transform: scale(1.005);
 }
-
-// @media (max-width: 630px) {
-//   .clickImg {
-//     transition: transform 0.2s;
-//     transform: translateX(-11px) translateY(-11px);
-//   }
-//   // .clickVid {
-//   //   transition: all 0.2s;
-//   //   opacity: 1;
-//   // }
-//   .clickImgShadow {
-//     transition: transform 0.2s;
-//     transform: scale(1.005);
-//   }
-// }
 
 .clickImgContainer:active .clickImgShadow {
   transition: transform 0.1s ease;
   transform: none !important;
 }
+
 .clickImgContainer:active .clickImg {
   transition: transform 0.1s ease;
   transform: none !important;
 }
+
 .clickImg {
   width: inherit;
   height: inherit;
   position: absolute;
   border-radius: 25px;
-  z-index: 9;
+  // The frames are square but the sources are not; cover crops instead of
+  // squashing every photograph into the box.
+  object-fit: cover;
+  z-index: 55;
   transition: transform 0.2s;
   scale: 1.002;
   pointer-events: none;
-  z-index: 55;
 }
+
 .clickVid {
   transition: all 0.2s ease;
   opacity: 0;
+  overflow: hidden;
 }
+
 .clickImgShadow {
   width: inherit;
   height: inherit;
   border-radius: 25px;
-  background-color: #1e1d1d;
+  background-color: var(--ink-line);
   z-index: 8;
   transition: transform 0.2s;
   pointer-events: none;

@@ -2,6 +2,15 @@ import styles from "./AboutSection.module.scss";
 import ClickyMedia from "../Base/ClickyMedia.jsx";
 import { useEffect, useState } from "preact/hooks";
 
+const DOB = new Date("10/03/2007");
+
+function calculate_age(dob) {
+  var diff_ms = Date.now() - dob.getTime();
+  var age_dt = new Date(diff_ms);
+
+  return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
+
 export default function AboutSection(props) {
   const [videoObj, setVideoObj] = useState(false);
   useEffect(() => {
@@ -10,16 +19,9 @@ export default function AboutSection(props) {
       transformations: "e_volume:mute,f_auto:video,q_auto:best",
     });
   }, []);
-  function calculate_age(dob) {
-    var diff_ms = Date.now() - dob.getTime();
-    var age_dt = new Date(diff_ms);
-
-    return Math.abs(age_dt.getUTCFullYear() - 1970);
-  }
-  const [age, setAge] = useState("[age]");
-  useEffect(() => {
-    setAge(calculate_age(new Date("10/03/2007")));
-  }, []);
+  // Resolved during the first render on both server and client, so the
+  // pre-hydration markup shows a number rather than a literal "[age]".
+  const [age] = useState(() => calculate_age(DOB));
   const aboutMeText = [
     {
       title: "Who am I?",

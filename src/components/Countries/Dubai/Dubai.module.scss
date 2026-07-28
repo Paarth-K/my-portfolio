@@ -1,41 +1,43 @@
 .main {
-  margin: 0 8vw;
-  padding-top: 100px; //compensating for the TitleSection
+  // Left only: the Countries grid already reserves the right gutter for its
+  // own rail, so setting it here too pushed the block off centre.
+  margin-left: var(--gutter);
+  padding-top: var(--gap-section);
 }
+
 .ex {
-  padding-bottom: 70px;
+  padding-bottom: var(--gap-stack);
 }
+
 .exGrid {
   display: grid;
-  grid-template-columns: 7vw auto;
-
-  // column-gap: 60px;
+  grid-template-columns: min-content minmax(0, auto);
+  column-gap: var(--rail-gap);
 }
+
 .exTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
-  font-size: 3vw;
-  color: rgb(42, 42, 42);
-  margin: 0px 0px;
+  // Hugs the em so rails of different sizes share one edge.
+  line-height: 1;
+  font-size: var(--type-rail-sub);
+  color: var(--ink-strong);
   place-items: center;
+  position: sticky;
+  top: 40%;
+  align-self: flex-start;
 }
 
 .exContent {
   display: grid;
   margin-top: 15px;
-  grid-template-rows: auto;
-  grid-template-columns: auto auto;
-  margin-left: 50px;
-  // column-gap: -50px !important;
-  row-gap: 50px !important;
-  // justify-content: center;
-  // place-items: center;
 }
 
 .exDescTitle {
-  font-size: 2.5vw;
+  font-size: var(--type-heading);
   font-weight: 500;
-  margin: 20px;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
   text-align: center;
 }
 
@@ -43,44 +45,23 @@
   width: 30vw;
   height: 30vw;
   margin: auto;
-  // border-radius: 25px;
 }
 
 .currentDesc {
-  margin-top: 25px;
+  // Full-bleed centred copy ran past 110 characters a line; cap the measure
+  // and centre the column instead of the text block.
+  max-width: var(--measure);
+  margin: 2rem auto 0;
   text-align: center;
-  font-size: 1.3vw;
+  font-size: var(--type-body);
+  line-height: 1.6;
+  color: var(--ink-body);
 }
 
 @media (max-width: 630px) {
-  .exTitle {
-    top: 35%;
-    position: sticky;
-    align-self: flex-start;
-    transform: translateX(-4vw);
-  }
-  .currentDesc {
-    font-size: 14px;
-  }
-  .exContent {
-    grid-template-rows: auto !important;
-    grid-template-columns: auto !important;
-    transform: translateX(1vw);
-    margin-left: 0px;
-    // margin-right: 50px;
-  }
-  .exDescTitle {
-    font-size: 6vw;
-    text-align: center;
-  }
   .currentImg {
     margin-top: 20px;
-    transform: translateX(2vw);
     width: 60vw;
     height: 60vw;
-  }
-  .exTitle {
-    font-size: 17.7px;
-    transform: translateX(-9vw);
   }
 }

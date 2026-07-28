@@ -1,197 +1,159 @@
 <template>
-  <div>
-    <transition>
-      <div class="ScrollAnim" v-if="showScroll">
-        <div id="mouse-scroll">
-          <div class="mouse">
-            <div class="mouse-in"></div>
-          </div>
-          <div>
-            <span class="down-arrow-1"></span>
-            <span class="down-arrow-2"></span>
-            <span class="down-arrow-3"></span>
-          </div>
-        </div>
-        <span id="scroll-text" class="mouse-scroll">
-          there's more stuff below!
-        </span>
+  <!--
+    Named, not the default `v-` transition. `<Transition>` is transparent, so
+    `.ScrollAnim` is this component's root element and therefore also carries
+    the *parent's* scope id — which meant LandingPageScroll's own
+    `.v-leave-active { position: absolute; top: 85% }` matched it and yanked
+    the hint up the page before it faded.
+  -->
+  <transition name="prompt">
+    <div class="ScrollAnim" v-if="showScroll" aria-hidden="true">
+      <div class="mouse">
+        <div class="mouse-in"></div>
       </div>
-    </transition>
-  </div>
+      <div class="arrows">
+        <span class="down-arrow-1"></span>
+        <span class="down-arrow-2"></span>
+        <span class="down-arrow-3"></span>
+      </div>
+      <span class="mouse-scroll-text">there's more stuff below!</span>
+    </div>
+  </transition>
 </template>
+
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, onBeforeUnmount, ref } from "vue";
+
 const showScroll = ref(false);
-const scrollCutoff = 250;
+// Clears well before the greeting re-centres at 250, so the hint is gone
+// by the time the second line arrives instead of colliding with it.
+const scrollCutoff = 120;
+
 function checkPos() {
-  if (window.scrollY > scrollCutoff) {
-    showScroll.value = false;
-  } else {
-    showScroll.value = true;
-  }
+  showScroll.value = window.scrollY <= scrollCutoff;
 }
+
 onMounted(() => {
   checkPos();
+  window.addEventListener("scroll", checkPos, { passive: true });
 });
-addEventListener("scroll", (event) => {
-  checkPos();
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", checkPos);
 });
 </script>
 
 <style scoped>
-#scroll-text,
 .ScrollAnim {
-  z-index: -10000 !important;
-}
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.2s ease;
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  /* Under the greeting, which sits at 101. */
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  /* Purely a hint — it must never intercept a click on what is underneath. */
+  pointer-events: none;
+  color: var(--text-col);
 }
 
-.v-enter-from,
-.v-leave-to {
+/* Fades out where it stands; no movement. */
+.prompt-enter-active,
+.prompt-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.prompt-enter-from,
+.prompt-leave-to {
   opacity: 0;
 }
 
-#mouse-scroll {
-  display: block;
+.mouse {
+  /* Was 4vw x 4vh, which drew a squat rectangle on wide screens and a
+     15px sliver on phones. */
+  width: 22px;
+  height: 34px;
+  padding-top: 6px;
+  border: 2px solid currentColor;
+  border-radius: 11px;
 }
-.mouse-scroll,
-#mouse-scroll {
-  position: fixed;
-  margin: auto;
-  left: 50%;
-  bottom: 80px;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  z-index: 9999;
+
+.mouse-in {
+  height: 5px;
+  width: 2px;
+  margin: 0 auto;
+  border-radius: 1px;
+  background: currentColor;
+  animation: animated-mouse 1.2s ease alternate-reverse infinite;
 }
-#scroll-text {
-  bottom: 55px;
-  width: 99vw;
-  text-align: center;
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
 }
-#mouse-scroll span {
+
+.arrows span {
   display: block;
   width: 5px;
   height: 5px;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  transform: rotate(45deg);
-  border-right: 2px solid #000000;
-  border-bottom: 2px solid #000000;
-  margin: 0 0 3px 5px;
-}
-#mouse-scroll .mouse {
-  height: calc(4vh - 2px);
-  width: 4vw;
-  padding: 1px;
-  padding-top: 3px;
-  border-radius: 5px;
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-  border: 2px solid #000000;
-  top: 170px;
-}
-#mouse-scroll .down-arrow-1 {
-  margin-top: 6px;
-}
-#mouse-scroll .down-arrow-1,
-#mouse-scroll .down-arrow-2,
-#mouse-scroll .down-arrow-3 {
-  animation: mouse-scroll 1s infinite;
-  -webkit-animation: mouse-scroll 1s infinite;
-  -moz-animation: mouse-scroll 1s infinite;
-  margin-right: auto;
-  margin-left: auto;
-}
-#mouse-scroll .down-arrow-1 {
-  animation-delay: 0.1s;
-  -webkit-animation-delay: 0.1s;
-  -moz-animation-delay: 0.1s;
-  animation-direction: alternate;
-  -webkit-animation-direction: alternate;
-}
-#mouse-scroll .down-arrow-2 {
-  animation-delay: 0.2s;
-  -webkit-animation-delay: 0.2s;
-  -moz-animation-delay: 0.2s;
-  animation-direction: alternate;
-  -webkit-animation-direction: alternate;
-}
-#mouse-scroll .down-arrow-3 {
-  animation-delay: 0.3s;
-  -webkit-animation-delay: 0.3s;
-  -moz-animation-delay: 0.3s;
-  animation-direction: alternate;
-  -webkit-animation-direction: alternate;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  animation: mouse-scroll 1s infinite alternate;
 }
 
-#mouse-scroll .mouse-in {
-  height: 4px;
-  width: 2px;
-  display: block;
-  margin: 5px auto;
-  background: #000000;
-  position: relative;
+.down-arrow-1 {
+  animation-delay: 0.1s;
 }
-#mouse-scroll .mouse-in {
-  animation: animated-mouse 1.2s ease alternate-reverse infinite;
-  -webkit-animation: animated-mouse 1.2s ease alternate-reverse infinite;
-  -moz-animation: animated-mouse 1.2s ease alternate-reverse infinite;
+
+.down-arrow-2 {
+  animation-delay: 0.2s;
+}
+
+.down-arrow-3 {
+  animation-delay: 0.3s;
+}
+
+.mouse-scroll-text {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
 }
 
 @keyframes animated-mouse {
   0% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
     transform: translateY(0);
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateY(2vh);
-    -ms-transform: translateY(2vh);
-    transform: translateY(2vh);
+    transform: translateY(12px);
   }
 }
 
-@-webkit-keyframes animated-mouse {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(2vh);
-    -ms-transform: translateY(2vh);
-    transform: translateY(2vh);
-  }
-}
-@-webkit-keyframes mouse-scroll {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 @keyframes mouse-scroll {
   0% {
-    opacity: 0;
+    opacity: 0.35;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.6;
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Short windows cannot fit the hint clear of the greeting; drop it rather
+   than let the two overlap. */
+@media (max-height: 560px) {
+  .ScrollAnim {
+    display: none;
   }
 }
 </style>

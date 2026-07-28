@@ -2,13 +2,16 @@ import styles from "./Dubai.module.scss";
 import ClickyMedia from "../../Base/ClickyMedia";
 import { useEffect, useState } from "preact/hooks";
 export default function Dubai() {
-  const [month, setMonth] = useState("[current]");
-  const [year, setYear] = useState("[date]");
+  // Resolved during the first render on both server and client, so the
+  // pre-hydration markup reads as a date rather than "[current] [date]".
+  const [month] = useState(() =>
+    new Date().toLocaleString("default", { month: "long" })
+  );
+  const [year] = useState(() =>
+    new Date().toLocaleString("default", { year: "numeric" })
+  );
   const [videoObj, setVideoObj] = useState(false);
   useEffect(() => {
-    const date = new Date();
-    setYear(date.toLocaleString("default", { year: "numeric" }));
-    setMonth(date.toLocaleString("default", { month: "long" }));
     setVideoObj({
       src: "/countries/Dubai-Video",
       transformations:

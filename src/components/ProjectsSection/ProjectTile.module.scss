@@ -1,84 +1,102 @@
 .projectTile {
-  margin: 0px;
-  padding: 0px;
-  aspect-ratio: 16/10;
-  height: auto;
+  position: relative;
+  margin: 0;
+  padding: 0;
   width: 30vw;
-  background-color: var(--background);
-  border-radius: 15px;
-  transform: scale 0.2s ease;
+  transition: scale 0.2s ease;
 }
+
+.projectPictureContainer {
+  position: relative;
+  z-index: 24;
+}
+
 .projectPicture {
-  width: 30vw;
-  height: auto;
+  display: block;
+  width: 100%;
+  // Declared up front so the row does not jump as the screenshots arrive.
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border-radius: 15px;
-  // aspect-ratio: 16/10;
   transition:
     scale 0.9s ease,
     box-shadow 0.9s ease;
 }
 
-.projectPictureContainer {
-  position: relative;
-  z-index: 24 !important;
-  // aspect-ratio: 16/10;
-}
-.projectPicture:hover {
+.projectTile:hover .projectPicture,
+.projectLink:focus-visible .projectPicture {
   scale: 1.01;
   transition:
     scale 0.2s ease,
     box-shadow 0.2s ease;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.091);
 }
+
 .projectLink {
+  // Block, or the outline of an inline anchor wrapping block children
+  // collapses and the focus ring never draws.
+  display: block;
   text-decoration: none;
 }
-.projectTile:hover .descriptionTextContainer {
-  margin-top: -5px;
-  transition:
-    margin-top 0.15s ease,
-    scale 0.2s ease;
-  opacity: 1;
+
+.projectLink:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 6px;
+  border-radius: 18px;
 }
+
 .projectTile:active {
-  transition: scale 0.2s ease;
-  scale: 0.93;
+  transition: scale 0.15s ease;
+  scale: 0.985;
 }
+
 .descriptionTextContainer {
-  transition:
-    margin-top 0.9s ease,
-    opacity 0s ease 1s;
-  z-index: 20 !important;
-  margin-top: -150px;
-  padding-bottom: 5px;
+  // Taken out of flow so the reveal cannot push the next row down.
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 12px 10px 0;
   opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
+
+.projectTile:hover .descriptionTextContainer,
+.projectLink:focus-visible .descriptionTextContainer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .descriptionText {
   text-align: center;
   font-size: 14px;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--ink-body);
 }
+
 .descriptionWIP {
   text-align: center;
   font-size: 17px;
   font-weight: 500;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+  margin: 0 0 6px;
 }
 
 @media (max-width: 630px) {
-  .projectPicture {
-    width: 65vw;
-  }
   .projectTile {
     width: 65vw;
-    transform: translateX(-8px);
   }
+
+  // No hover on touch: the description simply lives under each tile.
   .descriptionTextContainer {
-    margin-top: -5px;
+    position: static;
     opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    padding: 10px 0 0;
   }
 }

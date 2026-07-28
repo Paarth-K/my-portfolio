@@ -29,9 +29,10 @@ export default function Link({
     <a
       href={to}
       target={target}
+      rel={target === "_blank" ? "noopener" : undefined}
       onClick={handleClick}
       aria-label={ariaLabel}
-      className={className}
+      className={`${styles.link} ${className}`}
       {...props}
     >
       <div
