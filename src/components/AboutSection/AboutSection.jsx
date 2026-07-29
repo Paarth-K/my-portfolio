@@ -36,7 +36,7 @@ export default function AboutSection(props) {
     <div className={styles.main} id="about">
       <div className={styles.about}>
         <div className={styles.aboutGrid}>
-          <div className={styles.aboutTitle}>
+          <div className={styles.aboutTitle} data-rail>
             <span>A bit about me</span>
           </div>
           <div className={styles.aboutContent}>

@@ -8,7 +8,6 @@ export default function Experience({
   hoverImageSrc,
   htmlId,
   textObjectList,
-  top = 50,
   link = false,
 }) {
   return (
@@ -41,7 +40,7 @@ export default function Experience({
               </div>
             </div>
           </div>
-          <div className={styles.experienceTitle} style={{ top: `${top}%` }}>
+          <div className={styles.experienceTitle} data-rail>
             <span>{experienceName}</span>
           </div>
         </div>

@@ -10,23 +10,29 @@
   display: grid;
   // Same track as the section rail, so "Thinking Huts" and "Countries" sit
   // on one axis even though the glyphs are different sizes.
-  grid-template-columns: minmax(0, auto) min-content;
+  grid-template-columns: minmax(0, auto) var(--rail);
   column-gap: var(--rail-gap);
 }
 
 .experienceTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
-  // Hugs the em so rails of different sizes share one edge.
+  // Identical track + centred + tight line box = one shared axis.
   line-height: 1;
+  justify-self: center;
   font-size: var(--type-rail-sub);
   color: var(--ink-strong);
   place-items: center;
-  // `top` arrives as an inline style from the component; it was previously
-  // inert on desktop because sticky was only declared in the mobile query.
+  // Plain sticky: starts at the top of its section, stops near the
+  // centre of the screen, and is pushed out by the section's end.
   position: sticky;
-  align-self: flex-start;
+  // Exact stop: midpoint of the word on the midpoint of the screen.
+  // --rail-half is half this word's measured height, set by the small
+  // script in Layout.astro; the fallback approximates until it runs.
+  top: calc(50dvh - var(--rail-half, 5dvh));
+  align-self: start;
 }
+
 
 .experienceContent {
   display: inline-grid;

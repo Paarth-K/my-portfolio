@@ -9,31 +9,44 @@
 
 .projectGrid {
   display: grid;
-  grid-template-columns: minmax(0, auto) min-content;
+  // Three tracks even though only the right one holds a rail: the outer
+  // tracks are what keep every rail on the same axis across sections.
+  grid-template-columns: var(--rail) minmax(0, 1fr) var(--rail);
   column-gap: var(--rail-gap);
 }
 
 .projectTitle {
+  grid-column: 3;
   display: inline-grid;
   writing-mode: vertical-rl;
-  // Hugs the em so rails of different sizes share one edge.
+  // Identical track + centred + tight line box = one shared axis.
   line-height: 1;
+  justify-self: center;
   font-size: var(--type-rail);
   color: var(--ink-strong);
   place-items: center;
+  // Plain sticky: starts at the top of its section, stops near the
+  // centre of the screen, and is pushed out by the section's end.
   position: sticky;
-  top: 30%;
-  align-self: flex-start;
+  // Exact stop: midpoint of the word on the midpoint of the screen.
+  // --rail-half is half this word's measured height, set by the small
+  // script in Layout.astro; the fallback approximates until it runs.
+  top: calc(50dvh - var(--rail-half, 25dvh));
+  align-self: start;
 }
 
+
 .projectContent {
+  // No rail on the left, so the tiles take that track's space too and
+  // centre in the full run between the left gutter and the rail.
+  grid-column: 1 / 3;
   display: flex;
   margin-top: 15px;
 
   column-gap: 50px;
   // Leaves standing room for the description that reveals below each tile,
   // so revealing it never reflows the row beneath.
-  row-gap: clamp(5.5rem, 7vw, 7.5rem);
+  row-gap: clamp(5rem, 6vw, 6.5rem);
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -41,11 +54,9 @@
 }
 
 @media (max-width: 630px) {
-  .projectTitle {
-    top: 45%;
-  }
-
+  // Phones keep the symmetric centre track so the tiles stay centred.
   .projectContent {
+    grid-column: 2;
     row-gap: var(--gap-stack);
   }
 }

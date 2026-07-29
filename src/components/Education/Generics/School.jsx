@@ -38,7 +38,7 @@ export default function School({
               </div>
             </div>
           </div>
-          <div className={styles.schoolTitle}>
+          <div className={styles.schoolTitle} data-rail>
             <span>{schoolName}</span>
           </div>
         </div>

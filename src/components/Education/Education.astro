@@ -4,7 +4,7 @@ import NLCS from "./NLCS/NLCS";
 ---
 
 <div class="EducationGrid" id="education">
-  <div class="EducationTitle">
+  <div class="EducationTitle" data-rail>
     <span>Education</span>
   </div>
   <div class="EducationInfo">
@@ -16,7 +16,7 @@ import NLCS from "./NLCS/NLCS";
 <style lang="scss">
   .EducationGrid {
     display: grid;
-    grid-template-columns: min-content minmax(0, auto);
+    grid-template-columns: var(--rail) minmax(0, auto);
     column-gap: var(--rail-gap);
     margin-left: var(--gutter);
     margin-right: var(--gutter);
@@ -24,18 +24,19 @@ import NLCS from "./NLCS/NLCS";
   .EducationTitle {
     display: inline-grid;
     writing-mode: vertical-rl;
-    // Hugs the em so rails of different sizes share one edge.
+    // Identical track + centred + tight line box = one shared axis.
     line-height: 1;
+    justify-self: center;
     font-size: var(--type-rail);
     color: var(--ink-strong);
     place-items: center;
-    top: 30%;
+    // Plain sticky: starts at the top of its section, stops near the
+    // centre of the screen, and is pushed out by the section's end.
     position: sticky;
-    align-self: flex-start;
-  }
-  @media (max-width: 630px) {
-    .EducationTitle {
-      top: 45%;
-    }
+    // Exact stop: midpoint of the word on the midpoint of the screen.
+    // --rail-half is half this word's measured height, set by the small
+    // script in Layout.astro; the fallback approximates until it runs.
+    top: calc(50dvh - var(--rail-half, 25dvh));
+    align-self: start;
   }
 </style>

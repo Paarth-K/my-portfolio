@@ -9,31 +9,44 @@
 
 .aboutGrid {
   display: grid;
-  grid-template-columns: min-content auto;
+  // Three tracks even though only the left one holds a rail: the outer
+  // tracks are what keep every rail on the same axis across sections.
+  grid-template-columns: var(--rail) minmax(0, 1fr) var(--rail);
   column-gap: var(--rail-gap);
 }
 
 .aboutTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
-  // Hugs the em so rails of different sizes share one edge.
+  // Identical track + centred + tight line box = one shared axis.
   line-height: 1;
+  justify-self: center;
   font-size: var(--type-rail);
   color: var(--ink-strong);
   place-items: center;
-  // Matches the other four sections, which were already sticky on desktop.
+  // Plain sticky: starts at the top of its section, stops near the
+  // centre of the screen, and is pushed out by the section's end.
   position: sticky;
-  top: 30%;
-  align-self: flex-start;
+  // Exact stop: midpoint of the word on the midpoint of the screen.
+  // --rail-half is half this word's measured height, set by the small
+  // script in Layout.astro; the fallback approximates until it runs.
+  top: calc(50dvh - var(--rail-half, 25dvh));
+  align-self: start;
 }
 
+
 .aboutContent {
+  // No rail on the right, so the content takes that track's space too and
+  // centres in the full run between the rail and the right gutter.
+  grid-column: 2 / -1;
   display: inline-grid;
 }
 
 .aboutContentGrid {
   display: grid;
-  grid-template-columns: minmax(0, auto) 35vw;
+  // 30vw, matching every other media block; 35vw squeezed the text column
+  // too narrow once the content went back to the centre track.
+  grid-template-columns: minmax(0, auto) 30vw;
   column-gap: 40px;
   align-items: center;
 }
@@ -47,8 +60,8 @@
 .meImgContainer {
   display: inline-grid;
   margin: auto;
-  width: 35vw;
-  height: 35vw;
+  width: 30vw;
+  height: 30vw;
 }
 
 .meDescTitle {
@@ -67,8 +80,9 @@
 }
 
 @media (max-width: 630px) {
-  .aboutTitle {
-    top: 45%;
+  // Phones keep the symmetric centre track so the content stays centred.
+  .aboutContent {
+    grid-column: 2;
   }
 
   .aboutContentGrid {

@@ -22,7 +22,7 @@ export default function Dubai() {
     <div className={styles.main} id="dubai">
       <div className={styles.ex}>
         <div className={styles.exGrid}>
-          <div className={styles.exTitle}>
+          <div className={styles.exTitle} data-rail>
             <span>{`${month} ${year}`} - August 2023</span>
           </div>
           <div className={styles.exContent}>

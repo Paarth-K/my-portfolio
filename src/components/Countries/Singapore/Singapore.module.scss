@@ -11,22 +11,29 @@
 
 .exGrid {
   display: grid;
-  grid-template-columns: min-content minmax(0, auto);
+  grid-template-columns: var(--rail) minmax(0, auto);
   column-gap: var(--rail-gap);
 }
 
 .exTitle {
   display: inline-grid;
   writing-mode: vertical-rl;
-  // Hugs the em so rails of different sizes share one edge.
+  // Identical track + centred + tight line box = one shared axis.
   line-height: 1;
+  justify-self: center;
   font-size: var(--type-rail-sub);
   color: var(--ink-strong);
   place-items: center;
+  // Plain sticky: starts at the top of its section, stops near the
+  // centre of the screen, and is pushed out by the section's end.
   position: sticky;
-  top: 40%;
-  align-self: flex-start;
+  // Exact stop: midpoint of the word on the midpoint of the screen.
+  // --rail-half is half this word's measured height, set by the small
+  // script in Layout.astro; the fallback approximates until it runs.
+  top: calc(50dvh - var(--rail-half, 20dvh));
+  align-self: start;
 }
+
 
 .exContent {
   display: grid;

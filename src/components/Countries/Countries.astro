@@ -8,7 +8,7 @@ import Singapore from "./Singapore/Singapore.jsx";
     <Dubai client:visible />
     <Singapore client:visible />
   </div>
-  <div class="CountriesTitle">
+  <div class="CountriesTitle" data-rail>
     <span>Countries</span>
   </div>
 </div>
@@ -16,25 +16,26 @@ import Singapore from "./Singapore/Singapore.jsx";
 <style lang="scss">
   .CountriesGrid {
     display: grid;
-    grid-template-columns: minmax(0, auto) min-content;
+    grid-template-columns: minmax(0, auto) var(--rail);
     column-gap: var(--rail-gap);
     margin-right: var(--gutter);
   }
   .CountriesTitle {
     display: inline-grid;
     writing-mode: vertical-rl;
-    // Hugs the em so rails of different sizes share one edge.
+    // Identical track + centred + tight line box = one shared axis.
     line-height: 1;
+    justify-self: center;
     font-size: var(--type-rail);
     color: var(--ink-strong);
     place-items: center;
-    top: 30%;
+    // Plain sticky: starts at the top of its section, stops near the
+    // centre of the screen, and is pushed out by the section's end.
     position: sticky;
-    align-self: flex-start;
-  }
-  @media (max-width: 630px) {
-    .CountriesTitle {
-      top: 45%;
-    }
+    // Exact stop: midpoint of the word on the midpoint of the screen.
+    // --rail-half is half this word's measured height, set by the small
+    // script in Layout.astro; the fallback approximates until it runs.
+    top: calc(50dvh - var(--rail-half, 25dvh));
+    align-self: start;
   }
 </style>

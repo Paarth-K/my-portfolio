@@ -2,7 +2,8 @@
   position: relative;
   margin: 0;
   padding: 0;
-  width: 30vw;
+  // Two per row inside whatever width the centre track gives us.
+  width: min(26vw, calc((100% - 50px) / 2));
   transition: scale 0.2s ease;
 }
 

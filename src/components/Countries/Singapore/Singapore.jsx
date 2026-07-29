@@ -14,7 +14,7 @@ export default function Singapore() {
     <div className={styles.main} id="singapore">
       <div className={styles.ex}>
         <div className={styles.exGrid}>
-          <div className={styles.exTitle}>
+          <div className={styles.exTitle} data-rail>
             <span>August 2023 - 2013</span>
           </div>
           <div className={styles.exContent}>

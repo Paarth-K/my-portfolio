@@ -13,7 +13,6 @@ export default function TH() {
     <Experience
       experienceName={"Thinking Huts"}
       htmlId={"thinking-huts"}
-      top={45.5}
       link={{
         to: "https://www.thinkinghuts.org/",
         ariaLabel: "Thinking Huts website",

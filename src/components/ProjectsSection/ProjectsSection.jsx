@@ -36,7 +36,7 @@ export default function ProjectsSection() {
               return <ProjectTile project={project} key={index}></ProjectTile>;
             })}
           </div>
-          <div className={styles.projectTitle}>
+          <div className={styles.projectTitle} data-rail>
             <span>Projects</span>
           </div>
         </div>

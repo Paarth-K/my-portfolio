@@ -121,6 +121,25 @@ const { title } = Astro.props;
     <!-- End Google Tag Manager (noscript) -->
     <NavBar client:load />
     <slot />
+    <script>
+      // Each sideways rail pins with its midpoint on the screen's midpoint:
+      // top = 50dvh - half the word's own height. CSS cannot reference an
+      // element's own height in a sticky offset, so measure it here and hand
+      // it to the stylesheet. ResizeObserver re-measures on viewport resizes
+      // (the font sizes track vw) and when the web font finishes loading.
+      const observer = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+          const el = entry.target as HTMLElement;
+          el.style.setProperty(
+            "--rail-half",
+            el.getBoundingClientRect().height / 2 + "px"
+          );
+        }
+      });
+      document
+        .querySelectorAll("[data-rail]")
+        .forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
 <style is:global lang="scss">
@@ -158,10 +177,13 @@ const { title } = Astro.props;
 
     /* Rhythm */
     --gutter: 8vw;
-    /* Air between a rotated rail and the content beside it. */
-    --rail-gap: 2vw;
-    --gap-section: clamp(4.5rem, 8vw, 8rem);
-    --gap-stack: clamp(3rem, 5vw, 5rem);
+    /* Air between a rotated rail and the content beside it. Sized for the
+       full-size section rails, which nearly fill the --rail track and so
+       have the least slack of their own; the smaller sub-rails sit further
+       in because every rail is centred on one shared axis. */
+    --rail-gap: clamp(1.75rem, 3.4vw, 4rem);
+    --gap-section: clamp(3rem, 5vw, 5rem);
+    --gap-stack: clamp(2rem, 3.5vw, 3.5rem);
 
     /* Comfortable line length for running copy */
     --measure: 64ch;
@@ -178,8 +200,11 @@ const { title } = Astro.props;
      roughly even, which keeps the line measure where it is. */
   @media (max-width: 630px) {
     :root {
-      --gutter: 5vw;
-      --rail-gap: 4.5vw;
+      /* Content is centred between two reserved rail tracks, so on a phone
+         those tracks plus their gaps are most of the width. Spend less on
+         the outer gutter to keep the middle column readable. */
+      --gutter: 3vw;
+      --rail-gap: 3.5vw;
     }
   }
 
@@ -258,4 +283,5 @@ const { title } = Astro.props;
       scroll-behavior: auto !important;
     }
   }
+
 </style>
