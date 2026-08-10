@@ -11,7 +11,7 @@ export default function Image({
       decoding="async"
       loading={loading}
       draggable={draggable}
-      src={`https://cdn.paarthk.dev/?url=https://res.cloudinary.com/dgo87obt6/image/upload/${transformations}/portfolio-assets/${src}&output=webp`}
+      src={`https://wsrv.nl/?url=https://res.cloudinary.com/dgo87obt6/image/upload/${transformations}/portfolio-assets/${src}&output=webp`}
       alt={alt}
       {...other}
     />
