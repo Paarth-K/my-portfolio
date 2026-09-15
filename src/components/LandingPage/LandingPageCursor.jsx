@@ -61,6 +61,15 @@ const MARKS = [
     swapXY: false,
   },
   {
+    key: "us",
+    href: null,
+    src: "/home/USA-flag",
+    alt: "United States Flag",
+    negateX: false,
+    negateY: false,
+    swapXY: false,
+  },
+  {
     key: "nlcs",
     href: "#nlcs",
     src: "/home/NLCS-Logo",

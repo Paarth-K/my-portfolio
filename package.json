@@ -12,21 +12,21 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "packageManager": "pnpm@11.21.0",
+  "packageManager": "pnpm@12.4.1",
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/cloudflare": "^14.2.0",
-    "@astrojs/preact": "^6.0.2",
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/cloudflare": "^14.3.1",
+    "@astrojs/preact": "^6.0.5",
+    "@astrojs/sitemap": "^3.7.4",
     "@astrojs/vue": "^7.0.2",
-    "astro": "^7.2.0",
+    "astro": "^7.3.2",
     "preact": "^10.29.8",
-    "sass": "^1.102.0",
+    "sass": "^1.104.1",
     "typescript": "^7.0.2",
-    "vue": "^3.5.41"
+    "vue": "^3.5.42"
   },
   "devDependencies": {
     "prettier": "^3.9.6",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^1.0.0"
   }
 }

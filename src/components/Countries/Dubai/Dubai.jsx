@@ -2,14 +2,6 @@ import styles from "./Dubai.module.scss";
 import ClickyMedia from "../../Base/ClickyMedia";
 import { useEffect, useState } from "preact/hooks";
 export default function Dubai() {
-  // Resolved during the first render on both server and client, so the
-  // pre-hydration markup reads as a date rather than "[current] [date]".
-  const [month] = useState(() =>
-    new Date().toLocaleString("default", { month: "long" })
-  );
-  const [year] = useState(() =>
-    new Date().toLocaleString("default", { year: "numeric" })
-  );
   const [videoObj, setVideoObj] = useState(false);
   useEffect(() => {
     setVideoObj({
@@ -23,7 +15,7 @@ export default function Dubai() {
       <div className={styles.ex}>
         <div className={styles.exGrid}>
           <div className={styles.exTitle} data-rail>
-            <span>{`${month} ${year}`} - August 2023</span>
+            <span>September 2026 - August 2023</span>
           </div>
           <div className={styles.exContent}>
             <div className={styles.exContentItem}>

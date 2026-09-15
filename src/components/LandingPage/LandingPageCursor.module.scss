@@ -91,6 +91,12 @@
   right: 200px;
 }
 
+.us {
+  top: 380px;
+  left: 250px;
+  z-index: 102;
+}
+
 .sg {
   top: 90px;
   right: 450px;
@@ -137,6 +143,18 @@
   }
   .nlcs {
     left: 20px;
+  }
+  .us {
+    left: 190px;
+    top: 250px;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 630px) {
+  .us {
+    left: 125px;
+    top: 160px;
   }
 }
 
