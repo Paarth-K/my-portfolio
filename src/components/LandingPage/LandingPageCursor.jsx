@@ -87,6 +87,15 @@ const MARKS = [
     negateY: false,
     swapXY: true,
   },
+  {
+    key: "ucsd",
+    href: null,
+    src: "/home/UCSD-triton",
+    alt: "University of California San Diego Triton Logo",
+    negateX: false,
+    negateY: false,
+    swapXY: true,
+  },
 ];
 
 const IMAGE_TRANSFORMATIONS = "f_auto:image,q_auto,w_250";

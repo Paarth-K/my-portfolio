@@ -114,6 +114,11 @@
   z-index: 102;
 }
 
+.ucsd {
+  top: 560px;
+  right: 100px;
+}
+
 @media (max-width: 1010px) {
   .vue {
     left: 53px;
@@ -149,12 +154,21 @@
     top: 250px;
     z-index: 100;
   }
+  .ucsd {
+    left: 300px;
+    top: 90px;
+    right: auto;
+  }
 }
 
 @media (max-width: 630px) {
   .us {
     left: 125px;
     top: 160px;
+  }
+  .ucsd {
+    left: 20px;
+    top: 1200px;
   }
 }
 
