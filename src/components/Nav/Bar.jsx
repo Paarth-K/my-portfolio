@@ -7,7 +7,7 @@ const SECTIONS = [
   { to: "#about", display: "About Me" },
   { to: "#projects", display: "Projects" },
   { to: "#experience", display: "Experience" },
-  { to: "#countries", display: "Countries" },
+  { to: "#countries", display: "Places" },
   { to: "#education", display: "Education" },
 ];
 

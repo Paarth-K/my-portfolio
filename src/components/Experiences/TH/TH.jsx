@@ -5,8 +5,6 @@ export default function TH() {
   useEffect(() => {
     setVideoObj({
       src: "/experience/th/th_hover_vid",
-      transformations:
-        "c_crop,g_west,h_710,w_710,x_470,y_40,e_volume:mute,f_auto:video",
     });
   }, []);
   return (
@@ -18,7 +16,7 @@ export default function TH() {
         ariaLabel: "Thinking Huts website",
       }}
       hoverImageAlt={"Thinking Huts"}
-      hoverImageSrc={"/experience/th/thinking_huts_w_text"}
+      hoverImageSrc={"/experience/th/thinking_huts_w_text.png"}
       hoverVidObj={videoObj}
       textObjectList={[
         {

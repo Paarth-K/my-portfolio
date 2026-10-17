@@ -5,25 +5,25 @@ export default function ProjectsSection() {
     {
       link: "https://www.nlcsopp.org/",
       desc: "This project uses Next.js. It aims to help high school students in my school (NLCS Dubai) to find internships and opportunities that they can participate in.",
-      image: "projects/nlcsopp-org",
+      image: "/projects/nlcsopp-org.png",
       imgalt: "NLCS Opportunities Website",
     },
     {
       link: "https://tachyons.paarthkukreja.com/",
       desc: "I made this project with Astro (using React and Vue), for my friend's team based in Italy that is participating in the F1 in Schools Competition.",
-      image: "/projects/tachyons_w_car",
+      image: "/projects/tachyons_w_car.png",
       imgalt: "Tachyons F1 Website",
     },
     {
       link: "https://dofe.paarthkukreja.com/",
       desc: "I made this project with Nuxt3, for the Skills section of the Duke of Edinburgh Award.",
-      image: "/projects/dofeweb_dark",
+      image: "/projects/dofeweb_dark.png",
       imgalt: "DofE Website",
     },
     {
       link: "https://colab.research.google.com/drive/1rApehuk87KAJgl2RmoEk3X2eJc9l3BoW?usp=sharing",
       desc: "I made this Data Science Project with Python, for the Silicon Valley Competition by Byju's.",
-      image: "/projects/SiliconVCNew",
+      image: "/projects/SiliconVCNew.png",
       imgalt: "SVC Byju's Colab Notebook",
     },
   ];

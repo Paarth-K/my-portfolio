@@ -1,15 +1,17 @@
 ---
+import SanDiego from "./SanDiego/SanDiego.jsx";
 import Dubai from "./Dubai/Dubai.jsx";
 import Singapore from "./Singapore/Singapore.jsx";
 ---
 
 <div class="CountriesGrid" id="countries">
   <div class="CountriesInfo">
+    <SanDiego client:visible />
     <Dubai client:visible />
     <Singapore client:visible />
   </div>
   <div class="CountriesTitle" data-rail>
-    <span>Countries</span>
+    <span>Places</span>
   </div>
 </div>
 

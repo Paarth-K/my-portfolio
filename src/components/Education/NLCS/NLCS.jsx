@@ -5,8 +5,6 @@ export default function NLCS() {
   useEffect(() => {
     setVideoObj({
       src: "/education/NLCS-Video",
-      transformations:
-        "c_crop,g_west,h_1080,w_1080,x_250,q_auto,e_volume:mute,f_auto:video",
     });
   }, []);
   return (
@@ -18,7 +16,7 @@ export default function NLCS() {
         ariaLabel: "North London Collegiate School",
       }}
       hoverImageAlt={"North London Collegiate School"}
-      hoverImageSrc={"/education/NLCS-Image"}
+      hoverImageSrc={"/education/NLCS-Image.jpg"}
       hoverVidObj={videoObj}
       textObjectList={[
         {

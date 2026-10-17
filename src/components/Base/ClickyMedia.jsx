@@ -13,8 +13,8 @@ export default function ClickyMedia({
   src,
   alt,
   link = { to: false, ariaLabel: false, target: "_blank" },
-  hoverVid = { src: false, transformations: false },
-  ImgTransformations = "f_auto:image,q_auto,w_1500",
+  hoverVid = { src: false },
+  ImgTransformations = "w=1500",
   loading = "lazy",
   ...other
 }) {
@@ -44,7 +44,6 @@ export default function ClickyMedia({
         autoPlay
         muted
         src={hoverVid.src}
-        transformations={hoverVid.transformations}
       ></Video>
     </div>
   ) : null;

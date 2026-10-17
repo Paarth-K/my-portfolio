@@ -6,8 +6,6 @@ export default function Dubai() {
   useEffect(() => {
     setVideoObj({
       src: "/countries/Dubai-Video",
-      transformations:
-        "c_crop,g_west,h_1800,w_1800,x_900,y_-35,q_auto,e_volume:mute,f_auto:video",
     });
   }, []);
   return (
@@ -23,7 +21,7 @@ export default function Dubai() {
 
               <div className={styles.currentImg}>
                 <ClickyMedia
-                  src="/countries/Dubai-Image"
+                  src="/countries/Dubai-Image.jpg"
                   alt="Dubai Burj Khalifa"
                   link={{
                     to: "",
@@ -34,16 +32,16 @@ export default function Dubai() {
               </div>
 
               <p className={styles.currentDesc}>
-                Moving to Dubai from Singapore has been one of the toughest yet
+                Moving to Dubai from Singapore was one of the toughest yet
                 best experiences in my life. Living in a city that is so
-                diverse, so modern, and just as safe as Singapore has been an
+                diverse, so modern, and just as safe as Singapore was an
                 amazing experience. Dubai is a city that has a lot to offer,
                 from the world's tallest building, the Burj Khalifa, to the
                 world's largest mall, the Dubai Mall. The city is also home to
                 some of the best restaurants, hotels, and shopping centres in
                 the world. The people in Dubai are also very friendly and
-                welcoming, which has made my transition to the city much easier.
-                I'm very happy to be living in Dubai and I'm excited to see what
+                welcoming, which made my transition to the city much easier.
+                I was very happy living in Dubai and I'm excited to see what
                 the future holds for me.
               </p>
             </div>

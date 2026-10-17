@@ -5,7 +5,6 @@ export default function DCIS() {
   useEffect(() => {
     setVideoObj({
       src: "/experience/osn/osn_trailer_edited",
-      transformations: "q_auto:best,e_volume:mute,f_auto:video",
     });
   }, []);
   return (
@@ -17,7 +16,7 @@ export default function DCIS() {
         ariaLabel: "OSN plus website",
       }}
       hoverImageAlt={"OSN"}
-      hoverImageSrc={"/experience/osn/osnplus_logo"}
+      hoverImageSrc={"/experience/osn/osnplus_logo.jpg"}
       hoverVidObj={videoObj}
       textObjectList={[
         {

@@ -1,0 +1,74 @@
+.main {
+  // Left only: the Countries grid already reserves the right gutter for its
+  // own rail, so setting it here too pushed the block off centre.
+  margin-left: var(--gutter);
+  padding-top: var(--gap-section);
+}
+
+.ex {
+  padding-bottom: var(--gap-stack);
+}
+
+.exGrid {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, auto);
+  column-gap: var(--rail-gap);
+}
+
+.exTitle {
+  display: inline-grid;
+  writing-mode: vertical-rl;
+  // Identical track + centred + tight line box = one shared axis.
+  line-height: 1;
+  justify-self: center;
+  font-size: var(--type-rail-sub);
+  color: var(--ink-strong);
+  place-items: center;
+  // Plain sticky: starts at the top of its section, stops near the
+  // centre of the screen, and is pushed out by the section's end.
+  position: sticky;
+  // Exact stop: midpoint of the word on the midpoint of the screen.
+  // --rail-half is half this word's measured height, set by the small
+  // script in Layout.astro; the fallback approximates until it runs.
+  top: calc(50dvh - var(--rail-half, 20dvh));
+  align-self: start;
+}
+
+
+.exContent {
+  display: grid;
+  margin-top: 15px;
+}
+
+.exDescTitle {
+  font-size: var(--type-heading);
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+  text-align: center;
+}
+
+.currentImg {
+  width: 30vw;
+  height: 30vw;
+  margin: auto;
+}
+
+.currentDesc {
+  // Full-bleed centred copy ran past 110 characters a line; cap the measure
+  // and centre the column instead of the text block.
+  max-width: var(--measure);
+  margin: 2rem auto 0;
+  text-align: center;
+  font-size: var(--type-body);
+  line-height: 1.6;
+  color: var(--ink-body);
+}
+
+@media (max-width: 630px) {
+  .currentImg {
+    margin-top: 20px;
+    width: 60vw;
+    height: 60vw;
+  }
+}

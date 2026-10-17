@@ -5,8 +5,6 @@ export default function DCIS() {
   useEffect(() => {
     setVideoObj({
       src: "/education/DCIS-Video",
-      transformations:
-        "c_crop,g_west,h_720,w_720,x_200,q_auto,e_volume:mute,f_auto:video",
     });
   }, []);
   return (
@@ -18,7 +16,7 @@ export default function DCIS() {
         ariaLabel: "Dover Court International School",
       }}
       hoverImageAlt={"Dover Court International School"}
-      hoverImageSrc={"/education/DCIS-Image-new"}
+      hoverImageSrc={"/education/DCIS-Image-new.png"}
       hoverVidObj={videoObj}
       textObjectList={[
         {

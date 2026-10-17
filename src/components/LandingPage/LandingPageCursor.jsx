@@ -9,7 +9,7 @@ const MARKS = [
   {
     key: "react",
     href: "#projects",
-    src: "/home/React-icon",
+    src: "/home/React-icon.png",
     alt: "React Icon",
     negateX: false,
     negateY: false,
@@ -18,7 +18,7 @@ const MARKS = [
   {
     key: "vue",
     href: "#projects",
-    src: "/home/Vue-icon",
+    src: "/home/Vue-icon.png",
     alt: "Vue Icon",
     negateX: true,
     negateY: true,
@@ -27,7 +27,7 @@ const MARKS = [
   {
     key: "astro",
     href: "#projects",
-    src: "/home/Astro-icon",
+    src: "/home/Astro-icon.png",
     alt: "Astro Icon",
     negateX: false,
     negateY: true,
@@ -36,7 +36,7 @@ const MARKS = [
   {
     key: "uae",
     href: "#dubai",
-    src: "/home/UAE-flag",
+    src: "/home/UAE-flag.png",
     alt: "United Arab Emirates Flag",
     negateX: true,
     negateY: false,
@@ -45,7 +45,7 @@ const MARKS = [
   {
     key: "sg",
     href: "#singapore",
-    src: "/home/SG-flag",
+    src: "/home/SG-flag.png",
     alt: "Singapore Flag",
     negateX: false,
     negateY: false,
@@ -54,7 +54,7 @@ const MARKS = [
   {
     key: "india",
     href: null,
-    src: "/home/INDIA-flag",
+    src: "/home/INDIA-flag.png",
     alt: "India Flag",
     negateX: true,
     negateY: false,
@@ -62,8 +62,8 @@ const MARKS = [
   },
   {
     key: "us",
-    href: null,
-    src: "/home/USA-flag",
+    href: "#san-diego",
+    src: "/home/USA-flag.svg",
     alt: "United States Flag",
     negateX: false,
     negateY: false,
@@ -72,7 +72,7 @@ const MARKS = [
   {
     key: "nlcs",
     href: "#nlcs",
-    src: "/home/NLCS-Logo",
+    src: "/home/NLCS-Logo.png",
     alt: "North London Collegiate School Dubai Logo",
     negateX: false,
     negateY: false,
@@ -81,7 +81,7 @@ const MARKS = [
   {
     key: "nas",
     href: "#dcis",
-    src: "/home/NAS-Logo",
+    src: "/home/NAS-Logo.png",
     alt: "Nord Anglia Education Singapore School Logo",
     negateX: false,
     negateY: false,
@@ -89,8 +89,8 @@ const MARKS = [
   },
   {
     key: "ucsd",
-    href: null,
-    src: "/home/UCSD-triton",
+    href: "#ucsd",
+    src: "/home/UCSD-triton.png",
     alt: "University of California San Diego Triton Logo",
     negateX: false,
     negateY: false,
@@ -98,7 +98,7 @@ const MARKS = [
   },
 ];
 
-const IMAGE_TRANSFORMATIONS = "f_auto:image,q_auto,w_250";
+const IMAGE_TRANSFORMATIONS = "w=250";
 const EASE = 0.08; // lower is smoother and lazier
 const PARALLAX_MIN_WIDTH = 630;
 

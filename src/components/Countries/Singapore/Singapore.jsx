@@ -6,8 +6,6 @@ export default function Singapore() {
   useEffect(() => {
     setVideoObj({
       src: "/countries/Singapore-Video",
-      transformations:
-        "c_crop,g_west,h_2000,w_2000,x_870,y_10,q_auto,e_volume:mute,f_auto:video",
     });
   }, []);
   return (
@@ -23,7 +21,7 @@ export default function Singapore() {
 
               <div className={styles.currentImg}>
                 <ClickyMedia
-                  src="/countries/Singapore-Image"
+                  src="/countries/Singapore-Image.jpg"
                   alt="Singapore Jewel Indoor Waterfall"
                   link={{
                     to: "",

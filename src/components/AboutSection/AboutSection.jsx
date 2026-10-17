@@ -16,7 +16,6 @@ export default function AboutSection(props) {
   useEffect(() => {
     setVideoObj({
       src: "/about/about_me_hover_vid",
-      transformations: "e_volume:mute,f_auto:video,q_auto:best",
     });
   }, []);
   // Resolved during the first render on both server and client, so the
@@ -54,7 +53,7 @@ export default function AboutSection(props) {
               <div className={styles.meImgContainer}>
                 <ClickyMedia
                   alt="An image of Paarth Kukreja"
-                  src="/about/me_pic_2025"
+                  src="/about/me_pic_2025.png"
                   hoverVid={videoObj}
                 ></ClickyMedia>
               </div>
